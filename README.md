@@ -5,6 +5,8 @@ live in a **Google Sheet**; the page reads them live and refreshes every
 30 seconds. Update the sheet from any device — no redeploy, no git commit.
 A "last updated" timestamp in the sheet is shown in the page's status bar.
 
+Original wall chart artwork from [BBC](https://downloads.bbc.co.uk/england/pdf/BBC_WC_26_WALL_CHART.pdf).
+
 ## Files
 
 | File | What it is |
@@ -190,4 +192,3 @@ up promptly. Values map to fields by the **Field ID** column.
 - `fields.json` and `chart.jpg` are generated from the source PDF. If the
   underlying chart changes, regenerate both (see *Regenerating* in the project
   scripts) so coordinates and image stay in sync.
-
