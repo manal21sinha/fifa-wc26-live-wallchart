@@ -5,8 +5,6 @@ live in a **Google Sheet**; the page reads them live and refreshes every
 30 seconds. Update the sheet from any device — no redeploy, no git commit.
 A "last updated" timestamp in the sheet is shown in the page's status bar.
 
-Original wall chart artwork from [BBC](https://downloads.bbc.co.uk/england/pdf/BBC_WC_26_WALL_CHART.pdf).
-
 ## Files
 
 | File | What it is |
@@ -123,13 +121,20 @@ This row is **not drawn on the chart** — it only feeds the status bar. You can
 
 ## How the live read works
 
-The page fetches your sheet through Google's public **gviz CSV** endpoint
-(`/gviz/tq?tqx=out:csv&sheet=Scores`). It's free, needs no API key, works from
+The page fetches your sheet through Google's public **gviz JSON** endpoint
+(`/gviz/tq?tqx=out:json&sheet=Scores`). It's free, needs no API key, works from
 a static host, and is requested with a cache-buster each cycle so updates show
 up promptly. Values map to fields by the **Field ID** column.
 
-> Note: Google may cache the CSV for a short time, so an edit can take a few
-> tens of seconds beyond the refresh interval to appear. That's normal.
+> **Why JSON, not CSV?** gviz infers a single type per column. Because the
+> Value column is mostly digits, gviz types it as *numeric* — and in CSV mode
+> that makes the **text** cells (your knockout team names) come back **blank**.
+> The JSON response returns every cell's value regardless of column type, so
+> scores *and* team names both arrive. (It also returns clean score strings
+> like `2` rather than `2.0`.)
+
+> Note: Google may cache the response for a short time, so an edit can take a
+> few tens of seconds beyond the refresh interval to appear. That's normal.
 
 ## Field id scheme (reference)
 
@@ -143,7 +148,7 @@ up promptly. Values map to fields by the **Field ID** column.
 
 **The chart loads but no scores/names appear.**
 - Check the **sheet sharing**: it must be *Anyone with the link → Viewer*.
-  A private sheet returns an error page (often HTML), not CSV.
+  A private sheet returns an error page (often HTML), not the expected data.
 - Check `config.js`: `SHEET_ID` must be the long id from the URL (between
   `/d/` and `/edit`), **not** the whole URL, and not still `PASTE_…`.
 - Check the tab name: `SHEET_NAME` in `config.js` must match the tab exactly
@@ -163,6 +168,13 @@ up promptly. Values map to fields by the **Field ID** column.
   `sheet_template.csv` and re-enter values into the **Value** column only.
 - Make sure you typed into the **Value** column, not the Description column.
 
+**Scores appear but team names stay on the colour (kaleidoscope) fill.**
+- This was a gviz typing quirk: a number-heavy Value column read in CSV mode
+  dropped the text (team-name) cells. The page now uses the gviz **JSON**
+  endpoint, which returns text and numbers alike — so this is fixed. If you
+  ever see it again, make sure you're running the current `index.html`
+  (it requests `tqx=out:json`, not `out:csv`).
+
 **A team name is cut off / too long.**
 - Knockout name fields auto-shrink text to fit, but very long names in a small
   box can still clip. Use the short form (e.g. `S. KOREA`, `CZECHIA`) if needed.
@@ -174,9 +186,9 @@ up promptly. Values map to fields by the **Field ID** column.
   back to the viewer's own refresh time — that's expected.
 
 **Edits take a while to appear.**
-- Two layers of delay: your `REFRESH_MS` (default 30s) plus Google's short CSV
-  cache (usually tens of seconds). Up to ~1 minute total is normal. To poll
-  faster, lower `REFRESH_MS` in `config.js` (don't go below ~10000).
+- Two layers of delay: your `REFRESH_MS` (default 30s) plus Google's short
+  response cache (usually tens of seconds). Up to ~1 minute total is normal. To
+  poll faster, lower `REFRESH_MS` in `config.js` (don't go below ~10000).
 
 **GitHub Pages shows an old version after I push.**
 - Pages can serve cached assets for a minute or two. Hard-refresh
@@ -192,3 +204,4 @@ up promptly. Values map to fields by the **Field ID** column.
 - `fields.json` and `chart.jpg` are generated from the source PDF. If the
   underlying chart changes, regenerate both (see *Regenerating* in the project
   scripts) so coordinates and image stay in sync.
+

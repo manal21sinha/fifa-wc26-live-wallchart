@@ -97,55 +97,50 @@ const nodes = {};   // field id -> span element
 
 function setStatus(state, text){ statusEl.className = state; statusText.textContent = text; }
 
-// Build the gviz CSV endpoint — public, no API key, cache-buster friendly.
+// Build the gviz JSON endpoint — public, no API key, cache-buster friendly.
+// We use JSON (not CSV) on purpose: gviz infers ONE type per column, so a
+// Value column full of digits gets typed numeric and TEXT cells (team names)
+// come back blank in CSV. JSON returns every cell's value (and a formatted
+// string 'f') regardless of column type, so names and scores both arrive.
 function sheetUrl(){
   const base = `https://docs.google.com/spreadsheets/d/${CFG.SHEET_ID}/gviz/tq`;
-  // headers=1 forces gviz to treat exactly row 1 as the header. Without it,
-  // gviz auto-detects and can mis-guess once the Value column holds text (e.g.
-  // the _updated timestamp), which makes it emit A/B/C labels instead.
-  const q = new URLSearchParams({ tqx: "out:csv", sheet: CFG.SHEET_NAME,
+  const q = new URLSearchParams({ tqx: "out:json", sheet: CFG.SHEET_NAME,
                                   headers: "1", t: Date.now() });
   return `${base}?${q.toString()}`;
 }
 
-// Minimal RFC-4180 CSV parser (handles quotes, commas, newlines in quotes).
-function parseCSV(text){
-  const rows = []; let row = [], cur = "", q = false;
-  for (let i = 0; i < text.length; i++){
-    const c = text[i];
-    if (q){
-      if (c === '"'){ if (text[i+1] === '"'){ cur += '"'; i++; } else q = false; }
-      else cur += c;
-    } else {
-      if (c === '"') q = true;
-      else if (c === ',') { row.push(cur); cur = ""; }
-      else if (c === '\n'){ row.push(cur); rows.push(row); row = []; cur = ""; }
-      else if (c === '\r'){ /* skip */ }
-      else cur += c;
-    }
-  }
-  if (cur.length || row.length){ row.push(cur); rows.push(row); }
-  return rows;
+// gviz wraps JSON in a JS call:  /*O_o*/ google.visualization.Query.setResponse({...});
+// Strip the wrapper and parse the payload.
+function parseGviz(text){
+  const a = text.indexOf("{");
+  const b = text.lastIndexOf("}");
+  if (a === -1 || b === -1) throw new Error("unexpected gviz response");
+  return JSON.parse(text.slice(a, b + 1));
 }
 
-function rowsToValues(rows){
-  if (!rows.length) return {};
-  // Find the header row by looking for the ID/Value column names. Normally
-  // this is row 0, but searching makes us robust if a stray row appears above
-  // it or gviz auto-labels columns.
-  let hdrRow = -1, idIdx = -1, valIdx = -1;
-  for (let r = 0; r < Math.min(rows.length, 5); r++){
-    const cells = rows[r].map(h => h.trim());
-    const i = cells.indexOf(CFG.ID_COLUMN);
-    const v = cells.indexOf(CFG.VALUE_COLUMN);
-    if (i !== -1 && v !== -1){ hdrRow = r; idIdx = i; valIdx = v; break; }
-  }
-  if (hdrRow === -1)
-    throw new Error(`columns "${CFG.ID_COLUMN}"/"${CFG.VALUE_COLUMN}" not found`);
+// Turn the gviz table into { fieldId: value }. Columns are matched by their
+// header label (ID_COLUMN / VALUE_COLUMN). Cell value prefers the raw 'v';
+// falls back to the formatted 'f'. Everything is coerced to a trimmed string.
+function tableToValues(payload){
+  const table = payload.table || {};
+  const cols = table.cols || [];
+  const rows = table.rows || [];
+  const labelIdx = (name) => cols.findIndex(c => (c.label || "").trim() === name);
+  let idIdx = labelIdx(CFG.ID_COLUMN);
+  let valIdx = labelIdx(CFG.VALUE_COLUMN);
+  // Fallback: if labels are missing, assume Description,Field ID,Value order.
+  if (idIdx === -1) idIdx = 1;
+  if (valIdx === -1) valIdx = 2;
+  const cellStr = (cell) => {
+    if (!cell) return "";
+    const v = (cell.v !== null && cell.v !== undefined) ? cell.v : cell.f;
+    return (v === null || v === undefined) ? "" : String(v).trim();
+  };
   const out = {};
-  for (let r = hdrRow + 1; r < rows.length; r++){
-    const id = (rows[r][idIdx] || "").trim();
-    if (id) out[id] = (rows[r][valIdx] || "").trim();
+  for (const row of rows){
+    const c = row.c || [];
+    const id = cellStr(c[idIdx]);
+    if (id) out[id] = cellStr(c[valIdx]);
   }
   return out;
 }
@@ -191,7 +186,7 @@ async function refresh(){
   try {
     const r = await fetch(sheetUrl(), {cache:"no-store"});
     if (!r.ok) throw new Error("HTTP " + r.status);
-    const values = rowsToValues(parseCSV(await r.text()));
+    const values = tableToValues(parseGviz(await r.text()));
     applyValues(values);
     // Prefer the sheet's own "_updated" cell; fall back to this poll time.
     const stamp = (values["_updated"] || "").trim();

@@ -2,8 +2,8 @@
   "canvas": {
     "width": 2383.93994140625,
     "height": 1683.780029296875,
-    "image_width": 4768,
-    "image_height": 3368
+    "image_width": 3815,
+    "image_height": 2695
   },
   "fields": [
     {
@@ -1306,10 +1306,10 @@
       "id": "ko01_bottom_score",
       "kind": "score",
       "stage": "knockout",
-      "left": 48.0038,
-      "top": 42.1322,
+      "left": 50.672,
+      "top": 44.3465,
       "width": 1.2895,
-      "height": 4.2333
+      "height": 2.019
     },
     {
       "id": "ko01_bottom_team",
@@ -1327,7 +1327,7 @@
       "left": 50.672,
       "top": 42.1322,
       "width": 1.2895,
-      "height": 4.2333
+      "height": 1.9768
     },
     {
       "id": "ko01_top_team",
@@ -1415,9 +1415,9 @@
       "kind": "score",
       "stage": "knockout",
       "left": 48.0038,
-      "top": 42.1322,
+      "top": 44.3465,
       "width": 1.2895,
-      "height": 4.2333
+      "height": 2.019
     },
     {
       "id": "ko04_bottom_team",
@@ -1432,10 +1432,10 @@
       "id": "ko04_top_score",
       "kind": "score",
       "stage": "knockout",
-      "left": 50.672,
+      "left": 48.0038,
       "top": 42.1322,
       "width": 1.2895,
-      "height": 4.2333
+      "height": 1.9767
     },
     {
       "id": "ko04_top_team",
@@ -1739,9 +1739,9 @@
       "kind": "score",
       "stage": "knockout",
       "left": 68.7313,
-      "top": 25.3672,
+      "top": 27.5801,
       "width": 1.2885,
-      "height": 4.23
+      "height": 2.0172
     },
     {
       "id": "ko13_bottom_team",
@@ -1756,10 +1756,10 @@
       "id": "ko13_top_score",
       "kind": "score",
       "stage": "knockout",
-      "left": 77.834,
-      "top": 21.1727,
-      "width": 1.2905,
-      "height": 4.2363
+      "left": 68.7313,
+      "top": 25.3672,
+      "width": 1.2885,
+      "height": 1.9753
     },
     {
       "id": "ko13_top_team",
@@ -1775,9 +1775,9 @@
       "kind": "score",
       "stage": "knockout",
       "left": 68.7313,
-      "top": 42.1389,
+      "top": 44.3517,
       "width": 1.2885,
-      "height": 4.2301
+      "height": 2.0173
     },
     {
       "id": "ko14_bottom_team",
@@ -1792,10 +1792,10 @@
       "id": "ko14_top_score",
       "kind": "score",
       "stage": "knockout",
-      "left": 77.8415,
-      "top": 37.9444,
-      "width": 1.2905,
-      "height": 4.2363
+      "left": 68.7313,
+      "top": 42.1389,
+      "width": 1.2885,
+      "height": 1.9752
     },
     {
       "id": "ko14_top_team",
@@ -1811,9 +1811,9 @@
       "kind": "score",
       "stage": "knockout",
       "left": 68.7313,
-      "top": 58.9107,
+      "top": 61.1234,
       "width": 1.2885,
-      "height": 4.23
+      "height": 2.0172
     },
     {
       "id": "ko15_bottom_team",
@@ -1828,10 +1828,10 @@
       "id": "ko15_top_score",
       "kind": "score",
       "stage": "knockout",
-      "left": 77.8415,
-      "top": 54.7161,
-      "width": 1.2905,
-      "height": 4.2363
+      "left": 68.7313,
+      "top": 58.9107,
+      "width": 1.2885,
+      "height": 1.9752
     },
     {
       "id": "ko15_top_team",
@@ -1847,9 +1847,9 @@
       "kind": "score",
       "stage": "knockout",
       "left": 68.7313,
-      "top": 75.6824,
+      "top": 77.8951,
       "width": 1.2885,
-      "height": 4.23
+      "height": 2.0173
     },
     {
       "id": "ko16_bottom_team",
@@ -1864,10 +1864,10 @@
       "id": "ko16_top_score",
       "kind": "score",
       "stage": "knockout",
-      "left": 77.8415,
-      "top": 71.4878,
-      "width": 1.2905,
-      "height": 4.2363
+      "left": 68.7313,
+      "top": 75.6824,
+      "width": 1.2885,
+      "height": 1.9752
     },
     {
       "id": "ko16_top_team",
@@ -2315,9 +2315,9 @@
       "kind": "score",
       "stage": "knockout",
       "left": 29.9478,
-      "top": 25.3672,
+      "top": 27.5799,
       "width": 1.2885,
-      "height": 4.23
+      "height": 2.0173
     },
     {
       "id": "ko29_bottom_team",
@@ -2332,10 +2332,10 @@
       "id": "ko29_top_score",
       "kind": "score",
       "stage": "knockout",
-      "left": 20.8436,
-      "top": 21.1716,
-      "width": 1.2918,
-      "height": 4.2402
+      "left": 29.9478,
+      "top": 25.3672,
+      "width": 1.2885,
+      "height": 1.9752
     },
     {
       "id": "ko29_top_team",
@@ -2351,9 +2351,9 @@
       "kind": "score",
       "stage": "knockout",
       "left": 29.9478,
-      "top": 42.1389,
+      "top": 44.3517,
       "width": 1.2885,
-      "height": 4.2301
+      "height": 2.0173
     },
     {
       "id": "ko30_bottom_team",
@@ -2368,10 +2368,10 @@
       "id": "ko30_top_score",
       "kind": "score",
       "stage": "knockout",
-      "left": 20.8436,
-      "top": 37.9433,
-      "width": 1.2918,
-      "height": 4.2402
+      "left": 29.9478,
+      "top": 42.1389,
+      "width": 1.2885,
+      "height": 1.9752
     },
     {
       "id": "ko30_top_team",
@@ -2387,9 +2387,9 @@
       "kind": "score",
       "stage": "knockout",
       "left": 29.9464,
-      "top": 58.9107,
+      "top": 61.1234,
       "width": 1.2885,
-      "height": 4.23
+      "height": 2.0172
     },
     {
       "id": "ko31_bottom_team",
@@ -2404,10 +2404,10 @@
       "id": "ko31_top_score",
       "kind": "score",
       "stage": "knockout",
-      "left": 20.8436,
-      "top": 54.715,
-      "width": 1.2918,
-      "height": 4.2402
+      "left": 29.9464,
+      "top": 58.9107,
+      "width": 1.2885,
+      "height": 1.9752
     },
     {
       "id": "ko31_top_team",
@@ -2423,9 +2423,9 @@
       "kind": "score",
       "stage": "knockout",
       "left": 29.9464,
-      "top": 75.6824,
+      "top": 77.8952,
       "width": 1.2885,
-      "height": 4.23
+      "height": 2.0172
     },
     {
       "id": "ko32_bottom_team",
@@ -2440,10 +2440,10 @@
       "id": "ko32_top_score",
       "kind": "score",
       "stage": "knockout",
-      "left": 20.8436,
-      "top": 71.4868,
-      "width": 1.2918,
-      "height": 4.2402
+      "left": 29.9464,
+      "top": 75.6824,
+      "width": 1.2885,
+      "height": 1.9752
     },
     {
       "id": "ko32_top_team",
