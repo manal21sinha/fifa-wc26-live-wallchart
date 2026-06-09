@@ -33,6 +33,42 @@
   }
   .fld.name { color: #0b1d2a; }
 
+  /* ── Kaleidoscope fill for empty boxes ─────────────────────────────────
+     Each empty field animates a multi-stop gradient while slowly rotating
+     its hue. Per-box CSS vars (set in JS) randomise colours, angle, speed
+     and phase so the chart shimmers with every box on its own rhythm.   */
+  @keyframes kaleido {
+    0%   { background-position:   0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position:   0% 50%; }
+  }
+  @keyframes kaleidoHue {
+    from { filter: hue-rotate(0deg) saturate(1.05); }
+    to   { filter: hue-rotate(360deg) saturate(1.05); }
+  }
+  .fld.empty {
+    background-image: linear-gradient(
+        var(--angle, 120deg),
+        hsl(var(--h1, 200), 85%, 62%),
+        hsl(var(--h2, 320), 85%, 62%),
+        hsl(var(--h3, 50), 85%, 62%),
+        hsl(var(--h1, 200), 85%, 62%));
+    background-size: 320% 320%;
+    border-radius: 3px;
+    opacity: 0.9;
+    animation:
+      kaleido    var(--dur, 9s)  ease-in-out infinite,
+      kaleidoHue var(--hue, 14s) linear      infinite;
+    animation-delay: var(--delay, 0s);
+    transition: opacity .6s ease;
+  }
+  /* When a value lands, the box leaves .empty: gradient fades, text shows. */
+  .fld:not(.empty) { background-image: none; opacity: 1; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fld.empty { animation: none; }   /* keep the colourful gradient, no motion */
+  }
+
   #hint { color:#9fc2d4; font-size:13px; padding:10px 14px; }
   code { background:#13303f; padding:1px 5px; border-radius:4px; }
 </style>
@@ -117,20 +153,35 @@ function rowsToValues(rows){
 async function buildOverlay(){
   const m = await (await fetch(FIELDS_URL, {cache:"no-store"})).json();
   chart.style.aspectRatio = `${m.canvas.width} / ${m.canvas.height}`;
+  const rnd = (lo, hi) => lo + Math.random() * (hi - lo);
   for (const f of m.fields){
     const el = document.createElement("div");
-    el.className = "fld " + f.kind;
+    el.className = "fld " + f.kind + " empty";   // start empty -> kaleidoscope
     el.style.left = f.left + "%"; el.style.top = f.top + "%";
     el.style.width = f.width + "%"; el.style.height = f.height + "%";
     const fs = (f.kind === "name") ? f.height * 0.62 : f.height * 0.72;
     el.style.fontSize = `min(${fs}cqh, ${f.width * 0.9}cqw)`;
+    // Per-box random kaleidoscope: 3 spread hues, random angle/speed/phase.
+    const base = rnd(0, 360);
+    el.style.setProperty("--h1", base.toFixed(0));
+    el.style.setProperty("--h2", ((base + rnd(80, 160)) % 360).toFixed(0));
+    el.style.setProperty("--h3", ((base + rnd(180, 300)) % 360).toFixed(0));
+    el.style.setProperty("--angle", rnd(0, 360).toFixed(0) + "deg");
+    el.style.setProperty("--dur",  rnd(6, 13).toFixed(1) + "s");
+    el.style.setProperty("--hue",  rnd(10, 22).toFixed(1) + "s");
+    el.style.setProperty("--delay", (-rnd(0, 13)).toFixed(1) + "s"); // desync
     nodes[f.id] = el;
     chart.appendChild(el);
   }
 }
 
 function applyValues(values){
-  for (const id in nodes) nodes[id].textContent = values[id] ?? "";
+  for (const id in nodes){
+    const v = (values[id] ?? "").toString();
+    nodes[id].textContent = v;
+    // Empty -> shimmering kaleidoscope; filled -> clean value, no animation.
+    nodes[id].classList.toggle("empty", v === "");
+  }
 }
 
 async function refresh(){
