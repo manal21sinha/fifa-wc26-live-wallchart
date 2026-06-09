@@ -136,3 +136,58 @@ up promptly. Values map to fields by the **Field ID** column.
 - Knockout: `koNN_top_team`, `koNN_bottom_team`, `koNN_top_score`,
   `koNN_bottom_score` for `NN` = 01…32. `ko19` is the Final; `ko28` is the
   third-place play-off. You normally never need these — use the Description.
+
+## Troubleshooting
+
+**The chart loads but no scores/names appear.**
+- Check the **sheet sharing**: it must be *Anyone with the link → Viewer*.
+  A private sheet returns an error page (often HTML), not CSV.
+- Check `config.js`: `SHEET_ID` must be the long id from the URL (between
+  `/d/` and `/edit`), **not** the whole URL, and not still `PASTE_…`.
+- Check the tab name: `SHEET_NAME` in `config.js` must match the tab exactly
+  (case-sensitive). Default is `Scores`.
+
+**Status bar says "set SHEET_ID in config.js".**
+- You haven't replaced the placeholder. Open `config.js`, paste your id, commit.
+
+**Status bar says "couldn't reach sheet — retrying".**
+- The fetch failed. Open the browser console (the page logs the error).
+  Most common causes: sheet not shared publicly, wrong `SHEET_ID`, or a
+  network blip (it auto-retries every cycle, so transient issues self-heal).
+
+**Some values show but others don't / values land in the wrong box.**
+- A **Field ID** was edited or a row deleted. The `Field ID` column must match
+  the originals exactly (see the scheme above). The safest fix is to re-import
+  `sheet_template.csv` and re-enter values into the **Value** column only.
+- Make sure you typed into the **Value** column, not the Description column.
+
+**A team name is cut off / too long.**
+- Knockout name fields auto-shrink text to fit, but very long names in a small
+  box can still clip. Use the short form (e.g. `S. KOREA`, `CZECHIA`) if needed.
+
+**The "last updated" time looks wrong or shows raw text.**
+- A recognisable date (e.g. ISO `2026-06-11T21:05:00Z`) is shown in local time;
+  anything else is shown verbatim. If using the Apps Script, confirm the tab
+  name inside it matches your sheet's tab. If the cell is blank, the bar falls
+  back to the viewer's own refresh time — that's expected.
+
+**Edits take a while to appear.**
+- Two layers of delay: your `REFRESH_MS` (default 30s) plus Google's short CSV
+  cache (usually tens of seconds). Up to ~1 minute total is normal. To poll
+  faster, lower `REFRESH_MS` in `config.js` (don't go below ~10000).
+
+**GitHub Pages shows an old version after I push.**
+- Pages can serve cached assets for a minute or two. Hard-refresh
+  (Cmd/Ctrl+Shift+R) once, or wait briefly. Note: pushing only changes the
+  *site files* — score updates come from the sheet and don't need a push.
+
+**404 on GitHub Pages.**
+- Confirm `index.html` is in the **repo root** (not inside a subfolder), and
+  that Pages is set to **Deploy from a branch → `main` / `/ (root)`**. The
+  first build can take a minute after you enable it.
+
+**I changed the artwork / fields and now positions are off.**
+- `fields.json` and `chart.jpg` are generated from the source PDF. If the
+  underlying chart changes, regenerate both (see *Regenerating* in the project
+  scripts) so coordinates and image stay in sync.
+
