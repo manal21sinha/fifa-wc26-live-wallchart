@@ -131,11 +131,21 @@ async function refresh(){
     if (!r.ok) throw new Error("HTTP " + r.status);
     const values = rowsToValues(parseCSV(await r.text()));
     applyValues(values);
-    setStatus("", "updated " + new Date().toLocaleTimeString());
+    // Prefer the sheet's own "_updated" cell; fall back to this poll time.
+    const stamp = (values["_updated"] || "").trim();
+    setStatus("", "updated " + (stamp ? formatStamp(stamp)
+                                      : new Date().toLocaleTimeString()));
   } catch(e){
     setStatus("err", "couldn't reach sheet — retrying");
     console.error(e);
   }
+}
+
+// Format the sheet's timestamp. Accepts an ISO string or any value Date can
+// parse; if it isn't a recognisable date, show the raw text as-is.
+function formatStamp(s){
+  const d = new Date(s);
+  return isNaN(d.getTime()) ? s : d.toLocaleString();
 }
 
 (async function init(){

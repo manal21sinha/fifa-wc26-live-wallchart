@@ -3,6 +3,7 @@
 A single-page, mobile-friendly web wall chart. Scores and knockout team names
 live in a **Google Sheet**; the page reads them live and refreshes every
 30 seconds. Update the sheet from any device — no redeploy, no git commit.
+A "last updated" timestamp in the sheet is shown in the page's status bar.
 
 ## Files
 
@@ -73,6 +74,50 @@ Just edit the **Value** column in your Google Sheet (phone or laptop). Within
 - **Group matches:** fill home/away score rows (e.g. `MEX score`, `RSA score`).
 - **Knockout matches:** fill the team-name rows as teams qualify (the
   Description shows the slot, e.g. `[1E]`, `[M1]`), plus the score rows.
+
+## "Last updated" timestamp
+
+The status bar at the top of the page shows when the scores were last updated.
+There's a special row in the sheet for this:
+
+| Description | Field ID | Value |
+|---|---|---|
+| ⏱ Last updated … | `_updated` | *(a date/time)* |
+
+This row is **not drawn on the chart** — it only feeds the status bar. You can:
+
+- **Fill it manually** — type any text (e.g. `2026-06-11 21:05` or `Just now`).
+  If it's a recognisable date it's shown in the viewer's local format;
+  otherwise the raw text is shown as-is.
+- **Auto-fill it** (recommended) — add the tiny Apps Script below so the cell
+  stamps itself every time you edit any score.
+
+### Optional: auto-stamp on every edit
+
+1. In your sheet: **Extensions → Apps Script**.
+2. Replace the contents with this, then **Save**:
+
+   ```js
+   function onEdit(e) {
+     const sh = e.range.getSheet();
+     if (sh.getName() !== "Scores") return;        // match your tab name
+     // find the row whose "Field ID" is "_updated" and stamp its "Value"
+     const data = sh.getRange(1, 1, sh.getLastRow(), 3).getValues();
+     const header = data[0];
+     const idCol = header.indexOf("Field ID");
+     const valCol = header.indexOf("Value");
+     for (let r = 1; r < data.length; r++) {
+       if (String(data[r][idCol]).trim() === "_updated") {
+         sh.getRange(r + 1, valCol + 1).setValue(new Date().toISOString());
+         break;
+       }
+     }
+   }
+   ```
+
+3. That's it — `onEdit` is a simple trigger that runs automatically (no manual
+   authorization needed for basic edits). Now every score change refreshes the
+   `_updated` cell, and the page shows it within ~30s.
 
 ## How the live read works
 

@@ -1,4 +1,5 @@
 Description,Field ID,Value
+⏱ Last updated (auto/manual — shown in status bar),_updated,
 Group A · MEX v RSA · MEX score,group01_home_score,
 Group A · MEX v RSA · RSA score,group01_away_score,
 Group A · KOR v CZE · KOR score,group02_home_score,
