@@ -64,7 +64,11 @@ function setStatus(state, text){ statusEl.className = state; statusText.textCont
 // Build the gviz CSV endpoint — public, no API key, cache-buster friendly.
 function sheetUrl(){
   const base = `https://docs.google.com/spreadsheets/d/${CFG.SHEET_ID}/gviz/tq`;
-  const q = new URLSearchParams({ tqx: "out:csv", sheet: CFG.SHEET_NAME, t: Date.now() });
+  // headers=1 forces gviz to treat exactly row 1 as the header. Without it,
+  // gviz auto-detects and can mis-guess once the Value column holds text (e.g.
+  // the _updated timestamp), which makes it emit A/B/C labels instead.
+  const q = new URLSearchParams({ tqx: "out:csv", sheet: CFG.SHEET_NAME,
+                                  headers: "1", t: Date.now() });
   return `${base}?${q.toString()}`;
 }
 
@@ -90,13 +94,20 @@ function parseCSV(text){
 
 function rowsToValues(rows){
   if (!rows.length) return {};
-  const header = rows[0].map(h => h.trim());
-  const idIdx = header.indexOf(CFG.ID_COLUMN);
-  const valIdx = header.indexOf(CFG.VALUE_COLUMN);
-  if (idIdx === -1 || valIdx === -1)
+  // Find the header row by looking for the ID/Value column names. Normally
+  // this is row 0, but searching makes us robust if a stray row appears above
+  // it or gviz auto-labels columns.
+  let hdrRow = -1, idIdx = -1, valIdx = -1;
+  for (let r = 0; r < Math.min(rows.length, 5); r++){
+    const cells = rows[r].map(h => h.trim());
+    const i = cells.indexOf(CFG.ID_COLUMN);
+    const v = cells.indexOf(CFG.VALUE_COLUMN);
+    if (i !== -1 && v !== -1){ hdrRow = r; idIdx = i; valIdx = v; break; }
+  }
+  if (hdrRow === -1)
     throw new Error(`columns "${CFG.ID_COLUMN}"/"${CFG.VALUE_COLUMN}" not found`);
   const out = {};
-  for (let r = 1; r < rows.length; r++){
+  for (let r = hdrRow + 1; r < rows.length; r++){
     const id = (rows[r][idIdx] || "").trim();
     if (id) out[id] = (rows[r][valIdx] || "").trim();
   }
