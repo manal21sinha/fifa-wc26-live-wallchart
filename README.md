@@ -175,9 +175,13 @@ up promptly. Values map to fields by the **Field ID** column.
   ever see it again, make sure you're running the current `index.html`
   (it requests `tqx=out:json`, not `out:csv`).
 
-**A team name is cut off / too long.**
-- Knockout name fields auto-shrink text to fit, but very long names in a small
-  box can still clip. Use the short form (e.g. `S. KOREA`, `CZECHIA`) if needed.
+**A team name looks small / how does long text fit?**
+- Each box auto-fits its text: short names (e.g. `SPAIN`) show at the full
+  size, while long ones (e.g. `SWITZERLAND`, `NETHERLANDS`) automatically
+  shrink just enough to sit inside the box. Sizing is per-box and recalculated
+  on every refresh and on window resize/rotate, so names always stay snug.
+- If you'd still prefer a larger, more uniform look for a very long name, use a
+  short form (e.g. `S. KOREA`, `CZECHIA`) — but it's no longer required.
 
 **The "last updated" time looks wrong or shows raw text.**
 - A recognisable date (e.g. ISO `2026-06-11T21:05:00Z`) is shown in local time;

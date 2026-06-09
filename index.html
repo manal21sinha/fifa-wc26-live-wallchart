@@ -155,7 +155,16 @@ async function buildOverlay(){
     el.style.left = f.left + "%"; el.style.top = f.top + "%";
     el.style.width = f.width + "%"; el.style.height = f.height + "%";
     const fs = (f.kind === "name") ? f.height * 0.62 : f.height * 0.72;
-    el.style.fontSize = `min(${fs}cqh, ${f.width * 0.9}cqw)`;
+    const baseFs = `min(${fs}cqh, ${f.width * 0.9}cqw)`;
+    el.dataset.basefs = baseFs;     // remembered so we can reset before refitting
+    el.style.fontSize = baseFs;
+    // Text lives in an inner span so we can measure its true width reliably
+    // (a flex-centred container's scrollWidth is unreliable when text overflows
+    // both sides). The span is what we fit; the box stays put.
+    const span = document.createElement("span");
+    span.style.whiteSpace = "nowrap";
+    el.appendChild(span);
+    el._txt = span;
     // Per-box random kaleidoscope: 3 spread hues, random angle/speed/phase.
     const base = rnd(0, 360);
     el.style.setProperty("--h1", base.toFixed(0));
@@ -170,13 +179,31 @@ async function buildOverlay(){
   }
 }
 
+// Shrink a field's text to fit its box when the natural (box-based) size is
+// too wide — e.g. "SWITZERLAND" in a narrow name box. Reset to the base size
+// first, then scale down by the overflow ratio (never up). Measures the inner
+// span against the box's inner width.
+function fitText(el){
+  if (el.classList.contains("empty") || !el._txt || !el._txt.textContent) return;
+  el.style.fontSize = el.dataset.basefs || el.style.fontSize;
+  const avail = el.clientWidth * 0.92;     // leave a little side padding
+  const need = el._txt.scrollWidth;
+  if (need > avail && need > 0){
+    const px = parseFloat(getComputedStyle(el).fontSize);
+    el.style.fontSize = Math.max(1, Math.floor(px * avail / need)) + "px";
+  }
+}
+
 function applyValues(values){
   for (const id in nodes){
+    const el = nodes[id];
     const v = (values[id] ?? "").toString();
-    nodes[id].textContent = v;
+    el._txt.textContent = v;
     // Empty -> shimmering kaleidoscope; filled -> clean value, no animation.
-    nodes[id].classList.toggle("empty", v === "");
+    el.classList.toggle("empty", v === "");
   }
+  // Refit after the DOM updates so measurements are accurate.
+  requestAnimationFrame(() => { for (const id in nodes) fitText(nodes[id]); });
 }
 
 async function refresh(){
@@ -212,6 +239,13 @@ function formatStamp(s){
   await refresh();
   setInterval(refresh, CFG.REFRESH_MS);
   document.addEventListener("visibilitychange", () => { if (!document.hidden) refresh(); });
+  // The chart scales with the viewport, so re-fit text on resize/rotate
+  // (debounced) to keep long names snug at any size.
+  let rt;
+  window.addEventListener("resize", () => {
+    clearTimeout(rt);
+    rt = setTimeout(() => { for (const id in nodes) fitText(nodes[id]); }, 150);
+  });
 })();
 </script>
 </body>
