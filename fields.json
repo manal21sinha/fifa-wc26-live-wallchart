@@ -1,0 +1,2458 @@
+{
+  "canvas": {
+    "width": 2383.93994140625,
+    "height": 1683.780029296875,
+    "image_width": 4768,
+    "image_height": 3368
+  },
+  "fields": [
+    {
+      "id": "group01_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5571,
+      "top": 4.333,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group01_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8731,
+      "top": 4.333,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group02_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5571,
+      "top": 6.5956,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group02_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8731,
+      "top": 6.5956,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group03_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5571,
+      "top": 8.8695,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group03_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8731,
+      "top": 8.8695,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group04_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5571,
+      "top": 11.1436,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group04_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8731,
+      "top": 11.1436,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group05_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5571,
+      "top": 13.4177,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group05_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8731,
+      "top": 13.4177,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group06_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5571,
+      "top": 15.6918,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group06_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8731,
+      "top": 15.6918,
+      "width": 1.2452,
+      "height": 1.4254
+    },
+    {
+      "id": "group07_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5671,
+      "top": 20.0442,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group07_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8694,
+      "top": 20.0442,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group08_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5671,
+      "top": 22.3103,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group08_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8694,
+      "top": 22.3103,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group09_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5671,
+      "top": 24.588,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group09_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8694,
+      "top": 24.588,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group10_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5671,
+      "top": 26.8656,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group10_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8694,
+      "top": 26.8656,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group11_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5671,
+      "top": 29.1432,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group11_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8694,
+      "top": 29.1432,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group12_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5671,
+      "top": 31.4208,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group12_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8694,
+      "top": 31.4208,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group13_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.571,
+      "top": 35.7765,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group13_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8733,
+      "top": 35.7765,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group14_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.571,
+      "top": 38.0427,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group14_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8733,
+      "top": 38.0427,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group15_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.571,
+      "top": 40.3202,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group15_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8733,
+      "top": 40.3202,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group16_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.571,
+      "top": 42.5979,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group16_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8733,
+      "top": 42.5979,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group17_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.571,
+      "top": 44.8755,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group17_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8733,
+      "top": 44.8755,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group18_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.571,
+      "top": 47.1532,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group18_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8733,
+      "top": 47.1532,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group19_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5673,
+      "top": 51.5082,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group19_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8696,
+      "top": 51.5082,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group20_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5673,
+      "top": 53.7743,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group20_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8696,
+      "top": 53.7743,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group21_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5673,
+      "top": 56.052,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group21_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8696,
+      "top": 56.052,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group22_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5673,
+      "top": 58.3296,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group22_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8696,
+      "top": 58.3296,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group23_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5673,
+      "top": 60.6072,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group23_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8696,
+      "top": 60.6072,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group24_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5673,
+      "top": 62.8849,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group24_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8696,
+      "top": 62.8849,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group25_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5657,
+      "top": 67.2303,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group25_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.868,
+      "top": 67.2303,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group26_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5657,
+      "top": 69.4963,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group26_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.868,
+      "top": 69.4963,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group27_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5657,
+      "top": 71.774,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group27_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.868,
+      "top": 71.774,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group28_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5657,
+      "top": 74.0515,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group28_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.868,
+      "top": 74.0515,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group29_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5657,
+      "top": 76.3293,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group29_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.868,
+      "top": 76.3293,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group30_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5657,
+      "top": 78.6069,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group30_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.868,
+      "top": 78.6069,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group31_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5682,
+      "top": 82.9599,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group31_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8705,
+      "top": 82.9599,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group32_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5682,
+      "top": 85.2259,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group32_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8705,
+      "top": 85.2259,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group33_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5682,
+      "top": 87.5036,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group33_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8705,
+      "top": 87.5036,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group34_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5682,
+      "top": 89.7812,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group34_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8705,
+      "top": 89.7812,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group35_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5682,
+      "top": 92.0589,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group35_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8705,
+      "top": 92.0589,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group36_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 11.5682,
+      "top": 94.3365,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group36_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 2.8705,
+      "top": 94.3365,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group37_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8859,
+      "top": 4.3398,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group37_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1881,
+      "top": 4.3398,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group38_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8859,
+      "top": 6.6058,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group38_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1881,
+      "top": 6.6058,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group39_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8859,
+      "top": 8.8835,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group39_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1881,
+      "top": 8.8835,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group40_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8859,
+      "top": 11.1612,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group40_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1881,
+      "top": 11.1612,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group41_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8859,
+      "top": 13.4388,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group41_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1881,
+      "top": 13.4388,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group42_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8859,
+      "top": 15.7165,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group42_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1881,
+      "top": 15.7165,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group43_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 20.0392,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group43_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 20.0392,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group44_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 22.3054,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group44_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 22.3054,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group45_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 24.583,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group45_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 24.583,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group46_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 26.8607,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group46_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 26.8607,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group47_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 29.1384,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group47_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 29.1384,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group48_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 31.4159,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group48_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 31.4159,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group49_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8871,
+      "top": 35.7715,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group49_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1894,
+      "top": 35.7715,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group50_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8871,
+      "top": 38.0377,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group50_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1894,
+      "top": 38.0377,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group51_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8871,
+      "top": 40.3154,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group51_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1894,
+      "top": 40.3154,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group52_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8871,
+      "top": 42.5929,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group52_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1894,
+      "top": 42.5929,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group53_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8871,
+      "top": 44.8706,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group53_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1894,
+      "top": 44.8706,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group54_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8871,
+      "top": 47.1482,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group54_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1894,
+      "top": 47.1482,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group55_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.889,
+      "top": 51.5082,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group55_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1913,
+      "top": 51.5082,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group56_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.889,
+      "top": 53.7743,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group56_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1913,
+      "top": 53.7743,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group57_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.889,
+      "top": 56.0519,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group57_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1913,
+      "top": 56.0519,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group58_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.889,
+      "top": 58.3296,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group58_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1913,
+      "top": 58.3296,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group59_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.889,
+      "top": 60.6072,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group59_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1913,
+      "top": 60.6072,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group60_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.889,
+      "top": 62.8849,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group60_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1913,
+      "top": 62.8849,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group61_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 67.2301,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group61_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 67.2301,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group62_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 69.4963,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group62_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 69.4963,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group63_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 71.774,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group63_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 71.774,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group64_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 74.0515,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group64_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 74.0515,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group65_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 76.3293,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group65_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 76.3293,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group66_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8864,
+      "top": 78.6069,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group66_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1887,
+      "top": 78.6069,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group67_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8876,
+      "top": 82.9582,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group67_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1899,
+      "top": 82.9582,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group68_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8876,
+      "top": 85.2243,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group68_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1899,
+      "top": 85.2243,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group69_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8876,
+      "top": 87.5019,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group69_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1899,
+      "top": 87.5019,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group70_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8876,
+      "top": 89.7796,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group70_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1899,
+      "top": 89.7796,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group71_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8876,
+      "top": 92.0572,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group71_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1899,
+      "top": 92.0572,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group72_away_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 95.8876,
+      "top": 94.3349,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "group72_home_score",
+      "kind": "score",
+      "stage": "group",
+      "left": 87.1899,
+      "top": 94.3349,
+      "width": 1.2474,
+      "height": 1.4254
+    },
+    {
+      "id": "ko01_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 48.0038,
+      "top": 42.1322,
+      "width": 1.2895,
+      "height": 4.2333
+    },
+    {
+      "id": "ko01_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 52.1293,
+      "top": 44.3465,
+      "width": 5.2617,
+      "height": 2.019
+    },
+    {
+      "id": "ko01_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 50.672,
+      "top": 42.1322,
+      "width": 1.2895,
+      "height": 4.2333
+    },
+    {
+      "id": "ko01_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 52.1293,
+      "top": 42.1322,
+      "width": 5.2617,
+      "height": 1.9768
+    },
+    {
+      "id": "ko02_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 59.6471,
+      "top": 68.6507,
+      "width": 1.2881,
+      "height": 2.0166
+    },
+    {
+      "id": "ko02_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 61.103,
+      "top": 68.6507,
+      "width": 5.2563,
+      "height": 2.0166
+    },
+    {
+      "id": "ko02_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 59.6471,
+      "top": 66.4384,
+      "width": 1.2881,
+      "height": 1.9747
+    },
+    {
+      "id": "ko02_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 61.103,
+      "top": 66.4384,
+      "width": 5.2563,
+      "height": 1.9747
+    },
+    {
+      "id": "ko03_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 39.0465,
+      "top": 68.6506,
+      "width": 1.2881,
+      "height": 2.0167
+    },
+    {
+      "id": "ko03_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 33.6225,
+      "top": 68.6506,
+      "width": 5.2563,
+      "height": 2.0167
+    },
+    {
+      "id": "ko03_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 39.0465,
+      "top": 66.4384,
+      "width": 1.2881,
+      "height": 1.9746
+    },
+    {
+      "id": "ko03_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 33.6225,
+      "top": 66.4384,
+      "width": 5.2563,
+      "height": 1.9746
+    },
+    {
+      "id": "ko04_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 48.0038,
+      "top": 42.1322,
+      "width": 1.2895,
+      "height": 4.2333
+    },
+    {
+      "id": "ko04_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 42.5744,
+      "top": 44.3465,
+      "width": 5.2617,
+      "height": 2.019
+    },
+    {
+      "id": "ko04_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 50.672,
+      "top": 42.1322,
+      "width": 1.2895,
+      "height": 4.2333
+    },
+    {
+      "id": "ko04_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 42.5744,
+      "top": 42.1322,
+      "width": 5.2617,
+      "height": 1.9767
+    },
+    {
+      "id": "ko05_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.834,
+      "top": 23.3886,
+      "width": 1.2905,
+      "height": 2.0204
+    },
+    {
+      "id": "ko05_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 23.3886,
+      "width": 5.2653,
+      "height": 2.0204
+    },
+    {
+      "id": "ko05_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.834,
+      "top": 21.1727,
+      "width": 1.2905,
+      "height": 1.9784
+    },
+    {
+      "id": "ko05_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 21.1727,
+      "width": 5.2653,
+      "height": 1.9784
+    },
+    {
+      "id": "ko06_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 31.7744,
+      "width": 1.2905,
+      "height": 2.0203
+    },
+    {
+      "id": "ko06_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 31.7744,
+      "width": 5.2653,
+      "height": 2.0203
+    },
+    {
+      "id": "ko06_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 29.5585,
+      "width": 1.2905,
+      "height": 1.9784
+    },
+    {
+      "id": "ko06_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 29.5585,
+      "width": 5.2653,
+      "height": 1.9784
+    },
+    {
+      "id": "ko07_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 40.1602,
+      "width": 1.2905,
+      "height": 2.0205
+    },
+    {
+      "id": "ko07_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2998,
+      "top": 40.1602,
+      "width": 5.2653,
+      "height": 2.0205
+    },
+    {
+      "id": "ko07_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 37.9444,
+      "width": 1.2905,
+      "height": 1.9783
+    },
+    {
+      "id": "ko07_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2998,
+      "top": 37.9444,
+      "width": 5.2653,
+      "height": 1.9783
+    },
+    {
+      "id": "ko08_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 48.5461,
+      "width": 1.2905,
+      "height": 2.0204
+    },
+    {
+      "id": "ko08_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 48.5461,
+      "width": 5.2653,
+      "height": 2.0204
+    },
+    {
+      "id": "ko08_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 46.3302,
+      "width": 1.2905,
+      "height": 1.9783
+    },
+    {
+      "id": "ko08_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 46.3302,
+      "width": 5.2653,
+      "height": 1.9783
+    },
+    {
+      "id": "ko09_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 56.932,
+      "width": 1.2905,
+      "height": 2.0204
+    },
+    {
+      "id": "ko09_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 56.932,
+      "width": 5.2653,
+      "height": 2.0204
+    },
+    {
+      "id": "ko09_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 54.7161,
+      "width": 1.2905,
+      "height": 1.9783
+    },
+    {
+      "id": "ko09_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 54.7161,
+      "width": 5.2653,
+      "height": 1.9783
+    },
+    {
+      "id": "ko10_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 65.3178,
+      "width": 1.2905,
+      "height": 2.0204
+    },
+    {
+      "id": "ko10_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 65.3178,
+      "width": 5.2653,
+      "height": 2.0204
+    },
+    {
+      "id": "ko10_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 63.102,
+      "width": 1.2905,
+      "height": 1.9783
+    },
+    {
+      "id": "ko10_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 63.102,
+      "width": 5.2653,
+      "height": 1.9783
+    },
+    {
+      "id": "ko11_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 73.7037,
+      "width": 1.2905,
+      "height": 2.0205
+    },
+    {
+      "id": "ko11_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 73.7037,
+      "width": 5.2653,
+      "height": 2.0205
+    },
+    {
+      "id": "ko11_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 71.4878,
+      "width": 1.2905,
+      "height": 1.9783
+    },
+    {
+      "id": "ko11_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 71.4878,
+      "width": 5.2653,
+      "height": 1.9783
+    },
+    {
+      "id": "ko12_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 82.0895,
+      "width": 1.2905,
+      "height": 2.0205
+    },
+    {
+      "id": "ko12_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 82.0895,
+      "width": 5.2653,
+      "height": 2.0205
+    },
+    {
+      "id": "ko12_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 79.8737,
+      "width": 1.2905,
+      "height": 1.9782
+    },
+    {
+      "id": "ko12_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 79.2923,
+      "top": 79.8737,
+      "width": 5.2653,
+      "height": 1.9782
+    },
+    {
+      "id": "ko13_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 68.7313,
+      "top": 25.3672,
+      "width": 1.2885,
+      "height": 4.23
+    },
+    {
+      "id": "ko13_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 70.1875,
+      "top": 27.5801,
+      "width": 5.2577,
+      "height": 2.0172
+    },
+    {
+      "id": "ko13_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.834,
+      "top": 21.1727,
+      "width": 1.2905,
+      "height": 4.2363
+    },
+    {
+      "id": "ko13_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 70.1875,
+      "top": 25.3672,
+      "width": 5.2577,
+      "height": 1.9753
+    },
+    {
+      "id": "ko14_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 68.7313,
+      "top": 42.1389,
+      "width": 1.2885,
+      "height": 4.2301
+    },
+    {
+      "id": "ko14_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 70.1875,
+      "top": 44.3517,
+      "width": 5.2577,
+      "height": 2.0173
+    },
+    {
+      "id": "ko14_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 37.9444,
+      "width": 1.2905,
+      "height": 4.2363
+    },
+    {
+      "id": "ko14_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 70.1875,
+      "top": 42.1389,
+      "width": 5.2577,
+      "height": 1.9752
+    },
+    {
+      "id": "ko15_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 68.7313,
+      "top": 58.9107,
+      "width": 1.2885,
+      "height": 4.23
+    },
+    {
+      "id": "ko15_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 70.1875,
+      "top": 61.1234,
+      "width": 5.2577,
+      "height": 2.0172
+    },
+    {
+      "id": "ko15_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 54.7161,
+      "width": 1.2905,
+      "height": 4.2363
+    },
+    {
+      "id": "ko15_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 70.1875,
+      "top": 58.9107,
+      "width": 5.2577,
+      "height": 1.9752
+    },
+    {
+      "id": "ko16_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 68.7313,
+      "top": 75.6824,
+      "width": 1.2885,
+      "height": 4.23
+    },
+    {
+      "id": "ko16_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 70.1875,
+      "top": 77.8951,
+      "width": 5.2577,
+      "height": 2.0173
+    },
+    {
+      "id": "ko16_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 77.8415,
+      "top": 71.4878,
+      "width": 1.2905,
+      "height": 4.2363
+    },
+    {
+      "id": "ko16_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 70.1875,
+      "top": 75.6824,
+      "width": 5.2577,
+      "height": 1.9752
+    },
+    {
+      "id": "ko17_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 39.0465,
+      "top": 36.1361,
+      "width": 1.2881,
+      "height": 2.0167
+    },
+    {
+      "id": "ko17_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 33.6225,
+      "top": 36.1361,
+      "width": 5.2563,
+      "height": 2.0167
+    },
+    {
+      "id": "ko17_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 39.0465,
+      "top": 33.924,
+      "width": 1.2881,
+      "height": 1.9746
+    },
+    {
+      "id": "ko17_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 33.6225,
+      "top": 33.924,
+      "width": 5.2563,
+      "height": 1.9746
+    },
+    {
+      "id": "ko18_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 59.6471,
+      "top": 36.1361,
+      "width": 1.2881,
+      "height": 2.0167
+    },
+    {
+      "id": "ko18_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 61.103,
+      "top": 36.1361,
+      "width": 5.2563,
+      "height": 2.0167
+    },
+    {
+      "id": "ko18_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 59.6471,
+      "top": 33.924,
+      "width": 1.2881,
+      "height": 1.9746
+    },
+    {
+      "id": "ko18_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 61.103,
+      "top": 33.924,
+      "width": 5.2563,
+      "height": 1.9746
+    },
+    {
+      "id": "ko19_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 58.6775,
+      "top": 90.3446,
+      "width": 3.6403,
+      "height": 4.6087
+    },
+    {
+      "id": "ko19_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 37.6731,
+      "top": 90.3446,
+      "width": 20.8425,
+      "height": 4.6087
+    },
+    {
+      "id": "ko19_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 58.6775,
+      "top": 83.6976,
+      "width": 3.6403,
+      "height": 4.6087
+    },
+    {
+      "id": "ko19_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 37.6731,
+      "top": 83.6976,
+      "width": 20.8425,
+      "height": 4.6087
+    },
+    {
+      "id": "ko20_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 23.3895,
+      "width": 1.2918,
+      "height": 2.0224
+    },
+    {
+      "id": "ko20_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 23.3895,
+      "width": 5.2701,
+      "height": 2.0224
+    },
+    {
+      "id": "ko20_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 21.1716,
+      "width": 1.2918,
+      "height": 1.9803
+    },
+    {
+      "id": "ko20_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 21.1716,
+      "width": 5.2701,
+      "height": 1.9803
+    },
+    {
+      "id": "ko21_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 31.7753,
+      "width": 1.2918,
+      "height": 2.0224
+    },
+    {
+      "id": "ko21_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 31.7753,
+      "width": 5.2701,
+      "height": 2.0224
+    },
+    {
+      "id": "ko21_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 29.5575,
+      "width": 1.2918,
+      "height": 1.9803
+    },
+    {
+      "id": "ko21_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 29.5575,
+      "width": 5.2701,
+      "height": 1.9803
+    },
+    {
+      "id": "ko22_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 40.1612,
+      "width": 1.2918,
+      "height": 2.0224
+    },
+    {
+      "id": "ko22_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 40.1612,
+      "width": 5.2701,
+      "height": 2.0224
+    },
+    {
+      "id": "ko22_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 37.9433,
+      "width": 1.2918,
+      "height": 1.9803
+    },
+    {
+      "id": "ko22_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 37.9433,
+      "width": 5.2701,
+      "height": 1.9803
+    },
+    {
+      "id": "ko23_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 48.5471,
+      "width": 1.2918,
+      "height": 2.0223
+    },
+    {
+      "id": "ko23_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 48.5471,
+      "width": 5.2701,
+      "height": 2.0223
+    },
+    {
+      "id": "ko23_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 46.3292,
+      "width": 1.2918,
+      "height": 1.9803
+    },
+    {
+      "id": "ko23_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 46.3292,
+      "width": 5.2701,
+      "height": 1.9803
+    },
+    {
+      "id": "ko24_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 56.9329,
+      "width": 1.2918,
+      "height": 2.0224
+    },
+    {
+      "id": "ko24_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 56.9329,
+      "width": 5.2701,
+      "height": 2.0224
+    },
+    {
+      "id": "ko24_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 54.715,
+      "width": 1.2918,
+      "height": 1.9803
+    },
+    {
+      "id": "ko24_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 54.715,
+      "width": 5.2701,
+      "height": 1.9803
+    },
+    {
+      "id": "ko25_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 65.3188,
+      "width": 1.2918,
+      "height": 2.0224
+    },
+    {
+      "id": "ko25_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 65.3188,
+      "width": 5.2701,
+      "height": 2.0224
+    },
+    {
+      "id": "ko25_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 63.1009,
+      "width": 1.2918,
+      "height": 1.9803
+    },
+    {
+      "id": "ko25_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 63.1009,
+      "width": 5.2701,
+      "height": 1.9803
+    },
+    {
+      "id": "ko26_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 73.7046,
+      "width": 1.2918,
+      "height": 2.0224
+    },
+    {
+      "id": "ko26_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 73.7046,
+      "width": 5.2701,
+      "height": 2.0224
+    },
+    {
+      "id": "ko26_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 71.4868,
+      "width": 1.2918,
+      "height": 1.9803
+    },
+    {
+      "id": "ko26_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 71.4868,
+      "width": 5.2701,
+      "height": 1.9803
+    },
+    {
+      "id": "ko27_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 82.0904,
+      "width": 1.2918,
+      "height": 2.0224
+    },
+    {
+      "id": "ko27_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 82.0904,
+      "width": 5.2701,
+      "height": 2.0081
+    },
+    {
+      "id": "ko27_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 79.8727,
+      "width": 1.2918,
+      "height": 1.9802
+    },
+    {
+      "id": "ko27_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 15.4058,
+      "top": 79.8727,
+      "width": 5.2701,
+      "height": 1.9802
+    },
+    {
+      "id": "ko28_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 52.7914,
+      "top": 31.615,
+      "width": 1.288,
+      "height": 2.0164
+    },
+    {
+      "id": "ko28_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 47.3674,
+      "top": 31.615,
+      "width": 5.2562,
+      "height": 2.0164
+    },
+    {
+      "id": "ko28_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 52.7914,
+      "top": 29.4026,
+      "width": 1.288,
+      "height": 1.9748
+    },
+    {
+      "id": "ko28_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 47.3674,
+      "top": 29.4026,
+      "width": 5.2562,
+      "height": 1.9748
+    },
+    {
+      "id": "ko29_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 29.9478,
+      "top": 25.3672,
+      "width": 1.2885,
+      "height": 4.23
+    },
+    {
+      "id": "ko29_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 24.5209,
+      "top": 27.5799,
+      "width": 5.2577,
+      "height": 2.0173
+    },
+    {
+      "id": "ko29_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 21.1716,
+      "width": 1.2918,
+      "height": 4.2402
+    },
+    {
+      "id": "ko29_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 24.5209,
+      "top": 25.3672,
+      "width": 5.2577,
+      "height": 1.9752
+    },
+    {
+      "id": "ko30_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 29.9478,
+      "top": 42.1389,
+      "width": 1.2885,
+      "height": 4.2301
+    },
+    {
+      "id": "ko30_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 24.5209,
+      "top": 44.3517,
+      "width": 5.2577,
+      "height": 2.0173
+    },
+    {
+      "id": "ko30_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 37.9433,
+      "width": 1.2918,
+      "height": 4.2402
+    },
+    {
+      "id": "ko30_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 24.5209,
+      "top": 42.1389,
+      "width": 5.2577,
+      "height": 1.9752
+    },
+    {
+      "id": "ko31_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 29.9464,
+      "top": 58.9107,
+      "width": 1.2885,
+      "height": 4.23
+    },
+    {
+      "id": "ko31_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 24.5209,
+      "top": 61.1234,
+      "width": 5.2577,
+      "height": 2.0172
+    },
+    {
+      "id": "ko31_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 54.715,
+      "width": 1.2918,
+      "height": 4.2402
+    },
+    {
+      "id": "ko31_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 24.5209,
+      "top": 58.9107,
+      "width": 5.2577,
+      "height": 1.9752
+    },
+    {
+      "id": "ko32_bottom_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 29.9464,
+      "top": 75.6824,
+      "width": 1.2885,
+      "height": 4.23
+    },
+    {
+      "id": "ko32_bottom_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 24.5209,
+      "top": 77.8952,
+      "width": 5.2577,
+      "height": 2.0172
+    },
+    {
+      "id": "ko32_top_score",
+      "kind": "score",
+      "stage": "knockout",
+      "left": 20.8436,
+      "top": 71.4868,
+      "width": 1.2918,
+      "height": 4.2402
+    },
+    {
+      "id": "ko32_top_team",
+      "kind": "name",
+      "stage": "knockout",
+      "left": 24.5209,
+      "top": 75.6824,
+      "width": 5.2577,
+      "height": 1.9752
+    }
+  ]
+}

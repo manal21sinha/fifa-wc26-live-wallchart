@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+<title>FIFA World Cup 2026 — Live Wall Chart</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #0b1d2a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+  #bar {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px 14px; background: #07131c; color: #cfe6f2;
+    font-size: 14px; border-bottom: 1px solid #16303f;
+  }
+  #bar strong { color: #fff; }
+  #status { margin-left: auto; opacity: .9; white-space: nowrap; }
+  #status .dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:#3ad07a; margin-right:6px; vertical-align: middle; }
+  #status.stale .dot { background:#e0a93a; }
+  #status.err .dot { background:#e0533a; }
+  a.editlink { color:#6fd0ee; text-decoration:none; }
+
+  #wrap { width: 100%; margin: 0 auto; }
+  #chart { position: relative; width: 100%; container-type: size; }
+  #chart img { display: block; width: 100%; height: auto; user-select: none; -webkit-user-drag: none; }
+
+  .fld {
+    position: absolute; display: flex; align-items: center; justify-content: center;
+    overflow: hidden; white-space: nowrap; line-height: 1;
+    font-weight: 700; color: #111;
+  }
+  .fld.name { color: #0b1d2a; }
+
+  #hint { color:#9fc2d4; font-size:13px; padding:10px 14px; }
+  code { background:#13303f; padding:1px 5px; border-radius:4px; }
+</style>
+</head>
+<body>
+  <div id="bar">
+    <strong>World Cup 2026</strong> <span>Live Wall Chart</span>
+    <span id="status"><span class="dot"></span><span id="statusText">loading…</span></span>
+  </div>
+
+  <div id="wrap"><div id="chart"><img id="bg" alt="World Cup 2026 wall chart" /></div></div>
+  <p id="hint"></p>
+
+<script src="config.js"></script>
+<script>
+const CFG = window.CHART_CONFIG;
+const FIELDS_URL = "fields.json";
+const chart = document.getElementById("chart");
+const bg = document.getElementById("bg");
+const statusEl = document.getElementById("status");
+const statusText = document.getElementById("statusText");
+const hint = document.getElementById("hint");
+bg.src = "chart.jpg";
+
+const nodes = {};   // field id -> span element
+
+function setStatus(state, text){ statusEl.className = state; statusText.textContent = text; }
+
+// Build the gviz CSV endpoint — public, no API key, cache-buster friendly.
+function sheetUrl(){
+  const base = `https://docs.google.com/spreadsheets/d/${CFG.SHEET_ID}/gviz/tq`;
+  const q = new URLSearchParams({ tqx: "out:csv", sheet: CFG.SHEET_NAME, t: Date.now() });
+  return `${base}?${q.toString()}`;
+}
+
+// Minimal RFC-4180 CSV parser (handles quotes, commas, newlines in quotes).
+function parseCSV(text){
+  const rows = []; let row = [], cur = "", q = false;
+  for (let i = 0; i < text.length; i++){
+    const c = text[i];
+    if (q){
+      if (c === '"'){ if (text[i+1] === '"'){ cur += '"'; i++; } else q = false; }
+      else cur += c;
+    } else {
+      if (c === '"') q = true;
+      else if (c === ',') { row.push(cur); cur = ""; }
+      else if (c === '\n'){ row.push(cur); rows.push(row); row = []; cur = ""; }
+      else if (c === '\r'){ /* skip */ }
+      else cur += c;
+    }
+  }
+  if (cur.length || row.length){ row.push(cur); rows.push(row); }
+  return rows;
+}
+
+function rowsToValues(rows){
+  if (!rows.length) return {};
+  const header = rows[0].map(h => h.trim());
+  const idIdx = header.indexOf(CFG.ID_COLUMN);
+  const valIdx = header.indexOf(CFG.VALUE_COLUMN);
+  if (idIdx === -1 || valIdx === -1)
+    throw new Error(`columns "${CFG.ID_COLUMN}"/"${CFG.VALUE_COLUMN}" not found`);
+  const out = {};
+  for (let r = 1; r < rows.length; r++){
+    const id = (rows[r][idIdx] || "").trim();
+    if (id) out[id] = (rows[r][valIdx] || "").trim();
+  }
+  return out;
+}
+
+async function buildOverlay(){
+  const m = await (await fetch(FIELDS_URL, {cache:"no-store"})).json();
+  chart.style.aspectRatio = `${m.canvas.width} / ${m.canvas.height}`;
+  for (const f of m.fields){
+    const el = document.createElement("div");
+    el.className = "fld " + f.kind;
+    el.style.left = f.left + "%"; el.style.top = f.top + "%";
+    el.style.width = f.width + "%"; el.style.height = f.height + "%";
+    const fs = (f.kind === "name") ? f.height * 0.62 : f.height * 0.72;
+    el.style.fontSize = `min(${fs}cqh, ${f.width * 0.9}cqw)`;
+    nodes[f.id] = el;
+    chart.appendChild(el);
+  }
+}
+
+function applyValues(values){
+  for (const id in nodes) nodes[id].textContent = values[id] ?? "";
+}
+
+async function refresh(){
+  if (!CFG.SHEET_ID || CFG.SHEET_ID.startsWith("PASTE")){
+    setStatus("err", "set SHEET_ID in config.js"); return;
+  }
+  try {
+    const r = await fetch(sheetUrl(), {cache:"no-store"});
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const values = rowsToValues(parseCSV(await r.text()));
+    applyValues(values);
+    setStatus("", "updated " + new Date().toLocaleTimeString());
+  } catch(e){
+    setStatus("err", "couldn't reach sheet — retrying");
+    console.error(e);
+  }
+}
+
+(async function init(){
+  await buildOverlay();
+  hint.innerHTML = "Scores read live from Google Sheets, refreshing every " +
+    (CFG.REFRESH_MS/1000) + "s. Edit the sheet to update — no redeploy needed.";
+  await refresh();
+  setInterval(refresh, CFG.REFRESH_MS);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) refresh(); });
+})();
+</script>
+</body>
+</html>
