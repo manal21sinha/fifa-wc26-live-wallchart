@@ -32,6 +32,12 @@
     font-weight: 700; color: #111;
   }
   .fld.name { color: #0b1d2a; }
+  /* Penalty-shootout count, e.g. the "(4)" in 3(4): compact raised superscript
+     so the regular score stays the dominant, full-size figure. */
+  .fld .pen {
+    font-size: 0.62em; font-weight: 700; vertical-align: super;
+    line-height: 0; margin-left: 0.04em; opacity: 0.9;
+  }
 
   /* ── Kaleidoscope fill for empty boxes ─────────────────────────────────
      Each empty field animates a multi-stop gradient while slowly rotating
@@ -218,13 +224,35 @@ function fitText(el){
   }
 }
 
+// Render a score string into the box's inner span. A plain value (score or
+// team name) is set as text. A penalty-shootout score like "3(4)" is split so
+// the regular score stays full-size and the shootout count "(4)" renders as a
+// compact superscript. Matching is strict (digits + parenthesised digits) so
+// ordinary text never gets reinterpreted.
+const PEN_RE = /^(\d+)\((\d+)\)$/;
+function renderScore(span, v){
+  const m = PEN_RE.exec(v);
+  if (m){
+    span.textContent = "";                 // clear safely (no innerHTML w/ data)
+    span.appendChild(document.createTextNode(m[1]));
+    const sup = document.createElement("sup");
+    sup.className = "pen";
+    sup.textContent = "(" + m[2] + ")";
+    span.appendChild(sup);
+  } else {
+    span.textContent = v;
+  }
+}
+
 function applyValues(data){
   const values = data.values || {};
   const scorers = data.scorers || {};
   for (const id in nodes){
     const el = nodes[id];
     const v = (values[id] ?? "").toString();
-    el._txt.textContent = v;
+    // Score boxes may carry a penalty superscript; everything else is plain.
+    if (el._kind === "score") renderScore(el._txt, v);
+    else el._txt.textContent = v;
     // Empty -> shimmering kaleidoscope; filled -> clean value, no animation.
     el.classList.toggle("empty", v === "");
     // Scorer tooltip: only on score boxes that have both a value and scorers.

@@ -97,6 +97,25 @@ exactly as typed. Example for `SCO 1 – 3 BRA`:
 - Works for **all** score boxes, group and knockout.
 - Format is free-form; whatever you type is shown verbatim.
 
+### Penalty shootouts
+
+If a knockout match is decided on penalties, type the shootout count in
+parentheses right after the regular (post-extra-time) score, e.g. for
+`ARG 3(4) – 3(2) FRA`:
+
+| Field ID | Value |
+|---|---|
+| `…_top_score` (ARG) | `3(4)` |
+| `…_bottom_score` (FRA) | `3(2)` |
+
+- The page shows the regular score full-size with the shootout count as a
+  small **superscript** — so `3(4)` reads as a bold **3** with a raised `(4)`.
+- The pattern is strict: only `number(number)` is treated this way (so plain
+  scores and team names are never affected). `0(3)` works for goalless ties.
+- **Scorers tooltips are unaffected** — keep listing only the goals scored
+  through extra time (the shootout isn't part of the scorer list). E.g. the
+  `3(4)` box's Scorers cell should hold the three open-play/ET scorers.
+
 ## "Last updated" timestamp
 
 The status bar at the top of the page shows when the scores were last updated.
