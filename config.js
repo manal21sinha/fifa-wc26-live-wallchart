@@ -14,6 +14,7 @@ window.CHART_CONFIG = {
   // Column header names in row 1 of your sheet (must match exactly).
   ID_COLUMN: "Field ID",
   VALUE_COLUMN: "Value",
+  SCORERS_COLUMN: "Scorers",   // tooltip text shown on hover/focus of a score box
 
   // How often viewers re-poll the sheet, in milliseconds.
   REFRESH_MS: 30000,

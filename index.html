@@ -71,6 +71,21 @@
 
   #hint { color:#9fc2d4; font-size:13px; padding:10px 14px; }
   code { background:#13303f; padding:1px 5px; border-radius:4px; }
+
+  /* Score box with scorers: hint that it's interactive. */
+  .fld.score[data-tip]{ cursor: help; }
+  .fld.score[data-tip]:focus-visible{ outline: 2px solid #2b8fc4; outline-offset: 1px; }
+
+  /* Scorer tooltip bubble — a single shared element positioned in JS. */
+  #tip {
+    position: fixed; z-index: 100; max-width: 260px;
+    background: #07131c; color: #eaf4fa; border: 1px solid #2b6b8c;
+    border-radius: 7px; padding: 6px 9px; font-size: 13px; line-height: 1.35;
+    box-shadow: 0 6px 20px rgba(0,0,0,.35);
+    pointer-events: none; opacity: 0; transform: translateY(3px);
+    transition: opacity .12s ease, transform .12s ease;
+  }
+  #tip.show { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -78,6 +93,8 @@
     <strong>World Cup 2026</strong> <span>Live Wall Chart</span>
     <span id="status"><span class="dot"></span><span id="statusText">loading…</span></span>
   </div>
+
+  <div id="tip" role="tooltip" aria-hidden="true"></div>
 
   <div id="wrap"><div id="chart"><img id="bg" alt="World Cup 2026 wall chart" /></div></div>
   <p id="hint"></p>
@@ -118,31 +135,36 @@ function parseGviz(text){
   return JSON.parse(text.slice(a, b + 1));
 }
 
-// Turn the gviz table into { fieldId: value }. Columns are matched by their
-// header label (ID_COLUMN / VALUE_COLUMN). Cell value prefers the raw 'v';
-// falls back to the formatted 'f'. Everything is coerced to a trimmed string.
-function tableToValues(payload){
+// Turn the gviz table into { values: {fieldId: value}, scorers: {fieldId: text} }.
+// Columns are matched by header label. Cell value prefers raw 'v', falls back
+// to formatted 'f'; everything coerced to a trimmed string.
+function tableToData(payload){
   const table = payload.table || {};
   const cols = table.cols || [];
   const rows = table.rows || [];
   const labelIdx = (name) => cols.findIndex(c => (c.label || "").trim() === name);
   let idIdx = labelIdx(CFG.ID_COLUMN);
   let valIdx = labelIdx(CFG.VALUE_COLUMN);
-  // Fallback: if labels are missing, assume Description,Field ID,Value order.
+  let scIdx = labelIdx(CFG.SCORERS_COLUMN);
+  // Fallback to Description,Field ID,Value,Scorers order if labels are missing.
   if (idIdx === -1) idIdx = 1;
   if (valIdx === -1) valIdx = 2;
+  if (scIdx === -1) scIdx = 3;
   const cellStr = (cell) => {
     if (!cell) return "";
     const v = (cell.v !== null && cell.v !== undefined) ? cell.v : cell.f;
     return (v === null || v === undefined) ? "" : String(v).trim();
   };
-  const out = {};
+  const values = {}, scorers = {};
   for (const row of rows){
     const c = row.c || [];
     const id = cellStr(c[idIdx]);
-    if (id) out[id] = cellStr(c[valIdx]);
+    if (!id) continue;
+    values[id] = cellStr(c[valIdx]);
+    const sc = cellStr(c[scIdx]);
+    if (sc) scorers[id] = sc;
   }
-  return out;
+  return { values, scorers };
 }
 
 async function buildOverlay(){
@@ -165,6 +187,8 @@ async function buildOverlay(){
     span.style.whiteSpace = "nowrap";
     el.appendChild(span);
     el._txt = span;
+    el._kind = f.kind;
+    el._id = f.id;
     // Per-box random kaleidoscope: 3 spread hues, random angle/speed/phase.
     const base = rnd(0, 360);
     el.style.setProperty("--h1", base.toFixed(0));
@@ -194,16 +218,41 @@ function fitText(el){
   }
 }
 
-function applyValues(values){
+function applyValues(data){
+  const values = data.values || {};
+  const scorers = data.scorers || {};
   for (const id in nodes){
     const el = nodes[id];
     const v = (values[id] ?? "").toString();
     el._txt.textContent = v;
     // Empty -> shimmering kaleidoscope; filled -> clean value, no animation.
     el.classList.toggle("empty", v === "");
+    // Scorer tooltip: only on score boxes that have both a value and scorers.
+    if (el._kind === "score"){
+      const sc = (v !== "" && scorers[id]) ? scorers[id] : "";
+      setTooltip(el, sc);
+    }
   }
   // Refit after the DOM updates so measurements are accurate.
   requestAnimationFrame(() => { for (const id in nodes) fitText(nodes[id]); });
+}
+
+// Attach (or clear) an accessible scorer tooltip on a score box. A box with
+// scorers becomes keyboard-focusable and exposes the text via aria-describedby;
+// the visible bubble is positioned/shown by the tooltip handlers below. We use
+// a custom tooltip (not the native title attr) so it also shows on FOCUS, not
+// just hover — important for keyboard users.
+function setTooltip(el, text){
+  if (text){
+    el.dataset.tip = text;
+    el.setAttribute("tabindex", "0");
+    el.setAttribute("aria-label",
+      (el._txt.textContent || "") + " — scorers: " + text);
+  } else {
+    delete el.dataset.tip;
+    el.removeAttribute("tabindex");
+    el.removeAttribute("aria-label");
+  }
 }
 
 async function refresh(){
@@ -213,10 +262,10 @@ async function refresh(){
   try {
     const r = await fetch(sheetUrl(), {cache:"no-store"});
     if (!r.ok) throw new Error("HTTP " + r.status);
-    const values = tableToValues(parseGviz(await r.text()));
-    applyValues(values);
+    const data = tableToData(parseGviz(await r.text()));
+    applyValues(data);
     // Prefer the sheet's own "_updated" cell; fall back to this poll time.
-    const stamp = (values["_updated"] || "").trim();
+    const stamp = (data.values["_updated"] || "").trim();
     setStatus("", "updated " + (stamp ? formatStamp(stamp)
                                       : new Date().toLocaleTimeString()));
   } catch(e){
@@ -232,8 +281,49 @@ function formatStamp(s){
   return isNaN(d.getTime()) ? s : d.toLocaleString();
 }
 
+// ── Scorer tooltip (one shared bubble, positioned over the focused/hovered box)
+const tipEl = document.getElementById("tip");
+function showTip(box){
+  const text = box.dataset.tip;
+  if (!text) return;
+  tipEl.textContent = text;
+  tipEl.classList.add("show");
+  tipEl.setAttribute("aria-hidden", "false");
+  // Position above the box, clamped to the viewport.
+  const r = box.getBoundingClientRect();
+  const tr = tipEl.getBoundingClientRect();
+  let left = r.left + r.width / 2 - tr.width / 2;
+  left = Math.max(6, Math.min(left, window.innerWidth - tr.width - 6));
+  let top = r.top - tr.height - 8;
+  if (top < 6) top = r.bottom + 8;          // flip below if no room above
+  tipEl.style.left = left + "px";
+  tipEl.style.top = top + "px";
+}
+function hideTip(){
+  tipEl.classList.remove("show");
+  tipEl.setAttribute("aria-hidden", "true");
+}
+function wireTooltips(){
+  // Delegate on the chart so it keeps working as tooltip state changes each
+  // refresh. Hover (mouse) + focus (keyboard) both trigger; blur/leave/Esc hide.
+  const onEnter = (e) => {
+    const box = e.target.closest(".fld.score[data-tip]");
+    if (box) showTip(box);
+  };
+  chart.addEventListener("mouseover", onEnter);
+  chart.addEventListener("focusin", onEnter);
+  chart.addEventListener("mouseout", (e) => {
+    const box = e.target.closest(".fld.score[data-tip]");
+    if (box && !box.contains(e.relatedTarget)) hideTip();
+  });
+  chart.addEventListener("focusout", hideTip);
+  window.addEventListener("scroll", hideTip, { passive: true });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") hideTip(); });
+}
+
 (async function init(){
   await buildOverlay();
+  wireTooltips();
   hint.innerHTML = "Scores read live from Google Sheets, refreshing every " +
     (CFG.REFRESH_MS/1000) + "s. Edit the sheet to update — no redeploy needed.";
   await refresh();
@@ -244,6 +334,7 @@ function formatStamp(s){
   let rt;
   window.addEventListener("resize", () => {
     clearTimeout(rt);
+    hideTip();
     rt = setTimeout(() => { for (const id in nodes) fitText(nodes[id]); }, 150);
   });
 })();
