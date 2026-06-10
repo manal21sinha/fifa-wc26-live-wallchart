@@ -72,6 +72,26 @@ git push -u origin main
 Then on GitHub: **Settings → Pages → Deploy from a branch → `main` / `/ (root)`**.
 Live at `https://<you>.github.io/wc26-wallchart/` in ~1 minute.
 
+## Display on a TV / kiosk
+
+For an unattended screen (e.g. a TV at a bar), add **`?fit`** to the URL:
+
+```
+https://<you>.github.io/wc26-wallchart/?fit
+```
+
+This sizes the **whole chart to fit the visible area** — constrained by both
+width and height — and centres it, so the entire bracket is visible with **no
+scrolling**. Pair it with the browser's fullscreen/kiosk mode (often `F11`, or
+the TV browser's kiosk setting) to hide the browser toolbars for an edge-to-edge
+display.
+
+- Use `?fit` on **landscape** displays (TVs, monitors). On a **portrait phone**
+  the normal URL (no `?fit`) reads better — it keeps the full-width, scrollable
+  view rather than shrinking the wide chart to a tiny strip.
+- The fit recomputes automatically if the screen resolution or orientation
+  changes. All other features (live updates, tooltips, etc.) work the same.
+
 ## Updating scores during a match
 
 Just edit the **Value** column in your Google Sheet (phone or laptop). Within

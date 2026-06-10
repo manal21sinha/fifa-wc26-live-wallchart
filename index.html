@@ -26,6 +26,17 @@
   #chart { position: relative; width: 100%; container-type: size; }
   #chart img { display: block; width: 100%; height: auto; user-select: none; -webkit-user-drag: none; }
 
+  /* Kiosk "fit to screen" mode (enabled with ?fit) — the whole chart fits the
+     visible area with no scrolling, centred. Sized by JS (fitToViewport) so it
+     respects BOTH the available width and height, whichever is tighter. */
+  body.fit { overflow: hidden; }
+  body.fit #wrap {
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  body.fit #chart { width: auto; }      /* explicit px width set in JS */
+  body.fit #hint { display: none; }     /* hide the footer note on a TV */
+
   .fld {
     position: absolute; display: flex; align-items: center; justify-content: center;
     overflow: hidden; white-space: nowrap; line-height: 1;
@@ -117,6 +128,8 @@ const hint = document.getElementById("hint");
 bg.src = "chart.jpg";
 
 const nodes = {};   // field id -> span element
+let canvasAR = 1;   // chart aspect ratio (width/height), set in buildOverlay
+const FIT = new URLSearchParams(location.search).has("fit");  // kiosk mode
 
 function setStatus(state, text){ statusEl.className = state; statusText.textContent = text; }
 
@@ -176,6 +189,7 @@ function tableToData(payload){
 async function buildOverlay(){
   const m = await (await fetch(FIELDS_URL, {cache:"no-store"})).json();
   chart.style.aspectRatio = `${m.canvas.width} / ${m.canvas.height}`;
+  canvasAR = m.canvas.width / m.canvas.height;   // for fit-to-screen mode
   const rnd = (lo, hi) => lo + Math.random() * (hi - lo);
   for (const f of m.fields){
     const el = document.createElement("div");
@@ -349,21 +363,41 @@ function wireTooltips(){
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") hideTip(); });
 }
 
+// Kiosk fit-to-screen: size the chart so the WHOLE thing fits the visible area
+// (under the top bar) with no scrolling — constrained by width AND height,
+// whichever is tighter — then centre it. Used on a TV/wall display via ?fit.
+function fitToViewport(){
+  if (!FIT) return;
+  const bar = document.getElementById("bar");
+  const availW = window.innerWidth;
+  const availH = window.innerHeight - (bar ? bar.offsetHeight : 0);
+  if (availW <= 0 || availH <= 0 || !canvasAR) return;
+  // width if height-constrained vs. the full available width; take the smaller
+  const widthIfHeightBound = availH * canvasAR;
+  const w = Math.min(availW, widthIfHeightBound);
+  chart.style.width = Math.floor(w) + "px";
+}
+
 (async function init(){
+  if (FIT) document.body.classList.add("fit");
   await buildOverlay();
   wireTooltips();
+  fitToViewport();
   hint.innerHTML = "Scores read live from Google Sheets, refreshing every " +
     (CFG.REFRESH_MS/1000) + "s. Edit the sheet to update — no redeploy needed.";
   await refresh();
   setInterval(refresh, CFG.REFRESH_MS);
   document.addEventListener("visibilitychange", () => { if (!document.hidden) refresh(); });
-  // The chart scales with the viewport, so re-fit text on resize/rotate
-  // (debounced) to keep long names snug at any size.
+  // The chart scales with the viewport, so re-fit on resize/rotate (debounced):
+  // recompute the kiosk size first, then re-fit each box's text.
   let rt;
   window.addEventListener("resize", () => {
     clearTimeout(rt);
     hideTip();
-    rt = setTimeout(() => { for (const id in nodes) fitText(nodes[id]); }, 150);
+    rt = setTimeout(() => {
+      fitToViewport();
+      for (const id in nodes) fitText(nodes[id]);
+    }, 150);
   });
 })();
 </script>
