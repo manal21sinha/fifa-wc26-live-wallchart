@@ -19,12 +19,17 @@ A "last updated" timestamp in the sheet is shown in the page's status bar.
 
 1. Go to <https://sheets.new> to make a new spreadsheet.
 2. **File → Import → Upload → `sheet_template.csv`**, choosing
-   **"Replace current sheet"**. You'll get three columns:
-   `Description | Field ID | Value`.
+   **"Replace current sheet"**. Under import options, set
+   **"Convert text to numbers, dates, and formulas" → No** (this keeps the
+   Value column as text so team names aren't dropped — see Troubleshooting).
+   You'll get four columns: `Description | Field ID | Value | Scorers`.
    - **Description** — human labels like `Group A · MEX v RSA · MEX score`
      and `Round of 32 Match 1 · [1E] team name`. For your eyes only.
    - **Field ID** — the machine id the page looks up. **Don't change these.**
    - **Value** — the column **you type into** (scores and knockout team names).
+   - **Scorers** — *optional* per-score goalscorer text shown as a tooltip when
+     you hover or keyboard-focus that score box (e.g. `Shankland 11'` or
+     `Cunha 33', 43' (P), Richarlison 77'`). Free-form — shown verbatim.
 3. Rename the tab at the bottom to **`Scores`** (or set `SHEET_NAME` in
    `config.js` to match whatever you call it).
 4. **Share → General access → "Anyone with the link" → Viewer.** (Read-only
@@ -45,6 +50,7 @@ window.CHART_CONFIG = {
   SHEET_NAME: "Scores",
   ID_COLUMN: "Field ID",
   VALUE_COLUMN: "Value",
+  SCORERS_COLUMN: "Scorers",
   REFRESH_MS: 30000,
 };
 ```
@@ -74,6 +80,22 @@ Just edit the **Value** column in your Google Sheet (phone or laptop). Within
 - **Group matches:** fill home/away score rows (e.g. `MEX score`, `RSA score`).
 - **Knockout matches:** fill the team-name rows as teams qualify (the
   Description shows the slot, e.g. `[1E]`, `[M1]`), plus the score rows.
+
+### Goalscorer tooltips (optional)
+
+Type goalscorer info into the **Scorers** column next to any score. When a
+viewer hovers (or keyboard-focuses) that score box, a tooltip shows the text
+exactly as typed. Example for `SCO 1 – 3 BRA`:
+
+| Field ID | Value | Scorers |
+|---|---|---|
+| `…_home_score` (SCO) | `1` | `Shankland 11'` |
+| `…_away_score` (BRA) | `3` | `Cunha 33', 43' (P), Richarlison 77'` |
+
+- It's **per score box** and entirely optional — a box with no Scorers text
+  simply has no tooltip (and isn't focusable).
+- Works for **all** score boxes, group and knockout.
+- Format is free-form; whatever you type is shown verbatim.
 
 ## "Last updated" timestamp
 
