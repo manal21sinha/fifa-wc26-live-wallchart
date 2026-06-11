@@ -22,7 +22,8 @@ A "last updated" timestamp in the sheet is shown in the page's status bar.
    **"Replace current sheet"**. Under import options, set
    **"Convert text to numbers, dates, and formulas" → No** (this keeps the
    Value column as text so team names aren't dropped — see Troubleshooting).
-   You'll get four columns: `Description | Field ID | Value | Scorers`.
+   You'll get seven columns:
+   `Description | Field ID | Value | Scorers | Clock | Phase | Anchor`.
    - **Description** — human labels like `Group A · MEX v RSA · MEX score`
      and `Round of 32 Match 1 · [1E] team name`. For your eyes only.
    - **Field ID** — the machine id the page looks up. **Don't change these.**
@@ -30,6 +31,15 @@ A "last updated" timestamp in the sheet is shown in the page's status bar.
    - **Scorers** — *optional* per-score goalscorer text shown as a tooltip when
      you hover or keyboard-focus that score box (e.g. `Shankland 11'` or
      `Cunha 33', 43' (P), Richarlison 77'`). Free-form — shown verbatim.
+   - **Clock / Phase / Anchor** — power the live game-clock pill. See
+     *Live game clock* below. (Clock holds a formula; you edit Phase/Anchor.)
+
+   > **Important about the formula:** the `Clock` column contains a live formula.
+   > Google Sheets' importer keeps a leading-`=` cell as a real formula even
+   > with "Convert text to numbers" off, but **double-check one Clock cell after
+   > import shows a formula** (click it — you should see `=LET(...)`, not literal
+   > text). If it imported as text, re-paste the formula into the first Clock
+   > cell and fill down, or just type clock values manually (see that section).
 3. Rename the tab at the bottom to **`Scores`** (or set `SHEET_NAME` in
    `config.js` to match whatever you call it).
 4. **Share → General access → "Anyone with the link" → Viewer.** (Read-only
@@ -51,6 +61,7 @@ window.CHART_CONFIG = {
   ID_COLUMN: "Field ID",
   VALUE_COLUMN: "Value",
   SCORERS_COLUMN: "Scorers",
+  CLOCK_COLUMN: "Clock",
   REFRESH_MS: 30000,
 };
 ```
@@ -135,6 +146,50 @@ parentheses right after the regular (post-extra-time) score, e.g. for
 - **Scorers tooltips are unaffected** — keep listing only the goals scored
   through extra time (the shootout isn't part of the scorer list). E.g. the
   `3(4)` box's Scorers cell should hold the three open-play/ET scorers.
+
+## Live game clock
+
+Each match has a small dark **clock pill** (white condensed text + a pulsing red
+"live" dot) that appears on the card *only while the game is in progress*. It's
+driven by two helper columns the template adds — **`Phase`** and **`Anchor`** —
+plus a pre-filled **`Clock`** formula. You never edit the Clock cell; you just
+change the Phase (and, at each restart, the Anchor).
+
+### One-time setup
+1. Set **File → Settings → Calculation → Recalculation → "On change and every
+   minute"** so the live minute ticks on its own.
+2. The template already seeds each match's **`Anchor`** to its kickoff time and
+   leaves **`Phase`** blank (so no pill shows until you start it).
+
+### Live playbook (per match)
+At each moment of the game, set that match's **`Phase`** cell (and `Anchor`
+where noted). The pill updates within ~30s.
+
+| Moment | Set `Phase` to | Also set `Anchor` to | Pill shows |
+|---|---|---|---|
+| Kick-off | `1` | kickoff time *(already seeded)* | `1'`…`45'` |
+| Half-time | `HT` | — | `HT` |
+| 2nd-half restart | `2` | **now** | `46'`…`90'` |
+| Full time (decided) | `FT` | — | `FT` *(no dot)* |
+| Level at FT → extra time | `ET` | — | `ET` |
+| ET 1st-half kick-off | `E1` | **now** | `91'`…`105'` |
+| ET half-time | `ETHT` | — | `ET` / `HT` *(stacked)* |
+| ET 2nd-half restart | `E2` | **now** | `106'`…`120'` |
+| Still level after ET → pens | `AET` | — | `AET` *(no dot)* |
+| Game over / clear it | *(blank)* | — | *(pill hidden)* |
+
+Notes:
+- The clock **holds** at `45'`, `90'`, `105'`, `120'` through stoppage time
+  (it doesn't run past them) — you flip to `HT`/`FT`/etc. at the real whistle.
+- Setting `Anchor` to "now" at each restart keeps the clock **anchored to the
+  actual restart**, so it resumes at the right minute with no drift.
+- The pulsing dot shows for every live state; it's **dropped for `FT` and
+  `AET`** (nothing is live). A blank Phase hides the pill entirely.
+- Extra time (and its `ETHT` 3-row pill) only occurs in **knockout** games.
+
+> Prefer fully manual? You can ignore Phase/Anchor and just type a literal value
+> into the **`Clock`** cell (e.g. `67'`, `HT`, `ET/HT`, `FT`) — the pill renders
+> whatever's there. The formula is the convenience option, not a requirement.
 
 ## "Last updated" timestamp
 

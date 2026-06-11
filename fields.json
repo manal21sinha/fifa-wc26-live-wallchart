@@ -16,6 +16,16 @@
       "height": 1.4254
     },
     {
+      "id": "group01_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3532,
+      "top": 5.007,
+      "width": 0.8648,
+      "height": 0.612
+    },
+    {
       "id": "group01_home_score",
       "kind": "score",
       "stage": "group",
@@ -32,6 +42,16 @@
       "top": 6.5956,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group02_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3481,
+      "top": 7.2695,
+      "width": 0.867,
+      "height": 0.612
     },
     {
       "id": "group02_home_score",
@@ -52,6 +72,16 @@
       "height": 1.4254
     },
     {
+      "id": "group03_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3481,
+      "top": 9.5435,
+      "width": 0.8698,
+      "height": 0.612
+    },
+    {
       "id": "group03_home_score",
       "kind": "score",
       "stage": "group",
@@ -68,6 +98,16 @@
       "top": 11.1436,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group04_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3481,
+      "top": 11.8176,
+      "width": 0.7852,
+      "height": 0.612
     },
     {
       "id": "group04_home_score",
@@ -88,6 +128,16 @@
       "height": 1.4254
     },
     {
+      "id": "group05_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3481,
+      "top": 14.0916,
+      "width": 0.7061,
+      "height": 0.612
+    },
+    {
       "id": "group05_home_score",
       "kind": "score",
       "stage": "group",
@@ -104,6 +154,16 @@
       "top": 15.6918,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group06_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3481,
+      "top": 16.3657,
+      "width": 0.7852,
+      "height": 0.612
     },
     {
       "id": "group06_home_score",
@@ -124,6 +184,16 @@
       "height": 1.4254
     },
     {
+      "id": "group07_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3578,
+      "top": 20.7177,
+      "width": 0.7497,
+      "height": 0.6128
+    },
+    {
       "id": "group07_home_score",
       "kind": "score",
       "stage": "group",
@@ -140,6 +210,16 @@
       "top": 22.3103,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group08_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3527,
+      "top": 22.9838,
+      "width": 0.7548,
+      "height": 0.6128
     },
     {
       "id": "group08_home_score",
@@ -160,6 +240,16 @@
       "height": 1.4254
     },
     {
+      "id": "group09_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3527,
+      "top": 25.2615,
+      "width": 0.7548,
+      "height": 0.6128
+    },
+    {
       "id": "group09_home_score",
       "kind": "score",
       "stage": "group",
@@ -176,6 +266,16 @@
       "top": 26.8656,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group10_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3527,
+      "top": 27.5392,
+      "width": 0.7604,
+      "height": 0.6128
     },
     {
       "id": "group10_home_score",
@@ -196,6 +296,16 @@
       "height": 1.4254
     },
     {
+      "id": "group11_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3527,
+      "top": 29.8167,
+      "width": 0.7418,
+      "height": 0.6128
+    },
+    {
       "id": "group11_home_score",
       "kind": "score",
       "stage": "group",
@@ -212,6 +322,16 @@
       "top": 31.4208,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group12_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3527,
+      "top": 32.0943,
+      "width": 0.7604,
+      "height": 0.6128
     },
     {
       "id": "group12_home_score",
@@ -232,6 +352,16 @@
       "height": 1.4254
     },
     {
+      "id": "group13_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3617,
+      "top": 36.45,
+      "width": 0.7445,
+      "height": 0.6128
+    },
+    {
       "id": "group13_home_score",
       "kind": "score",
       "stage": "group",
@@ -248,6 +378,16 @@
       "top": 38.0427,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group14_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3566,
+      "top": 38.7162,
+      "width": 0.948,
+      "height": 0.6128
     },
     {
       "id": "group14_home_score",
@@ -268,6 +408,16 @@
       "height": 1.4254
     },
     {
+      "id": "group15_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3566,
+      "top": 40.9938,
+      "width": 0.7496,
+      "height": 0.6128
+    },
+    {
       "id": "group15_home_score",
       "kind": "score",
       "stage": "group",
@@ -284,6 +434,16 @@
       "top": 42.5979,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group16_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3566,
+      "top": 43.2714,
+      "width": 0.9778,
+      "height": 0.6128
     },
     {
       "id": "group16_home_score",
@@ -304,6 +464,16 @@
       "height": 1.4254
     },
     {
+      "id": "group17_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3566,
+      "top": 45.5491,
+      "width": 0.8548,
+      "height": 0.6128
+    },
+    {
       "id": "group17_home_score",
       "kind": "score",
       "stage": "group",
@@ -320,6 +490,16 @@
       "top": 47.1532,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group18_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3566,
+      "top": 47.8267,
+      "width": 0.9778,
+      "height": 0.6128
     },
     {
       "id": "group18_home_score",
@@ -340,6 +520,16 @@
       "height": 1.4254
     },
     {
+      "id": "group19_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.358,
+      "top": 52.1817,
+      "width": 0.7415,
+      "height": 0.6128
+    },
+    {
       "id": "group19_home_score",
       "kind": "score",
       "stage": "group",
@@ -356,6 +546,16 @@
       "top": 53.7743,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group20_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3529,
+      "top": 54.4478,
+      "width": 0.7894,
+      "height": 0.6128
     },
     {
       "id": "group20_home_score",
@@ -376,6 +576,16 @@
       "height": 1.4254
     },
     {
+      "id": "group21_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3529,
+      "top": 56.7255,
+      "width": 0.7782,
+      "height": 0.6128
+    },
+    {
       "id": "group21_home_score",
       "kind": "score",
       "stage": "group",
@@ -392,6 +602,16 @@
       "top": 58.3296,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group22_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3529,
+      "top": 59.0031,
+      "width": 0.7466,
+      "height": 0.6128
     },
     {
       "id": "group22_home_score",
@@ -412,6 +632,16 @@
       "height": 1.4254
     },
     {
+      "id": "group23_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3529,
+      "top": 61.2807,
+      "width": 0.7782,
+      "height": 0.6128
+    },
+    {
       "id": "group23_home_score",
       "kind": "score",
       "stage": "group",
@@ -428,6 +658,16 @@
       "top": 62.8849,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group24_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3529,
+      "top": 63.5584,
+      "width": 0.7782,
+      "height": 0.6128
     },
     {
       "id": "group24_home_score",
@@ -448,6 +688,16 @@
       "height": 1.4254
     },
     {
+      "id": "group25_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3565,
+      "top": 67.9038,
+      "width": 0.7746,
+      "height": 0.6128
+    },
+    {
       "id": "group25_home_score",
       "kind": "score",
       "stage": "group",
@@ -464,6 +714,16 @@
       "top": 69.4963,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group26_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3513,
+      "top": 70.1698,
+      "width": 0.8179,
+      "height": 0.6128
     },
     {
       "id": "group26_home_score",
@@ -484,6 +744,16 @@
       "height": 1.4254
     },
     {
+      "id": "group27_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3513,
+      "top": 72.4475,
+      "width": 0.9064,
+      "height": 0.6128
+    },
+    {
       "id": "group27_home_score",
       "kind": "score",
       "stage": "group",
@@ -500,6 +770,16 @@
       "top": 74.0515,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group28_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3513,
+      "top": 74.7251,
+      "width": 0.7788,
+      "height": 0.6128
     },
     {
       "id": "group28_home_score",
@@ -520,6 +800,16 @@
       "height": 1.4254
     },
     {
+      "id": "group29_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3513,
+      "top": 77.0028,
+      "width": 0.9064,
+      "height": 0.6128
+    },
+    {
       "id": "group29_home_score",
       "kind": "score",
       "stage": "group",
@@ -536,6 +826,16 @@
       "top": 78.6069,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group30_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3513,
+      "top": 79.2804,
+      "width": 0.7881,
+      "height": 0.6128
     },
     {
       "id": "group30_home_score",
@@ -556,6 +856,16 @@
       "height": 1.4254
     },
     {
+      "id": "group31_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.359,
+      "top": 83.6334,
+      "width": 0.8246,
+      "height": 0.6128
+    },
+    {
       "id": "group31_home_score",
       "kind": "score",
       "stage": "group",
@@ -572,6 +882,16 @@
       "top": 85.2259,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group32_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3538,
+      "top": 85.8994,
+      "width": 0.8325,
+      "height": 0.6128
     },
     {
       "id": "group32_home_score",
@@ -592,6 +912,16 @@
       "height": 1.4254
     },
     {
+      "id": "group33_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3538,
+      "top": 88.1771,
+      "width": 0.7459,
+      "height": 0.6128
+    },
+    {
       "id": "group33_home_score",
       "kind": "score",
       "stage": "group",
@@ -608,6 +938,16 @@
       "top": 89.7812,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group34_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3538,
+      "top": 90.4548,
+      "width": 0.8297,
+      "height": 0.6128
     },
     {
       "id": "group34_home_score",
@@ -628,6 +968,16 @@
       "height": 1.4254
     },
     {
+      "id": "group35_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3538,
+      "top": 92.7324,
+      "width": 0.7459,
+      "height": 0.6128
+    },
+    {
       "id": "group35_home_score",
       "kind": "score",
       "stage": "group",
@@ -644,6 +994,16 @@
       "top": 94.3365,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group36_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3538,
+      "top": 95.0101,
+      "width": 0.8204,
+      "height": 0.6128
     },
     {
       "id": "group36_home_score",
@@ -664,6 +1024,16 @@
       "height": 1.4254
     },
     {
+      "id": "group37_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3532,
+      "top": 5.007,
+      "width": 0.8648,
+      "height": 0.612
+    },
+    {
       "id": "group37_home_score",
       "kind": "score",
       "stage": "group",
@@ -680,6 +1050,16 @@
       "top": 6.6058,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group38_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3481,
+      "top": 7.2695,
+      "width": 0.867,
+      "height": 0.612
     },
     {
       "id": "group38_home_score",
@@ -700,6 +1080,16 @@
       "height": 1.4254
     },
     {
+      "id": "group39_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3481,
+      "top": 9.5435,
+      "width": 0.8698,
+      "height": 0.612
+    },
+    {
       "id": "group39_home_score",
       "kind": "score",
       "stage": "group",
@@ -716,6 +1106,16 @@
       "top": 11.1612,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group40_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3481,
+      "top": 11.8176,
+      "width": 0.7852,
+      "height": 0.612
     },
     {
       "id": "group40_home_score",
@@ -736,6 +1136,16 @@
       "height": 1.4254
     },
     {
+      "id": "group41_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3481,
+      "top": 14.0916,
+      "width": 0.7061,
+      "height": 0.612
+    },
+    {
       "id": "group41_home_score",
       "kind": "score",
       "stage": "group",
@@ -752,6 +1162,16 @@
       "top": 15.7165,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group42_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3481,
+      "top": 16.3657,
+      "width": 0.7852,
+      "height": 0.612
     },
     {
       "id": "group42_home_score",
@@ -772,6 +1192,16 @@
       "height": 1.4254
     },
     {
+      "id": "group43_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3578,
+      "top": 20.7177,
+      "width": 0.7497,
+      "height": 0.6128
+    },
+    {
       "id": "group43_home_score",
       "kind": "score",
       "stage": "group",
@@ -788,6 +1218,16 @@
       "top": 22.3054,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group44_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3527,
+      "top": 22.9838,
+      "width": 0.7548,
+      "height": 0.6128
     },
     {
       "id": "group44_home_score",
@@ -808,6 +1248,16 @@
       "height": 1.4254
     },
     {
+      "id": "group45_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3527,
+      "top": 25.2615,
+      "width": 0.7548,
+      "height": 0.6128
+    },
+    {
       "id": "group45_home_score",
       "kind": "score",
       "stage": "group",
@@ -824,6 +1274,16 @@
       "top": 26.8607,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group46_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3527,
+      "top": 27.5392,
+      "width": 0.7604,
+      "height": 0.6128
     },
     {
       "id": "group46_home_score",
@@ -844,6 +1304,16 @@
       "height": 1.4254
     },
     {
+      "id": "group47_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3527,
+      "top": 29.8167,
+      "width": 0.7418,
+      "height": 0.6128
+    },
+    {
       "id": "group47_home_score",
       "kind": "score",
       "stage": "group",
@@ -860,6 +1330,16 @@
       "top": 31.4159,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group48_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3527,
+      "top": 32.0943,
+      "width": 0.7604,
+      "height": 0.6128
     },
     {
       "id": "group48_home_score",
@@ -880,6 +1360,16 @@
       "height": 1.4254
     },
     {
+      "id": "group49_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3617,
+      "top": 36.45,
+      "width": 0.7445,
+      "height": 0.6128
+    },
+    {
       "id": "group49_home_score",
       "kind": "score",
       "stage": "group",
@@ -896,6 +1386,16 @@
       "top": 38.0377,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group50_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3566,
+      "top": 38.7162,
+      "width": 0.948,
+      "height": 0.6128
     },
     {
       "id": "group50_home_score",
@@ -916,6 +1416,16 @@
       "height": 1.4254
     },
     {
+      "id": "group51_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3566,
+      "top": 40.9938,
+      "width": 0.7496,
+      "height": 0.6128
+    },
+    {
       "id": "group51_home_score",
       "kind": "score",
       "stage": "group",
@@ -932,6 +1442,16 @@
       "top": 42.5929,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group52_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3566,
+      "top": 43.2714,
+      "width": 0.9778,
+      "height": 0.6128
     },
     {
       "id": "group52_home_score",
@@ -952,6 +1472,16 @@
       "height": 1.4254
     },
     {
+      "id": "group53_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3566,
+      "top": 45.5491,
+      "width": 0.8548,
+      "height": 0.6128
+    },
+    {
       "id": "group53_home_score",
       "kind": "score",
       "stage": "group",
@@ -968,6 +1498,16 @@
       "top": 47.1482,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group54_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3566,
+      "top": 47.8267,
+      "width": 0.9778,
+      "height": 0.6128
     },
     {
       "id": "group54_home_score",
@@ -988,6 +1528,16 @@
       "height": 1.4254
     },
     {
+      "id": "group55_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.358,
+      "top": 52.1817,
+      "width": 0.7415,
+      "height": 0.6128
+    },
+    {
       "id": "group55_home_score",
       "kind": "score",
       "stage": "group",
@@ -1004,6 +1554,16 @@
       "top": 53.7743,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group56_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3529,
+      "top": 54.4478,
+      "width": 0.7894,
+      "height": 0.6128
     },
     {
       "id": "group56_home_score",
@@ -1024,6 +1584,16 @@
       "height": 1.4254
     },
     {
+      "id": "group57_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3529,
+      "top": 56.7255,
+      "width": 0.7782,
+      "height": 0.6128
+    },
+    {
       "id": "group57_home_score",
       "kind": "score",
       "stage": "group",
@@ -1040,6 +1610,16 @@
       "top": 58.3296,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group58_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3529,
+      "top": 59.0031,
+      "width": 0.7466,
+      "height": 0.6128
     },
     {
       "id": "group58_home_score",
@@ -1060,6 +1640,16 @@
       "height": 1.4254
     },
     {
+      "id": "group59_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3529,
+      "top": 61.2807,
+      "width": 0.7782,
+      "height": 0.6128
+    },
+    {
       "id": "group59_home_score",
       "kind": "score",
       "stage": "group",
@@ -1076,6 +1666,16 @@
       "top": 62.8849,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group60_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3529,
+      "top": 63.5584,
+      "width": 0.7782,
+      "height": 0.6128
     },
     {
       "id": "group60_home_score",
@@ -1096,6 +1696,16 @@
       "height": 1.4254
     },
     {
+      "id": "group61_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3565,
+      "top": 67.9038,
+      "width": 0.7746,
+      "height": 0.6128
+    },
+    {
       "id": "group61_home_score",
       "kind": "score",
       "stage": "group",
@@ -1112,6 +1722,16 @@
       "top": 69.4963,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group62_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3513,
+      "top": 70.1698,
+      "width": 0.8179,
+      "height": 0.6128
     },
     {
       "id": "group62_home_score",
@@ -1132,6 +1752,16 @@
       "height": 1.4254
     },
     {
+      "id": "group63_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3513,
+      "top": 72.4475,
+      "width": 0.9064,
+      "height": 0.6128
+    },
+    {
       "id": "group63_home_score",
       "kind": "score",
       "stage": "group",
@@ -1148,6 +1778,16 @@
       "top": 74.0515,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group64_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3513,
+      "top": 74.7251,
+      "width": 0.7788,
+      "height": 0.6128
     },
     {
       "id": "group64_home_score",
@@ -1168,6 +1808,16 @@
       "height": 1.4254
     },
     {
+      "id": "group65_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3513,
+      "top": 77.0028,
+      "width": 0.9064,
+      "height": 0.6128
+    },
+    {
       "id": "group65_home_score",
       "kind": "score",
       "stage": "group",
@@ -1184,6 +1834,16 @@
       "top": 78.6069,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group66_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3513,
+      "top": 79.2804,
+      "width": 0.7881,
+      "height": 0.6128
     },
     {
       "id": "group66_home_score",
@@ -1204,6 +1864,16 @@
       "height": 1.4254
     },
     {
+      "id": "group67_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.359,
+      "top": 83.6334,
+      "width": 0.8246,
+      "height": 0.6128
+    },
+    {
       "id": "group67_home_score",
       "kind": "score",
       "stage": "group",
@@ -1220,6 +1890,16 @@
       "top": 85.2243,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group68_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3538,
+      "top": 85.8994,
+      "width": 0.8325,
+      "height": 0.6128
     },
     {
       "id": "group68_home_score",
@@ -1240,6 +1920,16 @@
       "height": 1.4254
     },
     {
+      "id": "group69_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3538,
+      "top": 88.1771,
+      "width": 0.7459,
+      "height": 0.6128
+    },
+    {
       "id": "group69_home_score",
       "kind": "score",
       "stage": "group",
@@ -1256,6 +1946,16 @@
       "top": 89.7796,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group70_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3538,
+      "top": 90.4548,
+      "width": 0.8297,
+      "height": 0.6128
     },
     {
       "id": "group70_home_score",
@@ -1276,6 +1976,16 @@
       "height": 1.4254
     },
     {
+      "id": "group71_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3538,
+      "top": 92.7324,
+      "width": 0.7459,
+      "height": 0.6128
+    },
+    {
       "id": "group71_home_score",
       "kind": "score",
       "stage": "group",
@@ -1292,6 +2002,16 @@
       "top": 94.3349,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group72_clock",
+      "kind": "clock",
+      "stage": "group",
+      "layout": "two-row",
+      "left": 8.3538,
+      "top": 95.0101,
+      "width": 0.8204,
+      "height": 0.6128
     },
     {
       "id": "group72_home_score",
@@ -1319,6 +2039,17 @@
       "top": 44.3465,
       "width": 5.2617,
       "height": 2.019
+    },
+    {
+      "id": "ko01_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 57.1075,
+      "top": 39.7114,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko01_top_score",
@@ -1357,6 +2088,17 @@
       "height": 2.0166
     },
     {
+      "id": "ko02_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 66.0742,
+      "top": 64.0177,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko02_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -1391,6 +2133,17 @@
       "top": 68.6506,
       "width": 5.2563,
       "height": 2.0167
+    },
+    {
+      "id": "ko03_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 32.3973,
+      "top": 64.0177,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko03_top_score",
@@ -1429,6 +2182,17 @@
       "height": 2.019
     },
     {
+      "id": "ko04_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 41.3477,
+      "top": 39.7114,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko04_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -1463,6 +2227,17 @@
       "top": 23.3886,
       "width": 5.2653,
       "height": 2.0204
+    },
+    {
+      "id": "ko05_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 84.2751,
+      "top": 18.7518,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko05_top_score",
@@ -1501,6 +2276,17 @@
       "height": 2.0203
     },
     {
+      "id": "ko06_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 84.2826,
+      "top": 27.1377,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko06_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -1535,6 +2321,17 @@
       "top": 40.1602,
       "width": 5.2653,
       "height": 2.0205
+    },
+    {
+      "id": "ko07_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 84.2826,
+      "top": 35.5236,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko07_top_score",
@@ -1573,6 +2370,17 @@
       "height": 2.0204
     },
     {
+      "id": "ko08_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 84.2826,
+      "top": 43.9094,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko08_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -1607,6 +2415,17 @@
       "top": 56.932,
       "width": 5.2653,
       "height": 2.0204
+    },
+    {
+      "id": "ko09_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 84.2826,
+      "top": 52.2953,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko09_top_score",
@@ -1645,6 +2464,17 @@
       "height": 2.0204
     },
     {
+      "id": "ko10_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 84.2826,
+      "top": 60.6759,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko10_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -1679,6 +2509,17 @@
       "top": 73.7037,
       "width": 5.2653,
       "height": 2.0205
+    },
+    {
+      "id": "ko11_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 84.2826,
+      "top": 69.067,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko11_top_score",
@@ -1717,6 +2558,17 @@
       "height": 2.0205
     },
     {
+      "id": "ko12_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 84.2826,
+      "top": 77.4529,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko12_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -1751,6 +2603,17 @@
       "top": 27.5801,
       "width": 5.2577,
       "height": 2.0172
+    },
+    {
+      "id": "ko13_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 75.1606,
+      "top": 22.9419,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko13_top_score",
@@ -1789,6 +2652,17 @@
       "height": 2.0173
     },
     {
+      "id": "ko14_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 75.1606,
+      "top": 39.7136,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko14_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -1823,6 +2697,17 @@
       "top": 61.1234,
       "width": 5.2577,
       "height": 2.0172
+    },
+    {
+      "id": "ko15_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 75.1606,
+      "top": 56.4854,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko15_top_score",
@@ -1861,6 +2746,17 @@
       "height": 2.0173
     },
     {
+      "id": "ko16_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 75.1606,
+      "top": 73.2571,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko16_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -1895,6 +2791,17 @@
       "top": 36.1361,
       "width": 5.2563,
       "height": 2.0167
+    },
+    {
+      "id": "ko17_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 32.3973,
+      "top": 31.5032,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko17_top_score",
@@ -1933,6 +2840,17 @@
       "height": 2.0167
     },
     {
+      "id": "ko18_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "R",
+      "left": 66.0743,
+      "top": 31.5032,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko18_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -1967,6 +2885,17 @@
       "top": 90.3446,
       "width": 20.8425,
       "height": 4.6087
+    },
+    {
+      "id": "ko19_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 41.3477,
+      "top": 39.7114,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko19_top_score",
@@ -2005,6 +2934,17 @@
       "height": 2.0224
     },
     {
+      "id": "ko20_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 14.177,
+      "top": 18.7508,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko20_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -2039,6 +2979,17 @@
       "top": 31.7753,
       "width": 5.2701,
       "height": 2.0224
+    },
+    {
+      "id": "ko21_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 14.177,
+      "top": 27.1325,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko21_top_score",
@@ -2077,6 +3028,17 @@
       "height": 2.0224
     },
     {
+      "id": "ko22_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 14.177,
+      "top": 35.5226,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko22_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -2111,6 +3073,17 @@
       "top": 48.5471,
       "width": 5.2701,
       "height": 2.0223
+    },
+    {
+      "id": "ko23_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 14.177,
+      "top": 43.9042,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko23_top_score",
@@ -2149,6 +3122,17 @@
       "height": 2.0224
     },
     {
+      "id": "ko24_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 14.177,
+      "top": 52.2943,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko24_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -2183,6 +3167,17 @@
       "top": 65.3188,
       "width": 5.2701,
       "height": 2.0224
+    },
+    {
+      "id": "ko25_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 14.177,
+      "top": 60.6759,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko25_top_score",
@@ -2221,6 +3216,17 @@
       "height": 2.0224
     },
     {
+      "id": "ko26_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 14.177,
+      "top": 69.066,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko26_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -2255,6 +3261,17 @@
       "top": 82.0904,
       "width": 5.2701,
       "height": 2.0081
+    },
+    {
+      "id": "ko27_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 14.177,
+      "top": 77.4546,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko27_top_score",
@@ -2293,6 +3310,17 @@
       "height": 2.0164
     },
     {
+      "id": "ko28_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 46.1422,
+      "top": 26.9818,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko28_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -2327,6 +3355,17 @@
       "top": 27.5799,
       "width": 5.2577,
       "height": 2.0173
+    },
+    {
+      "id": "ko29_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 23.2994,
+      "top": 22.9464,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko29_top_score",
@@ -2365,6 +3404,17 @@
       "height": 2.0173
     },
     {
+      "id": "ko30_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 23.2994,
+      "top": 39.7139,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko30_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -2401,6 +3451,17 @@
       "height": 2.0172
     },
     {
+      "id": "ko31_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 23.2994,
+      "top": 56.4898,
+      "width": 1.5101,
+      "height": 1.9754
+    },
+    {
       "id": "ko31_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -2435,6 +3496,17 @@
       "top": 77.8952,
       "width": 5.2577,
       "height": 2.0172
+    },
+    {
+      "id": "ko32_clock",
+      "kind": "clock",
+      "stage": "knockout",
+      "layout": "two-row",
+      "side": "L",
+      "left": 23.2994,
+      "top": 73.2616,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko32_top_score",

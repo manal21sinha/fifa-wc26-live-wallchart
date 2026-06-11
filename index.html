@@ -86,6 +86,37 @@
     .fld.empty { animation: none; }   /* keep the colourful gradient, no motion */
   }
 
+  /* ── Live game-clock pill ──────────────────────────────────────────────
+     A clock field is a transparent slot (sized in fields.json) that holds a
+     dark rounded "pill" with white condensed text and a pulsing red live dot.
+     The pill is centred in the slot, leaving a sliver of card background on all
+     sides (the slot is the validated watertight zone). */
+  .fld.clock { background: none; overflow: visible; }
+  .clockpill {
+    display: inline-flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 0.10em;
+    background: #12171c; border-radius: 6px;
+    padding: 0.18em 0.34em; line-height: 1;
+    font-family: "Arial Narrow", "Roboto Condensed", "Helvetica Neue Condensed",
+                 sans-serif-condensed, sans-serif;
+    font-stretch: condensed; font-weight: 700; color: #fff;
+    letter-spacing: -0.01em; white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(0,0,0,.35);
+  }
+  .clockpill .cdot {
+    width: 0.42em; height: 0.42em; border-radius: 50%;
+    background: #f54550; flex: none;
+    animation: clockpulse 1.4s ease-in-out infinite;
+  }
+  .clockpill .cline { display: block; }
+  @keyframes clockpulse {
+    0%, 100% { opacity: 1;   transform: scale(1); }
+    50%      { opacity: 0.35; transform: scale(0.7); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .clockpill .cdot { animation: none; }
+  }
+
   #hint { color:#9fc2d4; font-size:13px; padding:10px 14px; }
   code { background:#13303f; padding:1px 5px; border-radius:4px; }
 
@@ -165,16 +196,18 @@ function tableToData(payload){
   let idIdx = labelIdx(CFG.ID_COLUMN);
   let valIdx = labelIdx(CFG.VALUE_COLUMN);
   let scIdx = labelIdx(CFG.SCORERS_COLUMN);
-  // Fallback to Description,Field ID,Value,Scorers order if labels are missing.
+  let clkIdx = labelIdx(CFG.CLOCK_COLUMN);
+  // Fallback to Description,Field ID,Value,Scorers,Clock order if labels missing.
   if (idIdx === -1) idIdx = 1;
   if (valIdx === -1) valIdx = 2;
   if (scIdx === -1) scIdx = 3;
+  if (clkIdx === -1) clkIdx = 4;
   const cellStr = (cell) => {
     if (!cell) return "";
     const v = (cell.v !== null && cell.v !== undefined) ? cell.v : cell.f;
     return (v === null || v === undefined) ? "" : String(v).trim();
   };
-  const values = {}, scorers = {};
+  const values = {}, scorers = {}, clocks = {};
   for (const row of rows){
     const c = row.c || [];
     const id = cellStr(c[idIdx]);
@@ -182,8 +215,10 @@ function tableToData(payload){
     values[id] = cellStr(c[valIdx]);
     const sc = cellStr(c[scIdx]);
     if (sc) scorers[id] = sc;
+    const ck = cellStr(c[clkIdx]);
+    if (ck) clocks[id] = ck;
   }
-  return { values, scorers };
+  return { values, scorers, clocks };
 }
 
 async function buildOverlay(){
@@ -193,9 +228,23 @@ async function buildOverlay(){
   const rnd = (lo, hi) => lo + Math.random() * (hi - lo);
   for (const f of m.fields){
     const el = document.createElement("div");
-    el.className = "fld " + f.kind + " empty";   // start empty -> kaleidoscope
     el.style.left = f.left + "%"; el.style.top = f.top + "%";
     el.style.width = f.width + "%"; el.style.height = f.height + "%";
+    el._kind = f.kind;
+    el._id = f.id;
+
+    if (f.kind === "clock"){
+      // Clock slot: a transparent container that holds a pill (built on demand
+      // in applyValues). No kaleidoscope, no inner text span, never "empty".
+      el.className = "fld clock";
+      // font-size drives the pill's em-based sizing; scale to the slot.
+      el.style.fontSize = `min(${f.height * 0.92}cqh, ${f.width * 0.30}cqw)`;
+      nodes[f.id] = el;
+      chart.appendChild(el);
+      continue;
+    }
+
+    el.className = "fld " + f.kind + " empty";   // start empty -> kaleidoscope
     const fs = (f.kind === "name") ? f.height * 0.62 : f.height * 0.72;
     const baseFs = `min(${fs}cqh, ${f.width * 0.9}cqw)`;
     el.dataset.basefs = baseFs;     // remembered so we can reset before refitting
@@ -207,8 +256,6 @@ async function buildOverlay(){
     span.style.whiteSpace = "nowrap";
     el.appendChild(span);
     el._txt = span;
-    el._kind = f.kind;
-    el._id = f.id;
     // Per-box random kaleidoscope: 3 spread hues, random angle/speed/phase.
     const base = rnd(0, 360);
     el.style.setProperty("--h1", base.toFixed(0));
@@ -258,11 +305,41 @@ function renderScore(span, v){
   }
 }
 
+// Render a live-clock value into a clock slot as a dark pill with a pulsing
+// red dot. Hidden when blank. The dot is dropped for terminal states (FT/AET).
+// The extra-time break token "ET/HT" renders as a 3-row pill (dot / ET / HT);
+// everything else is the standard 2-row pill (dot above one text line).
+const NO_DOT = new Set(["FT", "AET"]);
+function renderClock(el, raw){
+  const v = (raw ?? "").toString().trim();
+  el.textContent = "";
+  if (!v) return;                              // blank -> no pill
+  const pill = document.createElement("span");
+  pill.className = "clockpill";
+  const showDot = !NO_DOT.has(v.toUpperCase());
+  if (showDot){
+    const dot = document.createElement("span");
+    dot.className = "cdot";
+    pill.appendChild(dot);
+  }
+  // lines: "ET/HT" -> ["ET","HT"]; otherwise a single line.
+  const lines = (v.toUpperCase() === "ET/HT") ? ["ET", "HT"] : [v];
+  for (const ln of lines){
+    const s = document.createElement("span");
+    s.className = "cline";
+    s.textContent = ln;
+    pill.appendChild(s);
+  }
+  el.appendChild(pill);
+}
+
 function applyValues(data){
   const values = data.values || {};
   const scorers = data.scorers || {};
+  const clocks = data.clocks || {};
   for (const id in nodes){
     const el = nodes[id];
+    if (el._kind === "clock"){ renderClock(el, clocks[id]); continue; }
     const v = (values[id] ?? "").toString();
     // Score boxes may carry a penalty superscript; everything else is plain.
     if (el._kind === "score") renderScore(el._txt, v);

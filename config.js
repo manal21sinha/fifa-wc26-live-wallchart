@@ -15,6 +15,7 @@ window.CHART_CONFIG = {
   ID_COLUMN: "Field ID",
   VALUE_COLUMN: "Value",
   SCORERS_COLUMN: "Scorers",   // tooltip text shown on hover/focus of a score box
+  CLOCK_COLUMN: "Clock",       // live game-clock text shown as a pill on the card
 
   // How often viewers re-poll the sheet, in milliseconds.
   REFRESH_MS: 30000,
