@@ -35,7 +35,8 @@
     overflow: hidden;
   }
   body.fit #chart { width: auto; }      /* explicit px width set in JS */
-  body.fit #hint { display: none; }     /* hide the footer note on a TV */
+  body.fit #hint { display: none; }     /* hide the hint on a TV; keep credit */
+  body.fit #credit { text-align: center; padding: 4px 14px; }
 
   .fld {
     position: absolute; display: flex; align-items: center; justify-content: center;
@@ -118,6 +119,8 @@
   }
 
   #hint { color:#9fc2d4; font-size:13px; padding:10px 14px; }
+  #credit { color:#7fa6bb; font-size:12px; padding:0 14px 14px; margin:0; }
+  #credit a { color:#6fd0ee; }
   code { background:#13303f; padding:1px 5px; border-radius:4px; }
 
   /* Red-card corner badge: a small vertical stack of red squares overlaid on a
@@ -165,6 +168,7 @@
 
   <div id="wrap"><div id="chart"><img id="bg" alt="World Cup 2026 wall chart" /><div id="tip" role="tooltip" aria-hidden="true"></div></div></div>
   <p id="hint"></p>
+  <p id="credit">Original wall chart artwork from the <a href="https://downloads.bbc.co.uk/england/pdf/BBC_WC_26_WALL_CHART.pdf">BBC</a>.</p>
 
 <script src="config.js"></script>
 <script>
@@ -572,8 +576,13 @@ function wireTooltips(){
 function fitToViewport(){
   if (!FIT) return;
   const bar = document.getElementById("bar");
+  const credit = document.getElementById("credit");
   const availW = window.innerWidth;
-  const availH = window.innerHeight - (bar ? bar.offsetHeight : 0);
+  // Reserve room for the top bar AND the always-visible credit line so the
+  // chart fits between them with no scrolling (overflow is hidden in fit mode).
+  const barH = bar ? bar.offsetHeight : 0;
+  const creditH = credit ? credit.offsetHeight : 0;
+  const availH = window.innerHeight - barH - creditH;
   if (availW <= 0 || availH <= 0 || !canvasAR) return;
   // width if height-constrained vs. the full available width; take the smaller
   const widthIfHeightBound = availH * canvasAR;

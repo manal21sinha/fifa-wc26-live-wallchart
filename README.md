@@ -1,5 +1,7 @@
 # FIFA World Cup 2026 — Live Wall Chart (Google Sheets backend)
 
+Original wall chart artwork from the [BBC](https://downloads.bbc.co.uk/england/pdf/BBC_WC_26_WALL_CHART.pdf).
+
 A single-page, mobile-friendly web wall chart. Scores and knockout team names
 live in a **Google Sheet**; the page reads them live and refreshes every
 30 seconds. Update the sheet from any device — no redeploy, no git commit.
@@ -146,6 +148,29 @@ parentheses right after the regular (post-extra-time) score, e.g. for
 - **Scorers tooltips are unaffected** — keep listing only the goals scored
   through extra time (the shootout isn't part of the scorer list). E.g. the
   `3(4)` box's Scorers cell should hold the three open-play/ET scorers.
+
+### Red-card badges
+
+The page also reads the **Scorers** column for red cards: include a 🟥 emoji in
+the entry for any player sent off, e.g.
+
+| For | Scorers cell |
+|---|---|
+| MEX | `Quiñones 9', Jiménez 67', Montes 🟥 90+2'` |
+| RSA | `Sithole 🟥 49', Zwane 🟥 84'` |
+
+For each team, the page **counts the 🟥** in that team's score-row Scorers cell
+and shows that many small red squares as a compact badge beside the team name —
+stacked vertically on the **outer** corner (group home → left, away → right;
+knockout → the side away from the score box).
+
+- It's automatic from the 🟥 you already type — **no extra column or step.**
+- 🟥 entries **don't affect** the goal count, scores, or the tooltip text; they
+  just drive the badge. Keep documenting cards however you like.
+- Up to **3** squares are shown per team (extra 🟥 are still counted but the
+  badge caps at 3 to stay compact).
+- Group team names show the badge always; knockout names show it once the team
+  name is filled in.
 
 ## Live game clock
 
