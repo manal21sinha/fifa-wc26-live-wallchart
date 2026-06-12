@@ -7,6 +7,16 @@
   },
   "fields": [
     {
+      "id": "group01_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.2389,
+      "top": 4.2182,
+      "width": 1.42,
+      "height": 1.5641
+    },
+    {
       "id": "group01_away_score",
       "kind": "score",
       "stage": "group",
@@ -26,6 +36,16 @@
       "height": 0.612
     },
     {
+      "id": "group01_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 4.9799,
+      "top": 4.2182,
+      "width": 1.6525,
+      "height": 1.5641
+    },
+    {
       "id": "group01_home_score",
       "kind": "score",
       "stage": "group",
@@ -33,6 +53,16 @@
       "top": 4.333,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group02_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.2361,
+      "top": 6.5592,
+      "width": 1.3307,
+      "height": 1.5641
     },
     {
       "id": "group02_away_score",
@@ -54,6 +84,16 @@
       "height": 0.612
     },
     {
+      "id": "group02_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0589,
+      "top": 6.5592,
+      "width": 1.4944,
+      "height": 1.5641
+    },
+    {
       "id": "group02_home_score",
       "kind": "score",
       "stage": "group",
@@ -61,6 +101,16 @@
       "top": 6.5956,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group03_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.2389,
+      "top": 8.7974,
+      "width": 1.42,
+      "height": 1.5641
     },
     {
       "id": "group03_away_score",
@@ -82,6 +132,16 @@
       "height": 0.612
     },
     {
+      "id": "group03_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1407,
+      "top": 8.7974,
+      "width": 1.3307,
+      "height": 1.5641
+    },
+    {
       "id": "group03_home_score",
       "kind": "score",
       "stage": "group",
@@ -89,6 +149,16 @@
       "top": 8.8695,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group04_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1543,
+      "top": 11.0686,
+      "width": 1.4944,
+      "height": 1.5641
     },
     {
       "id": "group04_away_score",
@@ -110,6 +180,16 @@
       "height": 0.612
     },
     {
+      "id": "group04_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 4.9799,
+      "top": 11.0686,
+      "width": 1.6525,
+      "height": 1.5641
+    },
+    {
       "id": "group04_home_score",
       "kind": "score",
       "stage": "group",
@@ -117,6 +197,16 @@
       "top": 11.1436,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group05_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.0753,
+      "top": 13.3713,
+      "width": 1.6525,
+      "height": 1.5641
     },
     {
       "id": "group05_away_score",
@@ -138,6 +228,16 @@
       "height": 0.612
     },
     {
+      "id": "group05_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1407,
+      "top": 13.3713,
+      "width": 1.3307,
+      "height": 1.5641
+    },
+    {
       "id": "group05_home_score",
       "kind": "score",
       "stage": "group",
@@ -145,6 +245,16 @@
       "top": 13.4177,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group06_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1543,
+      "top": 15.578,
+      "width": 1.4944,
+      "height": 1.5641
     },
     {
       "id": "group06_away_score",
@@ -166,6 +276,16 @@
       "height": 0.612
     },
     {
+      "id": "group06_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1435,
+      "top": 15.578,
+      "width": 1.42,
+      "height": 1.5641
+    },
+    {
       "id": "group06_home_score",
       "kind": "score",
       "stage": "group",
@@ -173,6 +293,16 @@
       "top": 15.6918,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group07_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1284,
+      "top": 19.9282,
+      "width": 1.4111,
+      "height": 1.5666
     },
     {
       "id": "group07_away_score",
@@ -194,6 +324,16 @@
       "height": 0.6128
     },
     {
+      "id": "group07_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0638,
+      "top": 19.9282,
+      "width": 1.4381,
+      "height": 1.5666
+    },
+    {
       "id": "group07_home_score",
       "kind": "score",
       "stage": "group",
@@ -201,6 +341,16 @@
       "top": 20.0442,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group08_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1284,
+      "top": 22.2729,
+      "width": 1.4111,
+      "height": 1.5666
     },
     {
       "id": "group08_away_score",
@@ -222,6 +372,16 @@
       "height": 0.6128
     },
     {
+      "id": "group08_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0834,
+      "top": 22.2729,
+      "width": 1.3999,
+      "height": 1.5666
+    },
+    {
       "id": "group08_home_score",
       "kind": "score",
       "stage": "group",
@@ -229,6 +389,16 @@
       "top": 22.3103,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group09_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1284,
+      "top": 24.5146,
+      "width": 1.4111,
+      "height": 1.5666
     },
     {
       "id": "group09_away_score",
@@ -250,6 +420,16 @@
       "height": 0.6128
     },
     {
+      "id": "group09_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0778,
+      "top": 24.5146,
+      "width": 1.4111,
+      "height": 1.5666
+    },
+    {
       "id": "group09_home_score",
       "kind": "score",
       "stage": "group",
@@ -257,6 +437,16 @@
       "top": 24.588,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group10_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.134,
+      "top": 26.7894,
+      "width": 1.3999,
+      "height": 1.5666
     },
     {
       "id": "group10_away_score",
@@ -278,6 +468,16 @@
       "height": 0.6128
     },
     {
+      "id": "group10_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0638,
+      "top": 26.7894,
+      "width": 1.4381,
+      "height": 1.5666
+    },
+    {
       "id": "group10_home_score",
       "kind": "score",
       "stage": "group",
@@ -285,6 +485,16 @@
       "top": 26.8656,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group11_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1154,
+      "top": 29.0957,
+      "width": 1.4381,
+      "height": 1.5666
     },
     {
       "id": "group11_away_score",
@@ -306,6 +516,16 @@
       "height": 0.6128
     },
     {
+      "id": "group11_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0778,
+      "top": 29.0957,
+      "width": 1.4111,
+      "height": 1.5666
+    },
+    {
       "id": "group11_home_score",
       "kind": "score",
       "stage": "group",
@@ -313,6 +533,16 @@
       "top": 29.1432,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group12_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.134,
+      "top": 31.3059,
+      "width": 1.3999,
+      "height": 1.5666
     },
     {
       "id": "group12_away_score",
@@ -334,6 +564,16 @@
       "height": 0.6128
     },
     {
+      "id": "group12_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0778,
+      "top": 31.3059,
+      "width": 1.4111,
+      "height": 1.5666
+    },
+    {
       "id": "group12_home_score",
       "kind": "score",
       "stage": "group",
@@ -341,6 +581,16 @@
       "top": 31.4208,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group13_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1272,
+      "top": 35.6605,
+      "width": 1.7184,
+      "height": 1.5666
     },
     {
       "id": "group13_away_score",
@@ -362,6 +612,16 @@
       "height": 0.6128
     },
     {
+      "id": "group13_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0132,
+      "top": 35.6605,
+      "width": 1.507,
+      "height": 1.5666
+    },
+    {
       "id": "group13_home_score",
       "kind": "score",
       "stage": "group",
@@ -369,6 +629,16 @@
       "top": 35.7765,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group14_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.3256,
+      "top": 38.0051,
+      "width": 1.3207,
+      "height": 1.5666
     },
     {
       "id": "group14_away_score",
@@ -390,6 +660,16 @@
       "height": 0.6128
     },
     {
+      "id": "group14_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1362,
+      "top": 38.0051,
+      "width": 1.2611,
+      "height": 1.5666
+    },
+    {
       "id": "group14_home_score",
       "kind": "score",
       "stage": "group",
@@ -397,6 +677,16 @@
       "top": 38.0427,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group15_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1272,
+      "top": 40.2469,
+      "width": 1.7184,
+      "height": 1.5666
     },
     {
       "id": "group15_away_score",
@@ -418,6 +708,16 @@
       "height": 0.6128
     },
     {
+      "id": "group15_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1064,
+      "top": 40.2469,
+      "width": 1.3207,
+      "height": 1.5666
+    },
+    {
       "id": "group15_home_score",
       "kind": "score",
       "stage": "group",
@@ -425,6 +725,16 @@
       "top": 40.3202,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group16_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.3554,
+      "top": 42.5216,
+      "width": 1.2611,
+      "height": 1.5666
     },
     {
       "id": "group16_away_score",
@@ -446,6 +756,16 @@
       "height": 0.6128
     },
     {
+      "id": "group16_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0132,
+      "top": 42.5216,
+      "width": 1.507,
+      "height": 1.5666
+    },
+    {
       "id": "group16_home_score",
       "kind": "score",
       "stage": "group",
@@ -453,6 +773,16 @@
       "top": 42.5979,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group17_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.2324,
+      "top": 44.828,
+      "width": 1.507,
+      "height": 1.5666
     },
     {
       "id": "group17_away_score",
@@ -474,6 +804,16 @@
       "height": 0.6128
     },
     {
+      "id": "group17_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1064,
+      "top": 44.828,
+      "width": 1.3207,
+      "height": 1.5666
+    },
+    {
       "id": "group17_home_score",
       "kind": "score",
       "stage": "group",
@@ -481,6 +821,16 @@
       "top": 44.8755,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group18_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.3554,
+      "top": 47.0381,
+      "width": 1.2611,
+      "height": 1.5666
     },
     {
       "id": "group18_away_score",
@@ -502,6 +852,16 @@
       "height": 0.6128
     },
     {
+      "id": "group18_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 4.907,
+      "top": 47.0381,
+      "width": 1.7184,
+      "height": 1.5666
+    },
+    {
       "id": "group18_home_score",
       "kind": "score",
       "stage": "group",
@@ -509,6 +869,16 @@
       "top": 47.1532,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group19_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1204,
+      "top": 51.3922,
+      "width": 1.4837,
+      "height": 1.5666
     },
     {
       "id": "group19_away_score",
@@ -530,6 +900,16 @@
       "height": 0.6128
     },
     {
+      "id": "group19_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1061,
+      "top": 51.3922,
+      "width": 1.4204,
+      "height": 1.5666
+    },
+    {
       "id": "group19_home_score",
       "kind": "score",
       "stage": "group",
@@ -537,6 +917,16 @@
       "top": 51.5082,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group20_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1633,
+      "top": 53.7368,
+      "width": 1.398,
+      "height": 1.5666
     },
     {
       "id": "group20_away_score",
@@ -558,6 +948,16 @@
       "height": 0.6128
     },
     {
+      "id": "group20_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1061,
+      "top": 53.7368,
+      "width": 1.4204,
+      "height": 1.5666
+    },
+    {
       "id": "group20_home_score",
       "kind": "score",
       "stage": "group",
@@ -565,6 +965,16 @@
       "top": 53.7743,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group21_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1521,
+      "top": 55.9786,
+      "width": 1.4204,
+      "height": 1.5666
     },
     {
       "id": "group21_away_score",
@@ -586,6 +996,16 @@
       "height": 0.6128
     },
     {
+      "id": "group21_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1061,
+      "top": 55.9786,
+      "width": 1.4204,
+      "height": 1.5666
+    },
+    {
       "id": "group21_home_score",
       "kind": "score",
       "stage": "group",
@@ -593,6 +1013,16 @@
       "top": 56.052,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group22_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1204,
+      "top": 58.2533,
+      "width": 1.4837,
+      "height": 1.5666
     },
     {
       "id": "group22_away_score",
@@ -614,6 +1044,16 @@
       "height": 0.6128
     },
     {
+      "id": "group22_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1173,
+      "top": 58.2533,
+      "width": 1.398,
+      "height": 1.5666
+    },
+    {
       "id": "group22_home_score",
       "kind": "score",
       "stage": "group",
@@ -621,6 +1061,16 @@
       "top": 58.3296,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group23_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1521,
+      "top": 60.5597,
+      "width": 1.4204,
+      "height": 1.5666
     },
     {
       "id": "group23_away_score",
@@ -642,6 +1092,16 @@
       "height": 0.6128
     },
     {
+      "id": "group23_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1173,
+      "top": 60.5597,
+      "width": 1.398,
+      "height": 1.5666
+    },
+    {
       "id": "group23_home_score",
       "kind": "score",
       "stage": "group",
@@ -649,6 +1109,16 @@
       "top": 60.6072,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group24_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1521,
+      "top": 62.7698,
+      "width": 1.4204,
+      "height": 1.5666
     },
     {
       "id": "group24_away_score",
@@ -670,6 +1140,16 @@
       "height": 0.6128
     },
     {
+      "id": "group24_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0745,
+      "top": 62.7698,
+      "width": 1.4837,
+      "height": 1.5666
+    },
+    {
       "id": "group24_home_score",
       "kind": "score",
       "stage": "group",
@@ -677,6 +1157,16 @@
       "top": 62.8849,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group25_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1521,
+      "top": 67.1142,
+      "width": 1.4213,
+      "height": 1.5666
     },
     {
       "id": "group25_away_score",
@@ -698,6 +1188,16 @@
       "height": 0.6128
     },
     {
+      "id": "group25_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1517,
+      "top": 67.1142,
+      "width": 1.4017,
+      "height": 1.5666
+    },
+    {
       "id": "group25_home_score",
       "kind": "score",
       "stage": "group",
@@ -705,6 +1205,16 @@
       "top": 67.2303,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group26_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1903,
+      "top": 69.4588,
+      "width": 1.344,
+      "height": 1.5666
     },
     {
       "id": "group26_away_score",
@@ -726,6 +1236,16 @@
       "height": 0.6128
     },
     {
+      "id": "group26_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.2691,
+      "top": 69.4588,
+      "width": 1.1661,
+      "height": 1.5666
+    },
+    {
       "id": "group26_home_score",
       "kind": "score",
       "stage": "group",
@@ -733,6 +1253,16 @@
       "top": 69.4963,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group27_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.2787,
+      "top": 71.7006,
+      "width": 1.1661,
+      "height": 1.5666
     },
     {
       "id": "group27_away_score",
@@ -754,6 +1284,16 @@
       "height": 0.6128
     },
     {
+      "id": "group27_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1508,
+      "top": 71.7006,
+      "width": 1.4017,
+      "height": 1.5666
+    },
+    {
       "id": "group27_home_score",
       "kind": "score",
       "stage": "group",
@@ -761,6 +1301,16 @@
       "top": 71.774,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group28_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1511,
+      "top": 73.9753,
+      "width": 1.4213,
+      "height": 1.5666
     },
     {
       "id": "group28_away_score",
@@ -782,6 +1332,16 @@
       "height": 0.6128
     },
     {
+      "id": "group28_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1797,
+      "top": 73.9753,
+      "width": 1.344,
+      "height": 1.5666
+    },
+    {
       "id": "group28_home_score",
       "kind": "score",
       "stage": "group",
@@ -789,6 +1349,16 @@
       "top": 74.0515,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group29_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.2787,
+      "top": 76.2817,
+      "width": 1.1661,
+      "height": 1.5666
     },
     {
       "id": "group29_away_score",
@@ -810,6 +1380,16 @@
       "height": 0.6128
     },
     {
+      "id": "group29_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1406,
+      "top": 76.2817,
+      "width": 1.4213,
+      "height": 1.5666
+    },
+    {
       "id": "group29_home_score",
       "kind": "score",
       "stage": "group",
@@ -817,6 +1397,16 @@
       "top": 76.3293,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group30_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1605,
+      "top": 78.4918,
+      "width": 1.4017,
+      "height": 1.5666
     },
     {
       "id": "group30_away_score",
@@ -838,6 +1428,16 @@
       "height": 0.6128
     },
     {
+      "id": "group30_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1797,
+      "top": 78.4918,
+      "width": 1.344,
+      "height": 1.5666
+    },
+    {
       "id": "group30_home_score",
       "kind": "score",
       "stage": "group",
@@ -845,6 +1445,16 @@
       "top": 78.6069,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group31_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.2045,
+      "top": 82.8439,
+      "width": 1.4111,
+      "height": 1.5666
     },
     {
       "id": "group31_away_score",
@@ -866,6 +1476,16 @@
       "height": 0.6128
     },
     {
+      "id": "group31_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0971,
+      "top": 82.8439,
+      "width": 1.4297,
+      "height": 1.5666
+    },
+    {
       "id": "group31_home_score",
       "kind": "score",
       "stage": "group",
@@ -873,6 +1493,16 @@
       "top": 82.9599,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group32_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.2073,
+      "top": 85.1885,
+      "width": 1.4055,
+      "height": 1.5666
     },
     {
       "id": "group32_away_score",
@@ -894,6 +1524,16 @@
       "height": 0.6128
     },
     {
+      "id": "group32_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.0226,
+      "top": 85.1885,
+      "width": 1.5796,
+      "height": 1.5666
+    },
+    {
       "id": "group32_home_score",
       "kind": "score",
       "stage": "group",
@@ -901,6 +1541,16 @@
       "top": 85.2259,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group33_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1207,
+      "top": 87.4303,
+      "width": 1.5796,
+      "height": 1.5666
     },
     {
       "id": "group33_away_score",
@@ -922,6 +1572,16 @@
       "height": 0.6128
     },
     {
+      "id": "group33_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.098,
+      "top": 87.4303,
+      "width": 1.4297,
+      "height": 1.5666
+    },
+    {
       "id": "group33_home_score",
       "kind": "score",
       "stage": "group",
@@ -929,6 +1589,16 @@
       "top": 87.5036,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group34_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.2045,
+      "top": 89.705,
+      "width": 1.4111,
+      "height": 1.5666
     },
     {
       "id": "group34_away_score",
@@ -950,6 +1620,16 @@
       "height": 0.6128
     },
     {
+      "id": "group34_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1101,
+      "top": 89.705,
+      "width": 1.4055,
+      "height": 1.5666
+    },
+    {
       "id": "group34_home_score",
       "kind": "score",
       "stage": "group",
@@ -957,6 +1637,16 @@
       "top": 89.7812,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group35_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1207,
+      "top": 92.0114,
+      "width": 1.5796,
+      "height": 1.5666
     },
     {
       "id": "group35_away_score",
@@ -978,6 +1668,16 @@
       "height": 0.6128
     },
     {
+      "id": "group35_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1073,
+      "top": 92.0114,
+      "width": 1.4111,
+      "height": 1.5666
+    },
+    {
       "id": "group35_home_score",
       "kind": "score",
       "stage": "group",
@@ -985,6 +1685,16 @@
       "top": 92.0589,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group36_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 9.1952,
+      "top": 94.2215,
+      "width": 1.4297,
+      "height": 1.5666
     },
     {
       "id": "group36_away_score",
@@ -1006,6 +1716,16 @@
       "height": 0.6128
     },
     {
+      "id": "group36_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 5.1101,
+      "top": 94.2215,
+      "width": 1.4055,
+      "height": 1.5666
+    },
+    {
       "id": "group36_home_score",
       "kind": "score",
       "stage": "group",
@@ -1013,6 +1733,16 @@
       "top": 94.3365,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group37_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4684,
+      "top": 4.2238,
+      "width": 1.4092,
+      "height": 1.5666
     },
     {
       "id": "group37_away_score",
@@ -1034,6 +1764,16 @@
       "height": 0.612
     },
     {
+      "id": "group37_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.5081,
+      "top": 4.2238,
+      "width": 1.344,
+      "height": 1.5666
+    },
+    {
       "id": "group37_home_score",
       "kind": "score",
       "stage": "group",
@@ -1041,6 +1781,16 @@
       "top": 4.3398,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group38_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4693,
+      "top": 6.5684,
+      "width": 1.4083,
+      "height": 1.5666
     },
     {
       "id": "group38_away_score",
@@ -1062,6 +1812,16 @@
       "height": 0.612
     },
     {
+      "id": "group38_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.5537,
+      "top": 6.5684,
+      "width": 1.2537,
+      "height": 1.5666
+    },
+    {
       "id": "group38_home_score",
       "kind": "score",
       "stage": "group",
@@ -1069,6 +1829,16 @@
       "top": 6.6058,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group39_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5466,
+      "top": 8.8102,
+      "width": 1.2537,
+      "height": 1.5666
     },
     {
       "id": "group39_away_score",
@@ -1090,6 +1860,16 @@
       "height": 0.612
     },
     {
+      "id": "group39_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.509,
+      "top": 8.8102,
+      "width": 1.344,
+      "height": 1.5666
+    },
+    {
       "id": "group39_home_score",
       "kind": "score",
       "stage": "group",
@@ -1097,6 +1877,16 @@
       "top": 8.8835,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group40_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4684,
+      "top": 11.0849,
+      "width": 1.4092,
+      "height": 1.5666
     },
     {
       "id": "group40_away_score",
@@ -1118,6 +1908,16 @@
       "height": 0.612
     },
     {
+      "id": "group40_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4764,
+      "top": 11.0849,
+      "width": 1.4083,
+      "height": 1.5666
+    },
+    {
       "id": "group40_home_score",
       "kind": "score",
       "stage": "group",
@@ -1125,6 +1925,16 @@
       "top": 11.1612,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group41_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5457,
+      "top": 13.3913,
+      "width": 1.2537,
+      "height": 1.5666
     },
     {
       "id": "group41_away_score",
@@ -1146,6 +1956,16 @@
       "height": 0.612
     },
     {
+      "id": "group41_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4755,
+      "top": 13.3913,
+      "width": 1.4092,
+      "height": 1.5666
+    },
+    {
       "id": "group41_home_score",
       "kind": "score",
       "stage": "group",
@@ -1153,6 +1973,16 @@
       "top": 13.4388,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group42_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4581,
+      "top": 15.6014,
+      "width": 1.344,
+      "height": 1.5666
     },
     {
       "id": "group42_away_score",
@@ -1174,6 +2004,16 @@
       "height": 0.612
     },
     {
+      "id": "group42_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4755,
+      "top": 15.6014,
+      "width": 1.4083,
+      "height": 1.5666
+    },
+    {
       "id": "group42_home_score",
       "kind": "score",
       "stage": "group",
@@ -1181,6 +2021,16 @@
       "top": 15.7165,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group43_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4699,
+      "top": 19.9232,
+      "width": 1.3822,
+      "height": 1.5666
     },
     {
       "id": "group43_away_score",
@@ -1202,6 +2052,16 @@
       "height": 0.6128
     },
     {
+      "id": "group43_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.5106,
+      "top": 19.9232,
+      "width": 1.3216,
+      "height": 1.5666
+    },
+    {
       "id": "group43_home_score",
       "kind": "score",
       "stage": "group",
@@ -1209,6 +2069,16 @@
       "top": 20.0392,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group44_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4169,
+      "top": 22.2679,
+      "width": 1.4884,
+      "height": 1.5666
     },
     {
       "id": "group44_away_score",
@@ -1230,6 +2100,16 @@
       "height": 0.6128
     },
     {
+      "id": "group44_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4612,
+      "top": 22.2679,
+      "width": 1.4204,
+      "height": 1.5666
+    },
+    {
       "id": "group44_home_score",
       "kind": "score",
       "stage": "group",
@@ -1237,6 +2117,16 @@
       "top": 22.3054,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group45_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4513,
+      "top": 24.5096,
+      "width": 1.4204,
+      "height": 1.5666
     },
     {
       "id": "group45_away_score",
@@ -1258,6 +2148,16 @@
       "height": 0.6128
     },
     {
+      "id": "group45_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.5106,
+      "top": 24.5096,
+      "width": 1.3216,
+      "height": 1.5666
+    },
+    {
       "id": "group45_home_score",
       "kind": "score",
       "stage": "group",
@@ -1265,6 +2165,16 @@
       "top": 24.583,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group46_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4709,
+      "top": 26.7844,
+      "width": 1.3822,
+      "height": 1.5666
     },
     {
       "id": "group46_away_score",
@@ -1286,6 +2196,16 @@
       "height": 0.6128
     },
     {
+      "id": "group46_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4277,
+      "top": 26.7844,
+      "width": 1.4884,
+      "height": 1.5666
+    },
+    {
       "id": "group46_home_score",
       "kind": "score",
       "stage": "group",
@@ -1293,6 +2213,16 @@
       "top": 26.8607,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group47_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4522,
+      "top": 29.0907,
+      "width": 1.4204,
+      "height": 1.5666
     },
     {
       "id": "group47_away_score",
@@ -1314,6 +2244,16 @@
       "height": 0.6128
     },
     {
+      "id": "group47_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4817,
+      "top": 29.0907,
+      "width": 1.3822,
+      "height": 1.5666
+    },
+    {
       "id": "group47_home_score",
       "kind": "score",
       "stage": "group",
@@ -1321,6 +2261,16 @@
       "top": 29.1384,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group48_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5016,
+      "top": 31.3009,
+      "width": 1.3216,
+      "height": 1.5666
     },
     {
       "id": "group48_away_score",
@@ -1342,6 +2292,16 @@
       "height": 0.6128
     },
     {
+      "id": "group48_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4286,
+      "top": 31.3009,
+      "width": 1.4884,
+      "height": 1.5666
+    },
+    {
       "id": "group48_home_score",
       "kind": "score",
       "stage": "group",
@@ -1349,6 +2309,16 @@
       "top": 31.4159,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group49_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5158,
+      "top": 35.6555,
+      "width": 1.3449,
+      "height": 1.5666
     },
     {
       "id": "group49_away_score",
@@ -1370,6 +2340,16 @@
       "height": 0.6128
     },
     {
+      "id": "group49_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4744,
+      "top": 35.6555,
+      "width": 1.3896,
+      "height": 1.5666
+    },
+    {
       "id": "group49_home_score",
       "kind": "score",
       "stage": "group",
@@ -1377,6 +2357,16 @@
       "top": 35.7715,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group50_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.444,
+      "top": 38.0001,
+      "width": 1.4884,
+      "height": 1.5666
     },
     {
       "id": "group50_away_score",
@@ -1398,6 +2388,16 @@
       "height": 0.6128
     },
     {
+      "id": "group50_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.5257,
+      "top": 38.0001,
+      "width": 1.2537,
+      "height": 1.5666
+    },
+    {
       "id": "group50_home_score",
       "kind": "score",
       "stage": "group",
@@ -1405,6 +2405,16 @@
       "top": 38.0377,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group51_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5437,
+      "top": 40.2419,
+      "width": 1.2537,
+      "height": 1.5666
     },
     {
       "id": "group51_away_score",
@@ -1426,6 +2436,16 @@
       "height": 0.6128
     },
     {
+      "id": "group51_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4744,
+      "top": 40.2419,
+      "width": 1.3896,
+      "height": 1.5666
+    },
+    {
       "id": "group51_home_score",
       "kind": "score",
       "stage": "group",
@@ -1433,6 +2453,16 @@
       "top": 40.3154,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group52_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5157,
+      "top": 42.5166,
+      "width": 1.3449,
+      "height": 1.5666
     },
     {
       "id": "group52_away_score",
@@ -1454,6 +2484,16 @@
       "height": 0.6128
     },
     {
+      "id": "group52_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.426,
+      "top": 42.5166,
+      "width": 1.4884,
+      "height": 1.5666
+    },
+    {
       "id": "group52_home_score",
       "kind": "score",
       "stage": "group",
@@ -1461,6 +2501,16 @@
       "top": 42.5929,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group53_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4934,
+      "top": 44.823,
+      "width": 1.3896,
+      "height": 1.5666
     },
     {
       "id": "group53_away_score",
@@ -1482,6 +2532,16 @@
       "height": 0.6128
     },
     {
+      "id": "group53_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.426,
+      "top": 44.823,
+      "width": 1.4884,
+      "height": 1.5666
+    },
+    {
       "id": "group53_home_score",
       "kind": "score",
       "stage": "group",
@@ -1489,6 +2549,16 @@
       "top": 44.8706,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group54_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5437,
+      "top": 47.0331,
+      "width": 1.2537,
+      "height": 1.5666
     },
     {
       "id": "group54_away_score",
@@ -1510,6 +2580,16 @@
       "height": 0.6128
     },
     {
+      "id": "group54_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4977,
+      "top": 47.0331,
+      "width": 1.3449,
+      "height": 1.5666
+    },
+    {
       "id": "group54_home_score",
       "kind": "score",
       "stage": "group",
@@ -1517,6 +2597,16 @@
       "top": 47.1482,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group55_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5069,
+      "top": 51.3921,
+      "width": 1.3859,
+      "height": 1.5666
     },
     {
       "id": "group55_away_score",
@@ -1538,6 +2628,16 @@
       "height": 0.6128
     },
     {
+      "id": "group55_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4274,
+      "top": 51.3921,
+      "width": 1.4865,
+      "height": 1.5666
+    },
+    {
       "id": "group55_home_score",
       "kind": "score",
       "stage": "group",
@@ -1545,6 +2645,16 @@
       "top": 51.5082,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group56_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4957,
+      "top": 53.7368,
+      "width": 1.4083,
+      "height": 1.5666
     },
     {
       "id": "group56_away_score",
@@ -1566,6 +2676,16 @@
       "height": 0.6128
     },
     {
+      "id": "group56_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4758,
+      "top": 53.7368,
+      "width": 1.3906,
+      "height": 1.5666
+    },
+    {
       "id": "group56_home_score",
       "kind": "score",
       "stage": "group",
@@ -1573,6 +2693,16 @@
       "top": 53.7743,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group57_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5041,
+      "top": 55.9785,
+      "width": 1.3906,
+      "height": 1.5666
     },
     {
       "id": "group57_away_score",
@@ -1594,6 +2724,16 @@
       "height": 0.6128
     },
     {
+      "id": "group57_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4274,
+      "top": 55.9785,
+      "width": 1.4865,
+      "height": 1.5666
+    },
+    {
       "id": "group57_home_score",
       "kind": "score",
       "stage": "group",
@@ -1601,6 +2741,16 @@
       "top": 56.0519,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group58_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5069,
+      "top": 58.2533,
+      "width": 1.3859,
+      "height": 1.5666
     },
     {
       "id": "group58_away_score",
@@ -1622,6 +2772,16 @@
       "height": 0.6128
     },
     {
+      "id": "group58_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4665,
+      "top": 58.2533,
+      "width": 1.4083,
+      "height": 1.5666
+    },
+    {
       "id": "group58_home_score",
       "kind": "score",
       "stage": "group",
@@ -1629,6 +2789,16 @@
       "top": 58.3296,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group59_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5041,
+      "top": 60.5597,
+      "width": 1.3906,
+      "height": 1.5666
     },
     {
       "id": "group59_away_score",
@@ -1650,6 +2820,16 @@
       "height": 0.6128
     },
     {
+      "id": "group59_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4777,
+      "top": 60.5597,
+      "width": 1.3859,
+      "height": 1.5666
+    },
+    {
       "id": "group59_home_score",
       "kind": "score",
       "stage": "group",
@@ -1657,6 +2837,16 @@
       "top": 60.6072,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group60_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4566,
+      "top": 62.7698,
+      "width": 1.4865,
+      "height": 1.5666
     },
     {
       "id": "group60_away_score",
@@ -1678,6 +2868,16 @@
       "height": 0.6128
     },
     {
+      "id": "group60_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4665,
+      "top": 62.7698,
+      "width": 1.4083,
+      "height": 1.5666
+    },
+    {
       "id": "group60_home_score",
       "kind": "score",
       "stage": "group",
@@ -1685,6 +2885,16 @@
       "top": 62.8849,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group61_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4654,
+      "top": 67.1142,
+      "width": 1.4306,
+      "height": 1.5666
     },
     {
       "id": "group61_away_score",
@@ -1706,6 +2916,16 @@
       "height": 0.6128
     },
     {
+      "id": "group61_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4287,
+      "top": 67.1142,
+      "width": 1.4651,
+      "height": 1.5666
+    },
+    {
       "id": "group61_home_score",
       "kind": "score",
       "stage": "group",
@@ -1713,6 +2933,16 @@
       "top": 67.2301,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group62_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.5212,
+      "top": 69.4588,
+      "width": 1.3198,
+      "height": 1.5666
     },
     {
       "id": "group62_away_score",
@@ -1734,6 +2964,16 @@
       "height": 0.6128
     },
     {
+      "id": "group62_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4194,
+      "top": 69.4588,
+      "width": 1.4846,
+      "height": 1.5666
+    },
+    {
       "id": "group62_home_score",
       "kind": "score",
       "stage": "group",
@@ -1741,6 +2981,16 @@
       "top": 69.4963,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group63_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4393,
+      "top": 71.7006,
+      "width": 1.4846,
+      "height": 1.5666
     },
     {
       "id": "group63_away_score",
@@ -1762,6 +3012,16 @@
       "height": 0.6128
     },
     {
+      "id": "group63_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4296,
+      "top": 71.7006,
+      "width": 1.4651,
+      "height": 1.5666
+    },
+    {
       "id": "group63_home_score",
       "kind": "score",
       "stage": "group",
@@ -1769,6 +3029,16 @@
       "top": 71.774,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group64_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4663,
+      "top": 73.9753,
+      "width": 1.4306,
+      "height": 1.5666
     },
     {
       "id": "group64_away_score",
@@ -1790,6 +3060,16 @@
       "height": 0.6128
     },
     {
+      "id": "group64_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.5023,
+      "top": 73.9753,
+      "width": 1.3198,
+      "height": 1.5666
+    },
+    {
       "id": "group64_home_score",
       "kind": "score",
       "stage": "group",
@@ -1797,6 +3077,16 @@
       "top": 74.0515,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group65_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4486,
+      "top": 76.2817,
+      "width": 1.4651,
+      "height": 1.5666
     },
     {
       "id": "group65_away_score",
@@ -1818,6 +3108,16 @@
       "height": 0.6128
     },
     {
+      "id": "group65_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.5023,
+      "top": 76.2817,
+      "width": 1.3198,
+      "height": 1.5666
+    },
+    {
       "id": "group65_home_score",
       "kind": "score",
       "stage": "group",
@@ -1825,6 +3125,16 @@
       "top": 76.3293,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group66_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4393,
+      "top": 78.4918,
+      "width": 1.4846,
+      "height": 1.5666
     },
     {
       "id": "group66_away_score",
@@ -1846,6 +3156,16 @@
       "height": 0.6128
     },
     {
+      "id": "group66_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4473,
+      "top": 78.4918,
+      "width": 1.4306,
+      "height": 1.5666
+    },
+    {
       "id": "group66_home_score",
       "kind": "score",
       "stage": "group",
@@ -1853,6 +3173,16 @@
       "top": 78.6069,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group67_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4886,
+      "top": 82.8421,
+      "width": 1.398,
+      "height": 1.5666
     },
     {
       "id": "group67_away_score",
@@ -1874,6 +3204,16 @@
       "height": 0.6128
     },
     {
+      "id": "group67_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4752,
+      "top": 82.8421,
+      "width": 1.4092,
+      "height": 1.5666
+    },
+    {
       "id": "group67_home_score",
       "kind": "score",
       "stage": "group",
@@ -1881,6 +3221,16 @@
       "top": 82.9582,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group68_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.442,
+      "top": 85.1868,
+      "width": 1.4911,
+      "height": 1.5666
     },
     {
       "id": "group68_away_score",
@@ -1902,6 +3252,16 @@
       "height": 0.6128
     },
     {
+      "id": "group68_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4333,
+      "top": 85.1868,
+      "width": 1.4939,
+      "height": 1.5666
+    },
+    {
       "id": "group68_home_score",
       "kind": "score",
       "stage": "group",
@@ -1909,6 +3269,16 @@
       "top": 85.2243,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group69_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4401,
+      "top": 87.4285,
+      "width": 1.4939,
+      "height": 1.5666
     },
     {
       "id": "group69_away_score",
@@ -1930,6 +3300,16 @@
       "height": 0.6128
     },
     {
+      "id": "group69_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4752,
+      "top": 87.4285,
+      "width": 1.4092,
+      "height": 1.5666
+    },
+    {
       "id": "group69_home_score",
       "kind": "score",
       "stage": "group",
@@ -1937,6 +3317,16 @@
       "top": 87.5019,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group70_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4886,
+      "top": 89.7033,
+      "width": 1.398,
+      "height": 1.5666
     },
     {
       "id": "group70_away_score",
@@ -1958,6 +3348,16 @@
       "height": 0.6128
     },
     {
+      "id": "group70_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4342,
+      "top": 89.7033,
+      "width": 1.4911,
+      "height": 1.5666
+    },
+    {
       "id": "group70_home_score",
       "kind": "score",
       "stage": "group",
@@ -1965,6 +3365,16 @@
       "top": 89.7796,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group71_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.483,
+      "top": 92.0083,
+      "width": 1.4092,
+      "height": 1.5666
     },
     {
       "id": "group71_away_score",
@@ -1986,6 +3396,16 @@
       "height": 0.6128
     },
     {
+      "id": "group71_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4342,
+      "top": 92.0083,
+      "width": 1.4911,
+      "height": 1.5666
+    },
+    {
       "id": "group71_home_score",
       "kind": "score",
       "stage": "group",
@@ -1993,6 +3413,16 @@
       "top": 92.0572,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group72_away_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "right",
+      "left": 93.4411,
+      "top": 94.2198,
+      "width": 1.4939,
+      "height": 1.5666
     },
     {
       "id": "group72_away_score",
@@ -2012,6 +3442,16 @@
       "top": 95.0101,
       "width": 0.8204,
       "height": 0.6128
+    },
+    {
+      "id": "group72_home_cards",
+      "kind": "cards",
+      "stage": "group",
+      "corner": "left",
+      "left": 89.4808,
+      "top": 94.2198,
+      "width": 1.398,
+      "height": 1.5666
     },
     {
       "id": "group72_home_score",

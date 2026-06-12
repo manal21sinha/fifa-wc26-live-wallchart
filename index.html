@@ -120,6 +120,22 @@
   #hint { color:#9fc2d4; font-size:13px; padding:10px 14px; }
   code { background:#13303f; padding:1px 5px; border-radius:4px; }
 
+  /* Red-card corner badge: a small vertical stack of red squares overlaid on a
+     corner of a team name (group printed names + knockout name fields). Built
+     in applyValues from the count of 🟥 in that team's Scorers cell. The .fld
+     slot is transparent; the badge floats just outside the chosen corner. */
+  .fld.cards { background: none; overflow: visible; }
+  /* A name field showing a red-card badge must let the badge spill outside. */
+  .fld.name.has-cards { overflow: visible; }
+  .cardbadge {
+    position: absolute; display: flex; flex-direction: column;
+    gap: 0.18em; pointer-events: none;
+  }
+  .cardbadge .rcard {
+    width: 1em; height: 1.35em; border-radius: 0.18em;
+    background: #e2241a; box-shadow: 0 0 0 0.08em rgba(0,0,0,.35);
+  }
+
   /* Score box with scorers: hint that it's interactive. */
   .fld.score[data-tip]{ cursor: help; }
   .fld.score[data-tip]:focus-visible{ outline: 2px solid #2b8fc4; outline-offset: 1px; }
@@ -247,6 +263,18 @@ async function buildOverlay(){
       continue;
     }
 
+    if (f.kind === "cards"){
+      // Red-card anchor: a transparent box over a team name; a corner badge of
+      // small red squares is built in applyValues. No kaleidoscope/text.
+      el.className = "fld cards";
+      el.dataset.corner = f.corner || "right";   // outer corner for the badge
+      // square size scales with the chart height
+      el.style.fontSize = `min(${f.height * 0.5}cqh, 1.4cqw)`;
+      nodes[f.id] = el;
+      chart.appendChild(el);
+      continue;
+    }
+
     el.className = "fld " + f.kind + " empty";   // start empty -> kaleidoscope
     const fs = (f.kind === "name") ? f.height * 0.62 : f.height * 0.72;
     const baseFs = `min(${fs}cqh, ${f.width * 0.9}cqw)`;
@@ -336,6 +364,47 @@ function renderClock(el, raw){
   el.appendChild(pill);
 }
 
+// Count red-card emojis in a Scorers string.
+function countRedCards(s){
+  if (!s) return 0;
+  // Match the red-square emoji (U+1F7E5). Use a global regex on the raw text.
+  const m = s.match(/\u{1F7E5}/gu);
+  return m ? m.length : 0;
+}
+
+// The Scorers cell that holds a given team's cards/goals:
+//   group NN home/away -> groupNN_(home|away)_score
+//   knockout top/bottom -> koNN_(top|bottom)_score
+function scorerKeyForTeam(fieldId){
+  // group card anchor: group01_home_cards -> group01_home_score
+  let m = fieldId.match(/^(group\d{2})_(home|away)_cards$/);
+  if (m) return `${m[1]}_${m[2]}_score`;
+  // knockout name field: ko20_top_team -> ko20_top_score
+  m = fieldId.match(/^(ko\d{2})_(top|bottom)_team$/);
+  if (m) return `${m[1]}_${m[2]}_score`;
+  return null;
+}
+
+// Render (or clear) a red-card corner badge of `n` small squares (cap 3) on a
+// slot, anchored to its outer corner.
+function renderCards(el, n){
+  el.textContent = "";
+  if (n <= 0) return;
+  const badge = document.createElement("span");
+  badge.className = "cardbadge";
+  // anchor to the chosen corner, just outside the box, vertically centred-ish
+  const corner = el.dataset.corner || "right";
+  badge.style.top = "0";
+  if (corner === "left"){ badge.style.right = "100%"; badge.style.marginRight = "0.2em"; }
+  else { badge.style.left = "100%"; badge.style.marginLeft = "0.2em"; }
+  for (let i = 0; i < Math.min(n, 3); i++){
+    const sq = document.createElement("span");
+    sq.className = "rcard";
+    badge.appendChild(sq);
+  }
+  el.appendChild(badge);
+}
+
 function applyValues(data){
   const values = data.values || {};
   const scorers = data.scorers || {};
@@ -343,6 +412,11 @@ function applyValues(data){
   for (const id in nodes){
     const el = nodes[id];
     if (el._kind === "clock"){ renderClock(el, clocks[id]); continue; }
+    if (el._kind === "cards"){                       // group printed-name badge
+      const k = scorerKeyForTeam(id);
+      renderCards(el, countRedCards(k ? scorers[k] : ""));
+      continue;
+    }
     const v = (values[id] ?? "").toString();
     // Score boxes may carry a penalty superscript; everything else is plain.
     if (el._kind === "score") renderScore(el._txt, v);
@@ -354,9 +428,48 @@ function applyValues(data){
       const sc = (v !== "" && scorers[id]) ? scorers[id] : "";
       setTooltip(el, sc);
     }
+    // Knockout NAME fields carry their own red-card corner badge (groups use
+    // the separate "cards" anchors above). Build it from the name's score row.
+    if (el._kind === "name"){
+      let badge = el.querySelector(":scope > .cardbadge");
+      if (badge) badge.remove();
+      const k = scorerKeyForTeam(id);
+      const n = countRedCards(k ? scorers[k] : "");
+      if (n > 0 && v !== ""){      // only show on a known (filled) team
+        if (!el.dataset.corner){
+          // knockout: outer corner = away from the score box. Left-bracket
+          // names have the score on their right, so the OUTER corner is LEFT;
+          // right-bracket names have score on the left -> outer corner RIGHT.
+          el.dataset.corner = (parseFloat(el.style.left) < 50) ? "left" : "right";
+        }
+        renderCardsInto(el, n);
+        el.classList.add("has-cards");
+      } else {
+        el.classList.remove("has-cards");
+      }
+    }
   }
   // Refit after the DOM updates so measurements are accurate.
   requestAnimationFrame(() => { for (const id in nodes) fitText(nodes[id]); });
+}
+
+// Append a card badge to an element that ALSO holds text (knockout name box),
+// without wiping its text content.
+function renderCardsInto(el, n){
+  const badge = document.createElement("span");
+  badge.className = "cardbadge";
+  const corner = el.dataset.corner || "right";
+  badge.style.top = "0";
+  if (corner === "left"){ badge.style.right = "100%"; badge.style.marginRight = "0.2em"; }
+  else { badge.style.left = "100%"; badge.style.marginLeft = "0.2em"; }
+  // size the squares relative to the name box height
+  badge.style.fontSize = "min(50cqh, 1.4cqw)";
+  for (let i = 0; i < Math.min(n, 3); i++){
+    const sq = document.createElement("span");
+    sq.className = "rcard";
+    badge.appendChild(sq);
+  }
+  el.appendChild(badge);
 }
 
 // Attach (or clear) an accessible scorer tooltip on a score box. A box with
