@@ -208,32 +208,60 @@ This row is **not drawn on the chart** — it only feeds the status bar. You can
 - **Auto-fill it** (recommended) — add the tiny Apps Script below so the cell
   stamps itself every time you edit any score.
 
-### Optional: auto-stamp on every edit
+### Apps Script: live heartbeat + auto-stamp
+
+The page reads the sheet through gviz, which serves a **saved snapshot**. A
+formula that recalculates on a timer (like the live `Clock`, driven by `NOW()`)
+updates the Sheets UI but is **not** pushed to gviz until the sheet is actually
+*written* to. So a tiny script must "touch" the sheet on a schedule — that write
+forces a recalculation **and** refreshes the gviz snapshot, so the live clocks
+reach the page. (Without it, clocks only update when you manually edit a cell.)
 
 1. In your sheet: **Extensions → Apps Script**.
 2. Replace the contents with this, then **Save**:
 
    ```js
-   function onEdit(e) {
-     const sh = e.range.getSheet();
-     if (sh.getName() !== "Scores") return;        // match your tab name
-     // find the row whose "Field ID" is "_updated" and stamp its "Value"
-     const data = sh.getRange(1, 1, sh.getLastRow(), 3).getValues();
-     const header = data[0];
-     const idCol = header.indexOf("Field ID");
-     const valCol = header.indexOf("Value");
-     for (let r = 1; r < data.length; r++) {
-       if (String(data[r][idCol]).trim() === "_updated") {
-         sh.getRange(r + 1, valCol + 1).setValue(new Date().toISOString());
-         break;
+   const TAB = "Scores";   // your tab name
+
+   // Write the current time into the _updated cell. This single write forces
+   // Sheets to recalc NOW()-based formulas (the live clocks) AND refreshes the
+   // gviz snapshot the web page reads.
+   function heartbeat() {
+     const sh = SpreadsheetApp.getActive().getSheetByName(TAB);
+     if (!sh) return;
+     const data = sh.getRange(1, 1, sh.getLastRow(), 2).getValues();
+     for (let r = 0; r < data.length; r++) {
+       if (String(data[r][1]).trim() === "_updated") {       // col B = Field ID
+         // _updated is column C (Value). Adjust if your columns differ.
+         sh.getRange(r + 1, 3).setValue(new Date().toISOString());
+         SpreadsheetApp.flush();                              // commit the write
+         return;
        }
      }
    }
+
+   // Keep an on-edit stamp too, so manual edits refresh immediately.
+   function onEdit(e) {
+     if (e.range.getSheet().getName() === TAB) heartbeat();
+   }
    ```
 
-3. That's it — `onEdit` is a simple trigger that runs automatically (no manual
-   authorization needed for basic edits). Now every score change refreshes the
-   `_updated` cell, and the page shows it within ~30s.
+3. **Add the time-driven trigger:** in the Apps Script editor, click the
+   **Triggers** (clock) icon → **Add Trigger** →
+   - Function: **`heartbeat`**
+   - Event source: **Time-driven** → **Minutes timer** → **Every minute**
+   - Save (authorise the script when prompted).
+
+That's it. The `_updated` cell now refreshes once a minute, which ticks the live
+clocks **and** publishes them to the page. Your "last updated" status bar also
+stays genuinely live as a bonus.
+
+> **Note on cadence:** Apps Script's fastest time-driven trigger is **once per
+> minute**, so the clocks advance at minute resolution — exactly right for a
+> match clock. End-to-end latency is that minute, plus your page's poll
+> (`REFRESH_MS`, default 30s) and gviz's short cache, so a change can take up to
+> ~1–2 minutes to appear. That's normal and fine for a game clock. (Manual edits
+> still refresh immediately via `onEdit`.)
 
 ## How the live read works
 
