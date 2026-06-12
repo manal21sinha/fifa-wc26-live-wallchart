@@ -132,8 +132,8 @@
     gap: 0.18em; pointer-events: none;
   }
   .cardbadge .rcard {
-    width: 1em; height: 1.35em; border-radius: 0.18em;
-    background: #e2241a; box-shadow: 0 0 0 0.08em rgba(0,0,0,.35);
+    width: 0.85em; height: 1.15em; border-radius: 0.16em;
+    background: #e2241a; box-shadow: 0 0 0 0.07em rgba(0,0,0,.35);
   }
 
   /* Score box with scorers: hint that it's interactive. */
@@ -268,8 +268,8 @@ async function buildOverlay(){
       // small red squares is built in applyValues. No kaleidoscope/text.
       el.className = "fld cards";
       el.dataset.corner = f.corner || "right";   // outer corner for the badge
-      // square size scales with the chart height
-      el.style.fontSize = `min(${f.height * 0.5}cqh, 1.4cqw)`;
+      // square size scales with the chart height; small, ~clock-pill scale.
+      el.style.fontSize = `min(${f.height * 0.30}cqh, 0.85cqw)`;
       nodes[f.id] = el;
       chart.appendChild(el);
       continue;
@@ -462,8 +462,8 @@ function renderCardsInto(el, n){
   badge.style.top = "0";
   if (corner === "left"){ badge.style.right = "100%"; badge.style.marginRight = "0.2em"; }
   else { badge.style.left = "100%"; badge.style.marginLeft = "0.2em"; }
-  // size the squares relative to the name box height
-  badge.style.fontSize = "min(50cqh, 1.4cqw)";
+  // size the squares relative to the name box height; small, ~clock-pill scale.
+  badge.style.fontSize = "min(30cqh, 0.85cqw)";
   for (let i = 0; i < Math.min(n, 3); i++){
     const sq = document.createElement("span");
     sq.className = "rcard";
