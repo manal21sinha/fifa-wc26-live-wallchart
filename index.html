@@ -124,14 +124,19 @@
   .fld.score[data-tip]{ cursor: help; }
   .fld.score[data-tip]:focus-visible{ outline: 2px solid #2b8fc4; outline-offset: 1px; }
 
-  /* Scorer tooltip bubble — a single shared element positioned in JS. */
+  /* Scorer popover — lives INSIDE #chart so it scales with the chart under
+     both Mac page-zoom AND iOS pinch-zoom (a position:fixed element would stay
+     screen-sized under iOS visual-viewport zoom and look oversized). Sized in
+     container-query units so its text tracks the chart's on-screen size. */
   #tip {
-    position: fixed; z-index: 100; max-width: 260px;
-    background: #07131c; color: #eaf4fa; border: 1px solid #2b6b8c;
-    border-radius: 7px; padding: 6px 9px; font-size: 13px; line-height: 1.35;
-    box-shadow: 0 6px 20px rgba(0,0,0,.35);
-    pointer-events: none; opacity: 0; transform: translateY(3px);
+    position: absolute; z-index: 100; max-width: 34cqw;
+    background: #07131c; color: #eaf4fa; border: 0.12cqh solid #2b6b8c;
+    border-radius: 1cqh; padding: 0.7cqh 1cqh;
+    font-size: 1.5cqh; line-height: 1.3;
+    box-shadow: 0 0.4cqh 1.4cqh rgba(0,0,0,.35);
+    pointer-events: none; opacity: 0; transform: translateY(0.4cqh);
     transition: opacity .12s ease, transform .12s ease;
+    white-space: normal;
   }
   #tip.show { opacity: 1; transform: translateY(0); }
 </style>
@@ -142,9 +147,7 @@
     <span id="status"><span class="dot"></span><span id="statusText">loading…</span></span>
   </div>
 
-  <div id="tip" role="tooltip" aria-hidden="true"></div>
-
-  <div id="wrap"><div id="chart"><img id="bg" alt="World Cup 2026 wall chart" /></div></div>
+  <div id="wrap"><div id="chart"><img id="bg" alt="World Cup 2026 wall chart" /><div id="tip" role="tooltip" aria-hidden="true"></div></div></div>
   <p id="hint"></p>
 
 <script src="config.js"></script>
@@ -400,23 +403,33 @@ function formatStamp(s){
   return isNaN(d.getTime()) ? s : d.toLocaleString();
 }
 
-// ── Scorer tooltip (one shared bubble, positioned over the focused/hovered box)
+// ── Scorer popover (one shared element, INSIDE #chart so it scales with zoom)
 const tipEl = document.getElementById("tip");
 function showTip(box){
   const text = box.dataset.tip;
   if (!text) return;
   tipEl.textContent = text;
+  // Make it measurable, then position in CHART-RELATIVE % (so it stays correct
+  // under both Mac page-zoom and iOS pinch-zoom — it's a child of #chart).
   tipEl.classList.add("show");
   tipEl.setAttribute("aria-hidden", "false");
-  // Position above the box, clamped to the viewport.
-  const r = box.getBoundingClientRect();
-  const tr = tipEl.getBoundingClientRect();
-  let left = r.left + r.width / 2 - tr.width / 2;
-  left = Math.max(6, Math.min(left, window.innerWidth - tr.width - 6));
-  let top = r.top - tr.height - 8;
-  if (top < 6) top = r.bottom + 8;          // flip below if no room above
-  tipEl.style.left = left + "px";
-  tipEl.style.top = top + "px";
+  const c = chart.getBoundingClientRect();
+  const b = box.getBoundingClientRect();
+  const t = tipEl.getBoundingClientRect();
+  if (!c.width || !c.height) return;
+  // box centre and edges, in px relative to the chart's top-left
+  const boxCx = (b.left + b.right) / 2 - c.left;
+  const boxTop = b.top - c.top;
+  const boxBot = b.bottom - c.top;
+  // centre the tip on the box horizontally; clamp within the chart
+  let leftPx = boxCx - t.width / 2;
+  leftPx = Math.max(4, Math.min(leftPx, c.width - t.width - 4));
+  // prefer above the box; flip below if it would clip the top
+  let topPx = boxTop - t.height - 6;
+  if (topPx < 4) topPx = boxBot + 6;
+  // store as % of the chart so it tracks any scaling
+  tipEl.style.left = (leftPx / c.width * 100) + "%";
+  tipEl.style.top  = (topPx / c.height * 100) + "%";
 }
 function hideTip(){
   tipEl.classList.remove("show");
