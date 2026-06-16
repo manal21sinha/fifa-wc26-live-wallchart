@@ -3486,10 +3486,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 57.5588,
-      "top": 42.1322,
-      "width": 1.4829,
-      "height": 4.2333
+      "left": 57.1075,
+      "top": 39.7114,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko01_top_score",
@@ -3627,10 +3627,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 40.9237,
-      "top": 42.1322,
-      "width": 1.4829,
-      "height": 4.2333
+      "left": 41.3477,
+      "top": 39.7114,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko04_top_score",
@@ -3674,10 +3674,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 76.1821,
-      "top": 21.1727,
-      "width": 1.4841,
-      "height": 4.2363
+      "left": 84.2751,
+      "top": 18.7518,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko05_top_score",
@@ -3721,10 +3721,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 76.1896,
-      "top": 29.5585,
-      "width": 1.4841,
-      "height": 4.2362
+      "left": 84.2826,
+      "top": 27.1377,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko06_top_score",
@@ -3768,10 +3768,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 76.1896,
-      "top": 37.9444,
-      "width": 1.4841,
-      "height": 4.2363
+      "left": 84.2826,
+      "top": 35.5236,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko07_top_score",
@@ -3815,10 +3815,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 76.1896,
-      "top": 46.3302,
-      "width": 1.4841,
-      "height": 4.2363
+      "left": 84.2826,
+      "top": 43.9094,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko08_top_score",
@@ -3862,10 +3862,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 76.1896,
-      "top": 54.7161,
-      "width": 1.4841,
-      "height": 4.2363
+      "left": 84.2826,
+      "top": 52.2953,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko09_top_score",
@@ -3909,10 +3909,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 76.1896,
-      "top": 63.102,
-      "width": 1.4841,
-      "height": 4.2362
+      "left": 84.2826,
+      "top": 60.6759,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko10_top_score",
@@ -3956,10 +3956,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 76.1896,
-      "top": 71.4878,
-      "width": 1.4841,
-      "height": 4.2364
+      "left": 84.2826,
+      "top": 69.067,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko11_top_score",
@@ -4003,10 +4003,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 76.1896,
-      "top": 79.8737,
-      "width": 1.4841,
-      "height": 4.2363
+      "left": 84.2826,
+      "top": 77.4529,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko12_top_score",
@@ -4050,10 +4050,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 67.0817,
-      "top": 25.3672,
-      "width": 1.4818,
-      "height": 4.2301
+      "left": 75.1606,
+      "top": 22.9419,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko13_top_score",
@@ -4097,10 +4097,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 67.0817,
-      "top": 42.1389,
-      "width": 1.4818,
-      "height": 4.2301
+      "left": 75.1606,
+      "top": 39.7136,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko14_top_score",
@@ -4144,10 +4144,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 67.0817,
-      "top": 58.9107,
-      "width": 1.4818,
-      "height": 4.2299
+      "left": 75.1606,
+      "top": 56.4854,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko15_top_score",
@@ -4191,10 +4191,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "R",
-      "left": 67.0817,
-      "top": 75.6824,
-      "width": 1.4818,
-      "height": 4.23
+      "left": 75.1606,
+      "top": 73.2571,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko16_top_score",
@@ -4379,10 +4379,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 22.3032,
-      "top": 21.1716,
-      "width": 1.4856,
-      "height": 4.2403
+      "left": 14.177,
+      "top": 18.7508,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko20_top_score",
@@ -4426,10 +4426,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 22.3032,
-      "top": 29.5575,
-      "width": 1.4856,
-      "height": 4.2402
+      "left": 14.177,
+      "top": 27.1325,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko21_top_score",
@@ -4473,10 +4473,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 22.3032,
-      "top": 37.9433,
-      "width": 1.4856,
-      "height": 4.2403
+      "left": 14.177,
+      "top": 35.5226,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko22_top_score",
@@ -4520,10 +4520,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 22.3032,
-      "top": 46.3292,
-      "width": 1.4856,
-      "height": 4.2402
+      "left": 14.177,
+      "top": 43.9042,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko23_top_score",
@@ -4567,10 +4567,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 22.3032,
-      "top": 54.715,
-      "width": 1.4856,
-      "height": 4.2403
+      "left": 14.177,
+      "top": 52.2943,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko24_top_score",
@@ -4614,10 +4614,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 22.3032,
-      "top": 63.1009,
-      "width": 1.4856,
-      "height": 4.2403
+      "left": 14.177,
+      "top": 60.6759,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko25_top_score",
@@ -4661,10 +4661,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 22.3032,
-      "top": 71.4868,
-      "width": 1.4856,
-      "height": 4.2402
+      "left": 14.177,
+      "top": 69.066,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko26_top_score",
@@ -4708,10 +4708,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 22.3032,
-      "top": 79.8727,
-      "width": 1.4856,
-      "height": 4.2401
+      "left": 14.177,
+      "top": 77.4546,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko27_top_score",
@@ -4802,10 +4802,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 31.4041,
-      "top": 25.3672,
-      "width": 1.4818,
-      "height": 4.23
+      "left": 23.2994,
+      "top": 22.9464,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko29_top_score",
@@ -4849,10 +4849,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 31.4041,
-      "top": 42.1389,
-      "width": 1.4818,
-      "height": 4.2301
+      "left": 23.2994,
+      "top": 39.7139,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko30_top_score",
@@ -4896,10 +4896,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 31.4027,
-      "top": 58.9107,
-      "width": 1.4818,
-      "height": 4.2299
+      "left": 23.2994,
+      "top": 56.4898,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko31_top_score",
@@ -4943,10 +4943,10 @@
       "stage": "knockout",
       "layout": "two-row",
       "side": "L",
-      "left": 31.4027,
-      "top": 75.6824,
-      "width": 1.4818,
-      "height": 4.23
+      "left": 23.2994,
+      "top": 73.2616,
+      "width": 1.5101,
+      "height": 1.9754
     },
     {
       "id": "ko32_top_score",
