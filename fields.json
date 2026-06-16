@@ -1758,10 +1758,10 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3532,
-      "top": 5.007,
-      "width": 0.8648,
-      "height": 0.612
+      "left": 92.6766,
+      "top": 5.0133,
+      "width": 0.7708,
+      "height": 0.6128
     },
     {
       "id": "group37_home_cards",
@@ -1806,10 +1806,10 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3481,
-      "top": 7.2695,
-      "width": 0.867,
-      "height": 0.612
+      "left": 92.6715,
+      "top": 7.2793,
+      "width": 0.7768,
+      "height": 0.6128
     },
     {
       "id": "group38_home_cards",
@@ -1854,10 +1854,10 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3481,
-      "top": 9.5435,
-      "width": 0.8698,
-      "height": 0.612
+      "left": 92.6715,
+      "top": 9.557,
+      "width": 0.8541,
+      "height": 0.6128
     },
     {
       "id": "group39_home_cards",
@@ -1902,10 +1902,10 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3481,
-      "top": 11.8176,
-      "width": 0.7852,
-      "height": 0.612
+      "left": 92.6715,
+      "top": 11.8347,
+      "width": 0.7759,
+      "height": 0.6128
     },
     {
       "id": "group40_home_cards",
@@ -1950,10 +1950,10 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3481,
-      "top": 14.0916,
-      "width": 0.7061,
-      "height": 0.612
+      "left": 92.6715,
+      "top": 14.1123,
+      "width": 0.8532,
+      "height": 0.6128
     },
     {
       "id": "group41_home_cards",
@@ -1998,10 +1998,10 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3481,
-      "top": 16.3657,
-      "width": 0.7852,
-      "height": 0.612
+      "left": 92.6715,
+      "top": 16.39,
+      "width": 0.7656,
+      "height": 0.6128
     },
     {
       "id": "group42_home_cards",
@@ -2046,9 +2046,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3578,
-      "top": 20.7177,
-      "width": 0.7497,
+      "left": 92.6772,
+      "top": 20.7127,
+      "width": 0.7718,
       "height": 0.6128
     },
     {
@@ -2094,9 +2094,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3527,
-      "top": 22.9838,
-      "width": 0.7548,
+      "left": 92.672,
+      "top": 22.9789,
+      "width": 0.7238,
       "height": 0.6128
     },
     {
@@ -2142,9 +2142,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3527,
-      "top": 25.2615,
-      "width": 0.7548,
+      "left": 92.672,
+      "top": 25.2565,
+      "width": 0.7583,
       "height": 0.6128
     },
     {
@@ -2190,9 +2190,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3527,
-      "top": 27.5392,
-      "width": 0.7604,
+      "left": 92.672,
+      "top": 27.5342,
+      "width": 0.7779,
       "height": 0.6128
     },
     {
@@ -2238,9 +2238,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3527,
-      "top": 29.8167,
-      "width": 0.7418,
+      "left": 92.672,
+      "top": 29.8119,
+      "width": 0.7592,
       "height": 0.6128
     },
     {
@@ -2286,9 +2286,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3527,
-      "top": 32.0943,
-      "width": 0.7604,
+      "left": 92.672,
+      "top": 32.0894,
+      "width": 0.8086,
       "height": 0.6128
     },
     {
@@ -2334,9 +2334,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3617,
-      "top": 36.45,
-      "width": 0.7445,
+      "left": 92.6778,
+      "top": 36.445,
+      "width": 0.817,
       "height": 0.6128
     },
     {
@@ -2382,9 +2382,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3566,
-      "top": 38.7162,
-      "width": 0.948,
+      "left": 92.6727,
+      "top": 38.7112,
+      "width": 0.7504,
       "height": 0.6128
     },
     {
@@ -2430,9 +2430,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3566,
-      "top": 40.9938,
-      "width": 0.7496,
+      "left": 92.6727,
+      "top": 40.9889,
+      "width": 0.85,
       "height": 0.6128
     },
     {
@@ -2478,9 +2478,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3566,
-      "top": 43.2714,
-      "width": 0.9778,
+      "left": 92.6727,
+      "top": 43.2664,
+      "width": 0.8221,
       "height": 0.6128
     },
     {
@@ -2526,9 +2526,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3566,
-      "top": 45.5491,
-      "width": 0.8548,
+      "left": 92.6727,
+      "top": 45.5441,
+      "width": 0.7997,
       "height": 0.6128
     },
     {
@@ -2574,9 +2574,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3566,
-      "top": 47.8267,
-      "width": 0.9778,
+      "left": 92.6727,
+      "top": 47.8217,
+      "width": 0.85,
       "height": 0.6128
     },
     {
@@ -2622,9 +2622,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.358,
+      "left": 92.6798,
       "top": 52.1817,
-      "width": 0.7415,
+      "width": 0.8061,
       "height": 0.6128
     },
     {
@@ -2670,9 +2670,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3529,
+      "left": 92.6746,
       "top": 54.4478,
-      "width": 0.7894,
+      "width": 0.8001,
       "height": 0.6128
     },
     {
@@ -2718,9 +2718,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3529,
-      "top": 56.7255,
-      "width": 0.7782,
+      "left": 92.6746,
+      "top": 56.7254,
+      "width": 0.8085,
       "height": 0.6128
     },
     {
@@ -2766,9 +2766,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3529,
+      "left": 92.6746,
       "top": 59.0031,
-      "width": 0.7466,
+      "width": 0.8113,
       "height": 0.6128
     },
     {
@@ -2814,9 +2814,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3529,
+      "left": 92.6746,
       "top": 61.2807,
-      "width": 0.7782,
+      "width": 0.8085,
       "height": 0.6128
     },
     {
@@ -2862,9 +2862,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3529,
+      "left": 92.6746,
       "top": 63.5584,
-      "width": 0.7782,
+      "width": 0.761,
       "height": 0.6128
     },
     {
@@ -2910,9 +2910,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3565,
-      "top": 67.9038,
-      "width": 0.7746,
+      "left": 92.6771,
+      "top": 67.9037,
+      "width": 0.7672,
       "height": 0.6128
     },
     {
@@ -2958,9 +2958,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3513,
+      "left": 92.672,
       "top": 70.1698,
-      "width": 0.8179,
+      "width": 0.8282,
       "height": 0.6128
     },
     {
@@ -3006,9 +3006,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3513,
+      "left": 92.672,
       "top": 72.4475,
-      "width": 0.9064,
+      "width": 0.7463,
       "height": 0.6128
     },
     {
@@ -3054,9 +3054,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3513,
+      "left": 92.672,
       "top": 74.7251,
-      "width": 0.7788,
+      "width": 0.7733,
       "height": 0.6128
     },
     {
@@ -3102,9 +3102,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3513,
+      "left": 92.672,
       "top": 77.0028,
-      "width": 0.9064,
+      "width": 0.7556,
       "height": 0.6128
     },
     {
@@ -3150,9 +3150,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3513,
+      "left": 92.672,
       "top": 79.2804,
-      "width": 0.7881,
+      "width": 0.7463,
       "height": 0.6128
     },
     {
@@ -3198,9 +3198,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.359,
-      "top": 83.6334,
-      "width": 0.8246,
+      "left": 92.6783,
+      "top": 83.6317,
+      "width": 0.7893,
       "height": 0.6128
     },
     {
@@ -3246,9 +3246,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3538,
-      "top": 85.8994,
-      "width": 0.8325,
+      "left": 92.6731,
+      "top": 85.8978,
+      "width": 0.7479,
       "height": 0.6128
     },
     {
@@ -3294,9 +3294,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3538,
-      "top": 88.1771,
-      "width": 0.7459,
+      "left": 92.6731,
+      "top": 88.1754,
+      "width": 0.746,
       "height": 0.6128
     },
     {
@@ -3342,9 +3342,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3538,
-      "top": 90.4548,
-      "width": 0.8297,
+      "left": 92.6731,
+      "top": 90.4531,
+      "width": 0.7945,
       "height": 0.6128
     },
     {
@@ -3390,9 +3390,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3538,
-      "top": 92.7324,
-      "width": 0.7459,
+      "left": 92.6731,
+      "top": 92.7307,
+      "width": 0.7889,
       "height": 0.6128
     },
     {
@@ -3438,9 +3438,9 @@
       "kind": "clock",
       "stage": "group",
       "layout": "two-row",
-      "left": 8.3538,
-      "top": 95.0101,
-      "width": 0.8204,
+      "left": 92.6731,
+      "top": 95.0084,
+      "width": 0.747,
       "height": 0.6128
     },
     {
