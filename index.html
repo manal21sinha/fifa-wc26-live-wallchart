@@ -36,7 +36,8 @@
   }
   body.fit #chart { width: auto; }      /* explicit px width set in JS */
   body.fit #hint { display: none; }     /* hide the hint on a TV; keep credit */
-  body.fit #credit { text-align: center; padding: 4px 14px; }
+  body.fit #credit { text-align: center; padding: 4px 14px 2px; }
+  body.fit #built-by { display: none; } /* hide Claude attribution on a TV */
 
   .fld {
     position: absolute; display: flex; align-items: center; justify-content: center;
@@ -119,8 +120,10 @@
   }
 
   #hint { color:#9fc2d4; font-size:13px; padding:10px 14px; }
-  #credit { color:#7fa6bb; font-size:12px; padding:0 14px 14px; margin:0; }
+  #credit { color:#7fa6bb; font-size:12px; padding:0 14px 6px; margin:0; }
   #credit a { color:#6fd0ee; }
+  #built-by { color:#5a7a8a; font-size:11px; padding:0 14px 14px; margin:0; font-style:italic; }
+  #built-by a { color:#4da8c8; }
   code { background:#13303f; padding:1px 5px; border-radius:4px; }
 
   /* Red-card corner badge: a small vertical stack of red squares overlaid on a
@@ -188,6 +191,7 @@
   <div id="wrap"><div id="chart"><img id="bg" alt="World Cup 2026 wall chart" /><div id="tip" role="tooltip" aria-hidden="true"></div></div></div>
   <p id="hint"></p>
   <p id="credit">Original wall chart artwork from the <a href="https://downloads.bbc.co.uk/england/pdf/BBC_WC_26_WALL_CHART.pdf">BBC</a>.</p>
+  <p id="built-by">Designed and built with <a href="https://www.anthropic.com/claude">Claude Opus 4.8</a>, with a little help from <a href="https://www.anthropic.com/claude">Sonnet 4.6</a>.</p>
 
 <script src="config.js"></script>
 <script>

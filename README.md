@@ -1,6 +1,7 @@
 # FIFA World Cup 2026 — Live Wall Chart (Google Sheets backend)
 
 Original wall chart artwork from the [BBC](https://downloads.bbc.co.uk/england/pdf/BBC_WC_26_WALL_CHART.pdf).
+Designed and built with [Claude Opus 4.8](https://www.anthropic.com/claude), with a little help from [Sonnet 4.6](https://www.anthropic.com/claude).
 
 A single-page, mobile-friendly web wall chart. Scores and knockout team names
 live in a **Google Sheet**; the page reads them live and refreshes every
@@ -64,6 +65,8 @@ window.CHART_CONFIG = {
   VALUE_COLUMN: "Value",
   SCORERS_COLUMN: "Scorers",
   CLOCK_COLUMN: "Clock",
+  XG_COLUMN: "xG",
+  POSSESSION_COLUMN: "Possession",
   REFRESH_MS: 30000,
 };
 ```
@@ -171,6 +174,51 @@ knockout → the side away from the score box).
   badge caps at 3 to stay compact).
 - Group team names show the badge always; knockout names show it once the team
   name is filled in.
+
+## xG and possession stats
+
+You can record **expected goals (xG)** and **possession** for each team in
+each match. The sheet columns are already declared in the template — just add
+them to your live sheet if you haven't already (two columns to the right of
+`Anchor`): header **`xG`** in one column, header **`Possession`** in the next.
+
+### Expected goals (xG)
+
+Type the xG value in the **`xG`** column on **each team's score row**, in the
+format `x.yz` (e.g. `1.74`, `0.82`).
+
+| Description | Field ID | xG |
+|---|---|---|
+| … · MEX score | `group01_home_score` | `1.74` |
+| … · RSA score | `group01_away_score` | `0.82` |
+
+- Works for **all** score rows (group home, group away, knockout top, knockout
+  bottom).
+- When you hover or keyboard-focus a **score box that already has a value**, the
+  tooltip shows the **goalscorer lines** (from the Scorers column) *and* an
+  **`xG: x.yz`** line below them — both in one combined popover.
+- If neither Scorers nor xG is filled, no tooltip appears.
+
+### Possession
+
+Enter the **home/top team's possession percentage** (a whole number, e.g. `58`)
+in the **`Possession`** column on that team's score row only. The away/bottom
+side is computed automatically as `100 − home`.
+
+| Description | Field ID | Possession |
+|---|---|---|
+| … · MEX score | `group01_home_score` | `58` |
+| … · RSA score | `group01_away_score` | *(leave blank — auto-computed)* |
+
+- Works for **all** matches (group and knockout).
+- When you hover or keyboard-focus the **VS circle** in a match, a tooltip
+  appears with a **"POSSESSION" label** and a horizontal two-tone bar:
+  the home team's share in **dark navy** (`#0D2032`) and the away team's share
+  in **warm red** (`#FF5049`), with each percentage labeled inside the bar.
+- If the Possession cell is blank for a match, hovering the VS circle shows
+  **nothing** — the tooltip only appears once data is entered.
+- A value under 7% or over 93% is **clamped** in the bar (so neither side
+  vanishes), but the percentage displayed is always the raw value you entered.
 
 ## Live game clock
 
