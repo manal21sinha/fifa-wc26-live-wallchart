@@ -55,6 +55,15 @@
       "height": 1.4254
     },
     {
+      "id": "group01_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4583,
+      "top": 4.4853,
+      "width": 0.8089,
+      "height": 1.1452
+    },
+    {
       "id": "group02_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -101,6 +110,15 @@
       "top": 6.5956,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group02_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4532,
+      "top": 6.7478,
+      "width": 0.8089,
+      "height": 1.1452
     },
     {
       "id": "group03_away_cards",
@@ -151,6 +169,15 @@
       "height": 1.4254
     },
     {
+      "id": "group03_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4532,
+      "top": 9.0218,
+      "width": 0.8089,
+      "height": 1.1452
+    },
+    {
       "id": "group04_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -197,6 +224,15 @@
       "top": 11.1436,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group04_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4532,
+      "top": 11.2959,
+      "width": 0.8089,
+      "height": 1.1452
     },
     {
       "id": "group05_away_cards",
@@ -247,6 +283,15 @@
       "height": 1.4254
     },
     {
+      "id": "group05_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4532,
+      "top": 13.57,
+      "width": 0.8089,
+      "height": 1.1452
+    },
+    {
       "id": "group06_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -293,6 +338,15 @@
       "top": 15.6918,
       "width": 1.2452,
       "height": 1.4254
+    },
+    {
+      "id": "group06_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4532,
+      "top": 15.844,
+      "width": 0.8089,
+      "height": 1.1452
     },
     {
       "id": "group07_away_cards",
@@ -343,6 +397,15 @@
       "height": 1.4254
     },
     {
+      "id": "group07_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4619,
+      "top": 20.1956,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group08_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -389,6 +452,15 @@
       "top": 22.3103,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group08_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4568,
+      "top": 22.4617,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group09_away_cards",
@@ -439,6 +511,15 @@
       "height": 1.4254
     },
     {
+      "id": "group09_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4568,
+      "top": 24.7393,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group10_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -485,6 +566,15 @@
       "top": 26.8656,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group10_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4568,
+      "top": 27.017,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group11_away_cards",
@@ -535,6 +625,15 @@
       "height": 1.4254
     },
     {
+      "id": "group11_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4568,
+      "top": 29.2946,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group12_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -581,6 +680,15 @@
       "top": 31.4208,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group12_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4568,
+      "top": 31.5723,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group13_away_cards",
@@ -631,6 +739,15 @@
       "height": 1.4254
     },
     {
+      "id": "group13_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4659,
+      "top": 35.9279,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group14_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -677,6 +794,15 @@
       "top": 38.0427,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group14_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4608,
+      "top": 38.194,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group15_away_cards",
@@ -727,6 +853,15 @@
       "height": 1.4254
     },
     {
+      "id": "group15_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4608,
+      "top": 40.4716,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group16_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -773,6 +908,15 @@
       "top": 42.5979,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group16_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4608,
+      "top": 42.7493,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group17_away_cards",
@@ -823,6 +967,15 @@
       "height": 1.4254
     },
     {
+      "id": "group17_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4608,
+      "top": 45.027,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group18_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -869,6 +1022,15 @@
       "top": 47.1532,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group18_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4608,
+      "top": 47.3046,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group19_away_cards",
@@ -919,6 +1081,15 @@
       "height": 1.4254
     },
     {
+      "id": "group19_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4621,
+      "top": 51.6596,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group20_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -965,6 +1136,15 @@
       "top": 53.7743,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group20_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.457,
+      "top": 53.9257,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group21_away_cards",
@@ -1015,6 +1195,15 @@
       "height": 1.4254
     },
     {
+      "id": "group21_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.457,
+      "top": 56.2033,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group22_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -1061,6 +1250,15 @@
       "top": 58.3296,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group22_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.457,
+      "top": 58.481,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group23_away_cards",
@@ -1111,6 +1309,15 @@
       "height": 1.4254
     },
     {
+      "id": "group23_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.457,
+      "top": 60.7587,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group24_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -1157,6 +1364,15 @@
       "top": 62.8849,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group24_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.457,
+      "top": 63.0363,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group25_away_cards",
@@ -1207,6 +1423,15 @@
       "height": 1.4254
     },
     {
+      "id": "group25_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4606,
+      "top": 67.3816,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group26_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -1253,6 +1478,15 @@
       "top": 69.4963,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group26_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4554,
+      "top": 69.6477,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group27_away_cards",
@@ -1303,6 +1537,15 @@
       "height": 1.4254
     },
     {
+      "id": "group27_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4554,
+      "top": 71.9254,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group28_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -1349,6 +1592,15 @@
       "top": 74.0515,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group28_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4554,
+      "top": 74.203,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group29_away_cards",
@@ -1399,6 +1651,15 @@
       "height": 1.4254
     },
     {
+      "id": "group29_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4554,
+      "top": 76.4807,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group30_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -1445,6 +1706,15 @@
       "top": 78.6069,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group30_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4554,
+      "top": 78.7583,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group31_away_cards",
@@ -1495,6 +1765,15 @@
       "height": 1.4254
     },
     {
+      "id": "group31_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.4631,
+      "top": 83.1112,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group32_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -1541,6 +1820,15 @@
       "top": 85.2259,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group32_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.458,
+      "top": 85.3773,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group33_away_cards",
@@ -1591,6 +1879,15 @@
       "height": 1.4254
     },
     {
+      "id": "group33_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.458,
+      "top": 87.655,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group34_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -1637,6 +1934,15 @@
       "top": 89.7812,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group34_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.458,
+      "top": 89.9326,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group35_away_cards",
@@ -1687,6 +1993,15 @@
       "height": 1.4254
     },
     {
+      "id": "group35_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.458,
+      "top": 92.2103,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group36_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -1733,6 +2048,15 @@
       "top": 94.3365,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group36_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 7.458,
+      "top": 94.4879,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group37_away_cards",
@@ -1783,6 +2107,15 @@
       "height": 1.4254
     },
     {
+      "id": "group37_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7807,
+      "top": 4.4911,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group38_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -1829,6 +2162,15 @@
       "top": 6.6058,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group38_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7756,
+      "top": 6.7572,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group39_away_cards",
@@ -1879,6 +2221,15 @@
       "height": 1.4254
     },
     {
+      "id": "group39_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7756,
+      "top": 9.0349,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group40_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -1925,6 +2276,15 @@
       "top": 11.1612,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group40_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7756,
+      "top": 11.3125,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group41_away_cards",
@@ -1975,6 +2335,15 @@
       "height": 1.4254
     },
     {
+      "id": "group41_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7756,
+      "top": 13.5902,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group42_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -2021,6 +2390,15 @@
       "top": 15.7165,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group42_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7756,
+      "top": 15.8678,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group43_away_cards",
@@ -2071,6 +2449,15 @@
       "height": 1.4254
     },
     {
+      "id": "group43_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7813,
+      "top": 20.1906,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group44_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -2117,6 +2504,15 @@
       "top": 22.3054,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group44_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7761,
+      "top": 22.4567,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group45_away_cards",
@@ -2167,6 +2563,15 @@
       "height": 1.4254
     },
     {
+      "id": "group45_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7761,
+      "top": 24.7344,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group46_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -2213,6 +2618,15 @@
       "top": 26.8607,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group46_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7761,
+      "top": 27.012,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group47_away_cards",
@@ -2263,6 +2677,15 @@
       "height": 1.4254
     },
     {
+      "id": "group47_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7761,
+      "top": 29.2897,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group48_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -2309,6 +2732,15 @@
       "top": 31.4159,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group48_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7761,
+      "top": 31.5674,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group49_away_cards",
@@ -2359,6 +2791,15 @@
       "height": 1.4254
     },
     {
+      "id": "group49_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7819,
+      "top": 35.923,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group50_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -2405,6 +2846,15 @@
       "top": 38.0377,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group50_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7768,
+      "top": 38.189,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group51_away_cards",
@@ -2455,6 +2905,15 @@
       "height": 1.4254
     },
     {
+      "id": "group51_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7768,
+      "top": 40.4667,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group52_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -2501,6 +2960,15 @@
       "top": 42.5929,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group52_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7768,
+      "top": 42.7443,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group53_away_cards",
@@ -2551,6 +3019,15 @@
       "height": 1.4254
     },
     {
+      "id": "group53_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7768,
+      "top": 45.022,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group54_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -2597,6 +3074,15 @@
       "top": 47.1482,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group54_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7768,
+      "top": 47.2997,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group55_away_cards",
@@ -2647,6 +3133,15 @@
       "height": 1.4254
     },
     {
+      "id": "group55_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7839,
+      "top": 51.6596,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group56_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -2693,6 +3188,15 @@
       "top": 53.7743,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group56_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7787,
+      "top": 53.9256,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group57_away_cards",
@@ -2743,6 +3247,15 @@
       "height": 1.4254
     },
     {
+      "id": "group57_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7787,
+      "top": 56.2033,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group58_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -2789,6 +3302,15 @@
       "top": 58.3296,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group58_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7787,
+      "top": 58.4809,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group59_away_cards",
@@ -2839,6 +3361,15 @@
       "height": 1.4254
     },
     {
+      "id": "group59_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7787,
+      "top": 60.7586,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group60_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -2885,6 +3416,15 @@
       "top": 62.8849,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group60_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7787,
+      "top": 63.0363,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group61_away_cards",
@@ -2935,6 +3475,15 @@
       "height": 1.4254
     },
     {
+      "id": "group61_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7813,
+      "top": 67.3816,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group62_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -2981,6 +3530,15 @@
       "top": 69.4963,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group62_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7761,
+      "top": 69.6477,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group63_away_cards",
@@ -3031,6 +3589,15 @@
       "height": 1.4254
     },
     {
+      "id": "group63_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7761,
+      "top": 71.9254,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group64_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -3077,6 +3644,15 @@
       "top": 74.0515,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group64_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7761,
+      "top": 74.203,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group65_away_cards",
@@ -3127,6 +3703,15 @@
       "height": 1.4254
     },
     {
+      "id": "group65_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7761,
+      "top": 76.4807,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group66_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -3173,6 +3758,15 @@
       "top": 78.6069,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group66_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7761,
+      "top": 78.7583,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group67_away_cards",
@@ -3223,6 +3817,15 @@
       "height": 1.4254
     },
     {
+      "id": "group67_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7824,
+      "top": 83.1096,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group68_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -3269,6 +3872,15 @@
       "top": 85.2243,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group68_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7773,
+      "top": 85.3756,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group69_away_cards",
@@ -3319,6 +3931,15 @@
       "height": 1.4254
     },
     {
+      "id": "group69_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7773,
+      "top": 87.6533,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group70_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -3365,6 +3986,15 @@
       "top": 89.7796,
       "width": 1.2474,
       "height": 1.4254
+    },
+    {
+      "id": "group70_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7773,
+      "top": 89.931,
+      "width": 0.8101,
+      "height": 1.1471
     },
     {
       "id": "group71_away_cards",
@@ -3415,6 +4045,15 @@
       "height": 1.4254
     },
     {
+      "id": "group71_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7773,
+      "top": 92.2086,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "group72_away_cards",
       "kind": "cards",
       "stage": "group",
@@ -3463,6 +4102,15 @@
       "height": 1.4254
     },
     {
+      "id": "group72_poss",
+      "kind": "possession",
+      "stage": "group",
+      "left": 91.7773,
+      "top": 94.4863,
+      "width": 0.8101,
+      "height": 1.1471
+    },
+    {
       "id": "ko01_bottom_score",
       "kind": "score",
       "stage": "knockout",
@@ -3490,6 +4138,15 @@
       "top": 39.7114,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko01_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 54.394,
+      "top": 43.7343,
+      "width": 0.7124,
+      "height": 1.0086
     },
     {
       "id": "ko01_top_score",
@@ -3539,6 +4196,15 @@
       "height": 4.2289
     },
     {
+      "id": "ko02_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 63.3653,
+      "top": 68.0389,
+      "width": 0.7116,
+      "height": 1.0075
+    },
+    {
       "id": "ko02_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -3584,6 +4250,15 @@
       "top": 66.4384,
       "width": 1.4813,
       "height": 4.2289
+    },
+    {
+      "id": "ko03_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 35.8848,
+      "top": 68.0389,
+      "width": 0.7116,
+      "height": 1.0075
     },
     {
       "id": "ko03_top_score",
@@ -3633,6 +4308,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko04_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 44.839,
+      "top": 43.7343,
+      "width": 0.7124,
+      "height": 1.0086
+    },
+    {
       "id": "ko04_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -3678,6 +4362,15 @@
       "top": 18.7518,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko05_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 81.5586,
+      "top": 22.7759,
+      "width": 0.7128,
+      "height": 1.0092
     },
     {
       "id": "ko05_top_score",
@@ -3727,6 +4420,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko06_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 81.5661,
+      "top": 31.1618,
+      "width": 0.7128,
+      "height": 1.0092
+    },
+    {
       "id": "ko06_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -3772,6 +4474,15 @@
       "top": 35.5236,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko07_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 81.5661,
+      "top": 39.5476,
+      "width": 0.7128,
+      "height": 1.0093
     },
     {
       "id": "ko07_top_score",
@@ -3821,6 +4532,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko08_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 81.5661,
+      "top": 47.9335,
+      "width": 0.7128,
+      "height": 1.0093
+    },
+    {
       "id": "ko08_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -3866,6 +4586,15 @@
       "top": 52.2953,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko09_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 81.5661,
+      "top": 56.3193,
+      "width": 0.7128,
+      "height": 1.0093
     },
     {
       "id": "ko09_top_score",
@@ -3915,6 +4644,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko10_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 81.5661,
+      "top": 64.7052,
+      "width": 0.7128,
+      "height": 1.0093
+    },
+    {
       "id": "ko10_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -3960,6 +4698,15 @@
       "top": 69.067,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko11_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 81.5661,
+      "top": 73.0911,
+      "width": 0.7128,
+      "height": 1.0093
     },
     {
       "id": "ko11_top_score",
@@ -4009,6 +4756,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko12_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 81.5661,
+      "top": 81.4769,
+      "width": 0.7128,
+      "height": 1.0093
+    },
+    {
       "id": "ko12_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -4054,6 +4810,15 @@
       "top": 22.9419,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko13_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 72.4505,
+      "top": 26.9681,
+      "width": 0.7118,
+      "height": 1.0078
     },
     {
       "id": "ko13_top_score",
@@ -4103,6 +4868,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko14_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 72.4505,
+      "top": 43.7398,
+      "width": 0.7118,
+      "height": 1.0078
+    },
+    {
       "id": "ko14_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -4148,6 +4922,15 @@
       "top": 56.4854,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko15_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 72.4505,
+      "top": 60.5115,
+      "width": 0.7118,
+      "height": 1.0078
     },
     {
       "id": "ko15_top_score",
@@ -4197,6 +4980,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko16_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 72.4505,
+      "top": 77.2832,
+      "width": 0.7118,
+      "height": 1.0078
+    },
+    {
       "id": "ko16_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -4242,6 +5034,15 @@
       "top": 33.924,
       "width": 1.4813,
       "height": 4.2288
+    },
+    {
+      "id": "ko17_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 35.8848,
+      "top": 35.5244,
+      "width": 0.7116,
+      "height": 1.0075
     },
     {
       "id": "ko17_top_score",
@@ -4291,6 +5092,15 @@
       "height": 4.2288
     },
     {
+      "id": "ko18_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 63.3653,
+      "top": 35.5244,
+      "width": 0.7116,
+      "height": 1.0075
+    },
+    {
       "id": "ko18_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -4336,6 +5146,15 @@
       "top": 88.4251,
       "width": 1.6779,
       "height": 1.8007
+    },
+    {
+      "id": "ko19_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 49.5341,
+      "top": 88.4194,
+      "width": 0.9228,
+      "height": 1.3066
     },
     {
       "id": "ko19_top_score",
@@ -4385,6 +5204,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko20_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 17.6742,
+      "top": 22.7764,
+      "width": 0.7134,
+      "height": 1.0101
+    },
+    {
       "id": "ko20_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -4430,6 +5258,15 @@
       "top": 27.1325,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko21_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 17.6742,
+      "top": 31.1623,
+      "width": 0.7134,
+      "height": 1.0101
     },
     {
       "id": "ko21_top_score",
@@ -4479,6 +5316,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko22_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 17.6742,
+      "top": 39.5481,
+      "width": 0.7134,
+      "height": 1.0101
+    },
+    {
       "id": "ko22_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -4524,6 +5370,15 @@
       "top": 43.9042,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko23_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 17.6742,
+      "top": 47.934,
+      "width": 0.7134,
+      "height": 1.0101
     },
     {
       "id": "ko23_top_score",
@@ -4573,6 +5428,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko24_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 17.6742,
+      "top": 56.3199,
+      "width": 0.7134,
+      "height": 1.0101
+    },
+    {
       "id": "ko24_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -4618,6 +5482,15 @@
       "top": 60.6759,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko25_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 17.6742,
+      "top": 64.7057,
+      "width": 0.7134,
+      "height": 1.0101
     },
     {
       "id": "ko25_top_score",
@@ -4667,6 +5540,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko26_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 17.6742,
+      "top": 73.0916,
+      "width": 0.7134,
+      "height": 1.0101
+    },
+    {
       "id": "ko26_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -4712,6 +5594,15 @@
       "top": 77.4546,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko27_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 17.6742,
+      "top": 81.4774,
+      "width": 0.7134,
+      "height": 1.0101
     },
     {
       "id": "ko27_top_score",
@@ -4761,6 +5652,15 @@
       "height": 4.2288
     },
     {
+      "id": "ko28_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 49.6297,
+      "top": 31.003,
+      "width": 0.7116,
+      "height": 1.0075
+    },
+    {
       "id": "ko28_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -4806,6 +5706,15 @@
       "top": 22.9464,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko29_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 26.7853,
+      "top": 26.9681,
+      "width": 0.7118,
+      "height": 1.0078
     },
     {
       "id": "ko29_top_score",
@@ -4855,6 +5764,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko30_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 26.7853,
+      "top": 43.7398,
+      "width": 0.7118,
+      "height": 1.0078
+    },
+    {
       "id": "ko30_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -4902,6 +5820,15 @@
       "height": 1.9754
     },
     {
+      "id": "ko31_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 26.7839,
+      "top": 60.5115,
+      "width": 0.7118,
+      "height": 1.0078
+    },
+    {
       "id": "ko31_top_score",
       "kind": "score",
       "stage": "knockout",
@@ -4947,6 +5874,15 @@
       "top": 73.2616,
       "width": 1.5101,
       "height": 1.9754
+    },
+    {
+      "id": "ko32_poss",
+      "kind": "possession",
+      "stage": "knockout",
+      "left": 26.7839,
+      "top": 77.2832,
+      "width": 0.7118,
+      "height": 1.0078
     },
     {
       "id": "ko32_top_score",

@@ -140,8 +140,27 @@
   }
 
   /* Score box with scorers: hint that it's interactive. */
-  .fld.score[data-tip]{ cursor: help; }
-  .fld.score[data-tip]:focus-visible{ outline: 2px solid #2b8fc4; outline-offset: 1px; }
+  .fld.score[data-tip], .fld.score[data-xg]{ cursor: help; }
+  .fld.score[data-tip]:focus-visible,
+  .fld.score[data-xg]:focus-visible{ outline: 2px solid #2b8fc4; outline-offset: 1px; }
+
+  /* Possession hover zone (over the VS circle). Transparent but focusable. */
+  .fld.possession { background: none; cursor: pointer; border-radius: 50%; }
+  .fld.possession[data-poss]{ cursor: help; }
+  .fld.possession[data-poss]:focus-visible{ outline: 2px solid #2b8fc4; outline-offset: 2px; border-radius: 50%; }
+
+  /* Possession bar inside the popover. */
+  .possbar {
+    display: flex; height: 2.2cqh; border-radius: 0.5cqh; overflow: hidden;
+    margin-top: 0.6cqh; min-width: 18cqw;
+  }
+  .possbar .home { background: #0D2032; }
+  .possbar .away { background: #FF5049; }
+  .possbar .pct {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2cqh; font-weight: 700; color: #fff; padding: 0 0.4cqh;
+    white-space: nowrap;
+  }
 
   /* Scorer popover — lives INSIDE #chart so it scales with the chart under
      both Mac page-zoom AND iOS pinch-zoom (a position:fixed element would stay
@@ -220,17 +239,21 @@ function tableToData(payload){
   let valIdx = labelIdx(CFG.VALUE_COLUMN);
   let scIdx = labelIdx(CFG.SCORERS_COLUMN);
   let clkIdx = labelIdx(CFG.CLOCK_COLUMN);
-  // Fallback to Description,Field ID,Value,Scorers,Clock order if labels missing.
+  let xgIdx = labelIdx(CFG.XG_COLUMN);
+  let posIdx = labelIdx(CFG.POSSESSION_COLUMN);
+  // Fallback to Description,Field ID,Value,Scorers,Clock,Phase,Anchor,xG,Poss order.
   if (idIdx === -1) idIdx = 1;
   if (valIdx === -1) valIdx = 2;
   if (scIdx === -1) scIdx = 3;
   if (clkIdx === -1) clkIdx = 4;
+  if (xgIdx === -1) xgIdx = 7;
+  if (posIdx === -1) posIdx = 8;
   const cellStr = (cell) => {
     if (!cell) return "";
     const v = (cell.v !== null && cell.v !== undefined) ? cell.v : cell.f;
     return (v === null || v === undefined) ? "" : String(v).trim();
   };
-  const values = {}, scorers = {}, clocks = {};
+  const values = {}, scorers = {}, clocks = {}, xg = {}, possession = {};
   for (const row of rows){
     const c = row.c || [];
     const id = cellStr(c[idIdx]);
@@ -240,8 +263,12 @@ function tableToData(payload){
     if (sc) scorers[id] = sc;
     const ck = cellStr(c[clkIdx]);
     if (ck) clocks[id] = ck;
+    const xv = cellStr(c[xgIdx]);
+    if (xv) xg[id] = xv;
+    const pv = cellStr(c[posIdx]);
+    if (pv) possession[id] = pv;
   }
-  return { values, scorers, clocks };
+  return { values, scorers, clocks, xg, possession };
 }
 
 async function buildOverlay(){
@@ -274,6 +301,16 @@ async function buildOverlay(){
       el.dataset.corner = f.corner || "right";   // outer corner for the badge
       // square size scales with the chart height; small, ~clock-pill scale.
       el.style.fontSize = `min(${f.height * 0.30}cqh, 0.85cqw)`;
+      nodes[f.id] = el;
+      chart.appendChild(el);
+      continue;
+    }
+
+    if (f.kind === "possession"){
+      // Possession hover zone over the match's VS circle. Transparent and
+      // focusable; on hover/focus it shows the possession-bar popover (built in
+      // applyValues from this match's possession value). No kaleidoscope/text.
+      el.className = "fld possession";
       nodes[f.id] = el;
       chart.appendChild(el);
       continue;
@@ -413,6 +450,8 @@ function applyValues(data){
   const values = data.values || {};
   const scorers = data.scorers || {};
   const clocks = data.clocks || {};
+  const xg = data.xg || {};
+  const possession = data.possession || {};
   for (const id in nodes){
     const el = nodes[id];
     if (el._kind === "clock"){ renderClock(el, clocks[id]); continue; }
@@ -421,16 +460,18 @@ function applyValues(data){
       renderCards(el, countRedCards(k ? scorers[k] : ""));
       continue;
     }
+    if (el._kind === "possession"){ setPossession(el, possession); continue; }
     const v = (values[id] ?? "").toString();
     // Score boxes may carry a penalty superscript; everything else is plain.
     if (el._kind === "score") renderScore(el._txt, v);
     else el._txt.textContent = v;
     // Empty -> shimmering kaleidoscope; filled -> clean value, no animation.
     el.classList.toggle("empty", v === "");
-    // Scorer tooltip: only on score boxes that have both a value and scorers.
+    // Scorer + xG tooltip: on score boxes with a value and scorers and/or xG.
     if (el._kind === "score"){
       const sc = (v !== "" && scorers[id]) ? scorers[id] : "";
-      setTooltip(el, sc);
+      const xv = (v !== "" && xg[id]) ? xg[id] : "";
+      setTooltip(el, sc, xv);
     }
     // Knockout NAME fields carry their own red-card corner badge (groups use
     // the separate "cards" anchors above). Build it from the name's score row.
@@ -476,22 +517,46 @@ function renderCardsInto(el, n){
   el.appendChild(badge);
 }
 
-// Attach (or clear) an accessible scorer tooltip on a score box. A box with
-// scorers becomes keyboard-focusable and exposes the text via aria-describedby;
-// the visible bubble is positioned/shown by the tooltip handlers below. We use
-// a custom tooltip (not the native title attr) so it also shows on FOCUS, not
-// just hover — important for keyboard users.
-function setTooltip(el, text){
-  if (text){
-    el.dataset.tip = text;
+// Attach (or clear) the accessible score-box popover. It shows the goalscorer
+// lines and/or an "xG: x.yz" line. A box with anything to show becomes
+// keyboard-focusable; the visible bubble is built/positioned by showTip().
+function setTooltip(el, text, xgValue){
+  const sc = (text || "").trim();
+  const xv = (xgValue || "").trim();
+  if (sc || xv){
+    if (sc) el.dataset.tip = sc; else delete el.dataset.tip;
+    if (xv) el.dataset.xg = xv; else delete el.dataset.xg;
     el.setAttribute("tabindex", "0");
-    el.setAttribute("aria-label",
-      (el._txt.textContent || "") + " — scorers: " + text);
+    const parts = [];
+    if (sc) parts.push("scorers: " + sc);
+    if (xv) parts.push("xG " + xv);
+    el.setAttribute("aria-label", (el._txt.textContent || "") + " — " + parts.join("; "));
   } else {
-    delete el.dataset.tip;
+    delete el.dataset.tip; delete el.dataset.xg;
     el.removeAttribute("tabindex");
     el.removeAttribute("aria-label");
   }
+}
+
+// Possession: read the match's home/top possession value; store home & away %
+// on the zone for the popover. Blank -> no possession (hover shows nothing).
+function setPossession(el, possession){
+  // zone id: group01_poss / ko20_poss -> home/top score row holds the value
+  const m = el._id.match(/^(group\d{2}|ko\d{2})_poss$/);
+  if (!m){ delete el.dataset.poss; el.removeAttribute("tabindex"); return; }
+  const base = m[1];
+  const homeKey = base.startsWith("group") ? `${base}_home_score` : `${base}_top_score`;
+  const raw = (possession[homeKey] || "").toString().trim();
+  const home = parseFloat(raw);
+  if (raw === "" || isNaN(home) || home < 0 || home > 100){
+    delete el.dataset.poss; el.removeAttribute("tabindex"); el.removeAttribute("aria-label");
+    return;
+  }
+  const away = 100 - home;
+  el.dataset.poss = `${Math.round(home)}|${Math.round(away)}`;
+  el.setAttribute("tabindex", "0");
+  el.setAttribute("aria-label",
+    `Possession: home ${Math.round(home)}%, away ${Math.round(away)}%`);
 }
 
 async function refresh(){
@@ -520,49 +585,111 @@ function formatStamp(s){
   return isNaN(d.getTime()) ? s : d.toLocaleString();
 }
 
-// ── Scorer popover (one shared element, INSIDE #chart so it scales with zoom)
+// ── Shared popover — scorer/xG for score boxes; possession bar for VS zones.
+// Lives INSIDE #chart (scales with zoom). Positioned in chart-relative %.
 const tipEl = document.getElementById("tip");
-function showTip(box){
-  const text = box.dataset.tip;
-  if (!text) return;
-  tipEl.textContent = text;
-  // Make it measurable, then position in CHART-RELATIVE % (so it stays correct
-  // under both Mac page-zoom and iOS pinch-zoom — it's a child of #chart).
+
+function positionTip(box){
   tipEl.classList.add("show");
   tipEl.setAttribute("aria-hidden", "false");
   const c = chart.getBoundingClientRect();
   const b = box.getBoundingClientRect();
   const t = tipEl.getBoundingClientRect();
   if (!c.width || !c.height) return;
-  // box centre and edges, in px relative to the chart's top-left
   const boxCx = (b.left + b.right) / 2 - c.left;
   const boxTop = b.top - c.top;
   const boxBot = b.bottom - c.top;
-  // centre the tip on the box horizontally; clamp within the chart
   let leftPx = boxCx - t.width / 2;
   leftPx = Math.max(4, Math.min(leftPx, c.width - t.width - 4));
-  // prefer above the box; flip below if it would clip the top
   let topPx = boxTop - t.height - 6;
   if (topPx < 4) topPx = boxBot + 6;
-  // store as % of the chart so it tracks any scaling
   tipEl.style.left = (leftPx / c.width * 100) + "%";
   tipEl.style.top  = (topPx / c.height * 100) + "%";
 }
+
+function showTip(box){
+  tipEl.textContent = "";                    // clear previous content
+
+  if (box.dataset.poss !== undefined){
+    // ── Possession bar ──────────────────────────────────────────────────
+    const [homeRaw, awayRaw] = box.dataset.poss.split("|");
+    const home = parseInt(homeRaw, 10) || 0;
+    const away = parseInt(awayRaw, 10) || 0;
+    const MIN = 7; const MAX = 93;           // clamp so no side vanishes
+    const hp = Math.min(Math.max(home, MIN), MAX);
+    const ap = 100 - hp;
+    const lbl = document.createElement("div");
+    lbl.textContent = "POSSESSION";
+    lbl.style.cssText = "font-size:1.1cqh;font-weight:700;letter-spacing:.06em;opacity:.7;margin-bottom:.2cqh;";
+    tipEl.appendChild(lbl);
+    const bar = document.createElement("div");
+    bar.className = "possbar";
+    const homeSeg = document.createElement("div");
+    homeSeg.className = "home pct"; homeSeg.style.flex = hp;
+    homeSeg.textContent = `${home}%`;
+    const awaySeg = document.createElement("div");
+    awaySeg.className = "away pct"; awaySeg.style.flex = ap;
+    awaySeg.textContent = `${away}%`;
+    bar.appendChild(homeSeg); bar.appendChild(awaySeg);
+    tipEl.appendChild(bar);
+  } else {
+    // ── Scorer / xG lines ───────────────────────────────────────────────
+    const sc  = box.dataset.tip || "";
+    const xgv = box.dataset.xg  || "";
+    if (!sc && !xgv) return;               // nothing to show
+    if (sc){
+      const s = document.createElement("div");
+      s.textContent = sc;
+      tipEl.appendChild(s);
+    }
+    if (xgv){
+      const x = document.createElement("div");
+      x.style.cssText = "margin-top:.4cqh;opacity:.85;";
+      x.textContent = "xG: " + xgv;
+      tipEl.appendChild(x);
+    }
+  }
+  positionTip(box);
+}
+
+function positionTip(box){
+  // Make visible first so browser knows size, then place via rAF.
+  tipEl.classList.add("show");
+  tipEl.setAttribute("aria-hidden", "false");
+  requestAnimationFrame(() => {
+    const c = chart.getBoundingClientRect();
+    const b = box.getBoundingClientRect();
+    const t = tipEl.getBoundingClientRect();
+    if (!c.width || !c.height) return;
+    const boxCx = (b.left + b.right) / 2 - c.left;
+    const boxTop = b.top - c.top;
+    const boxBot = b.bottom - c.top;
+    let leftPx = boxCx - t.width / 2;
+    leftPx = Math.max(4, Math.min(leftPx, c.width - t.width - 4));
+    let topPx = boxTop - t.height - 6;
+    if (topPx < 4) topPx = boxBot + 6;
+    tipEl.style.left = (leftPx / c.width * 100) + "%";
+    tipEl.style.top  = (topPx / c.height * 100) + "%";
+  });
+}
+
 function hideTip(){
   tipEl.classList.remove("show");
   tipEl.setAttribute("aria-hidden", "true");
 }
+
 function wireTooltips(){
-  // Delegate on the chart so it keeps working as tooltip state changes each
-  // refresh. Hover (mouse) + focus (keyboard) both trigger; blur/leave/Esc hide.
+  // Delegate on the chart; handles both score and possession zones.
   const onEnter = (e) => {
-    const box = e.target.closest(".fld.score[data-tip]");
-    if (box) showTip(box);
+    const score = e.target.closest(".fld.score[data-tip],.fld.score[data-xg]");
+    if (score){ showTip(score); return; }
+    const poss = e.target.closest(".fld.possession[data-poss]");
+    if (poss) showTip(poss);
   };
   chart.addEventListener("mouseover", onEnter);
-  chart.addEventListener("focusin", onEnter);
+  chart.addEventListener("focusin",   onEnter);
   chart.addEventListener("mouseout", (e) => {
-    const box = e.target.closest(".fld.score[data-tip]");
+    const box = e.target.closest(".fld.score[data-tip],.fld.score[data-xg],.fld.possession[data-poss]");
     if (box && !box.contains(e.relatedTarget)) hideTip();
   });
   chart.addEventListener("focusout", hideTip);
