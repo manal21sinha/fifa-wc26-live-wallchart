@@ -651,11 +651,13 @@ function showTip(box){
       xgLbl.style.cssText = "font-size:1.1cqh;font-weight:700;letter-spacing:.06em;opacity:.7;margin-top:.6cqh;margin-bottom:.2cqh;";
       tipEl.appendChild(xgLbl);
       const xgRow = document.createElement("div");
-      xgRow.style.cssText = "display:flex;justify-content:space-between;gap:1.5cqw;font-size:1.4cqh;font-weight:700;";
+      xgRow.style.cssText = "display:flex;gap:.5cqw;font-size:1.4cqh;font-weight:700;";
       const hSpan = document.createElement("span");
-      hSpan.style.color = "#0D2032"; hSpan.textContent = hxg || "–";
+      hSpan.style.cssText = "background:#0D2032;color:#fff;padding:.25cqh .7cqw;border-radius:.4cqh;";
+      hSpan.textContent = hxg || "–";
       const aSpan = document.createElement("span");
-      aSpan.style.color = "#FF5049"; aSpan.textContent = axg || "–";
+      aSpan.style.cssText = "background:#FF5049;color:#fff;padding:.25cqh .7cqw;border-radius:.4cqh;";
+      aSpan.textContent = axg || "–";
       xgRow.appendChild(hSpan); xgRow.appendChild(aSpan);
       tipEl.appendChild(xgRow);
     }
