@@ -177,10 +177,14 @@ knockout → the side away from the score box).
 
 ## xG and possession stats
 
-You can record **expected goals (xG)** and **possession** for each team in
-each match. The sheet columns are already declared in the template — just add
-them to your live sheet if you haven't already (two columns to the right of
-`Anchor`): header **`xG`** in one column, header **`Possession`** in the next.
+You can record **expected goals (xG)** and **possession** for each match in
+your Google Sheet. Both stats appear together in a single tooltip when you
+hover or keyboard-focus the **VS circle** in a match — xG and possession
+make most sense seen together for both teams at once, rather than per-team.
+
+The sheet columns are already declared in the template — just add them to your
+live sheet if you haven't already (two columns to the right of `Anchor`):
+header **`xG`** in one column, header **`Possession`** in the next.
 
 ### Expected goals (xG)
 
@@ -194,10 +198,7 @@ format `x.yz` (e.g. `1.74`, `0.82`).
 
 - Works for **all** score rows (group home, group away, knockout top, knockout
   bottom).
-- When you hover or keyboard-focus a **score box that already has a value**, the
-  tooltip shows the **goalscorer lines** (from the Scorers column) *and* an
-  **`xG: x.yz`** line below them — both in one combined popover.
-- If neither Scorers nor xG is filled, no tooltip appears.
+- Shown in the **VS-circle tooltip** (see below), not on the score box.
 
 ### Possession
 
@@ -210,15 +211,20 @@ side is computed automatically as `100 − home`.
 | … · MEX score | `group01_home_score` | `58` |
 | … · RSA score | `group01_away_score` | *(leave blank — auto-computed)* |
 
-- Works for **all** matches (group and knockout).
-- When you hover or keyboard-focus the **VS circle** in a match, a tooltip
-  appears with a **"POSSESSION" label** and a horizontal two-tone bar:
-  the home team's share in **dark navy** (`#0D2032`) and the away team's share
-  in **warm red** (`#FF5049`), with each percentage labeled inside the bar.
-- If the Possession cell is blank for a match, hovering the VS circle shows
-  **nothing** — the tooltip only appears once data is entered.
-- A value under 7% or over 93% is **clamped** in the bar (so neither side
-  vanishes), but the percentage displayed is always the raw value you entered.
+### VS-circle tooltip
+
+When you hover or keyboard-focus the **VS circle** in any match, a tooltip
+shows both stats together:
+
+- **POSSESSION** — a horizontal two-tone bar: the home team's share in dark
+  navy (`#0D2032`) and the away team's share in warm red (`#FF5049`), with
+  each percentage labeled inside. Values under 7% or over 93% are clamped so
+  neither side vanishes; the displayed percentage is always the raw value.
+- **xG** — the home team's xG in navy and the away team's in red, side by side,
+  using the same colors as the possession bar for easy visual pairing.
+
+The tooltip appears only when **at least one of possession or xG** has been
+entered for that match. If both cells are blank the VS circle shows nothing.
 
 ## Live game clock
 

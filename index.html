@@ -143,9 +143,8 @@
   }
 
   /* Score box with scorers: hint that it's interactive. */
-  .fld.score[data-tip], .fld.score[data-xg]{ cursor: help; }
-  .fld.score[data-tip]:focus-visible,
-  .fld.score[data-xg]:focus-visible{ outline: 2px solid #2b8fc4; outline-offset: 1px; }
+  .fld.score[data-tip]{ cursor: help; }
+  .fld.score[data-tip]:focus-visible{ outline: 2px solid #2b8fc4; outline-offset: 1px; }
 
   /* Possession hover zone (over the VS circle). Transparent but focusable. */
   .fld.possession { background: none; cursor: pointer; border-radius: 50%; }
@@ -464,18 +463,17 @@ function applyValues(data){
       renderCards(el, countRedCards(k ? scorers[k] : ""));
       continue;
     }
-    if (el._kind === "possession"){ setPossession(el, possession); continue; }
+    if (el._kind === "possession"){ setPossession(el, possession, xg); continue; }
     const v = (values[id] ?? "").toString();
     // Score boxes may carry a penalty superscript; everything else is plain.
     if (el._kind === "score") renderScore(el._txt, v);
     else el._txt.textContent = v;
     // Empty -> shimmering kaleidoscope; filled -> clean value, no animation.
     el.classList.toggle("empty", v === "");
-    // Scorer + xG tooltip: on score boxes with a value and scorers and/or xG.
+    // Scorer tooltip (xG has moved to the VS-circle possession tooltip).
     if (el._kind === "score"){
       const sc = (v !== "" && scorers[id]) ? scorers[id] : "";
-      const xv = (v !== "" && xg[id]) ? xg[id] : "";
-      setTooltip(el, sc, xv);
+      setTooltip(el, sc);
     }
     // Knockout NAME fields carry their own red-card corner badge (groups use
     // the separate "cards" anchors above). Build it from the name's score row.
@@ -521,46 +519,53 @@ function renderCardsInto(el, n){
   el.appendChild(badge);
 }
 
-// Attach (or clear) the accessible score-box popover. It shows the goalscorer
-// lines and/or an "xG: x.yz" line. A box with anything to show becomes
-// keyboard-focusable; the visible bubble is built/positioned by showTip().
-function setTooltip(el, text, xgValue){
+// Attach (or clear) the accessible score-box popover (scorers only now —
+// xG has moved to the VS-circle possession tooltip for match-level context).
+function setTooltip(el, text){
   const sc = (text || "").trim();
-  const xv = (xgValue || "").trim();
-  if (sc || xv){
-    if (sc) el.dataset.tip = sc; else delete el.dataset.tip;
-    if (xv) el.dataset.xg = xv; else delete el.dataset.xg;
+  if (sc){
+    el.dataset.tip = sc;
     el.setAttribute("tabindex", "0");
-    const parts = [];
-    if (sc) parts.push("scorers: " + sc);
-    if (xv) parts.push("xG " + xv);
-    el.setAttribute("aria-label", (el._txt.textContent || "") + " — " + parts.join("; "));
+    el.setAttribute("aria-label", (el._txt.textContent || "") + " — scorers: " + sc);
   } else {
-    delete el.dataset.tip; delete el.dataset.xg;
+    delete el.dataset.tip;
     el.removeAttribute("tabindex");
     el.removeAttribute("aria-label");
   }
 }
 
-// Possession: read the match's home/top possession value; store home & away %
-// on the zone for the popover. Blank -> no possession (hover shows nothing).
-function setPossession(el, possession){
-  // zone id: group01_poss / ko20_poss -> home/top score row holds the value
+// Possession (+ xG): read the match's possession and both teams' xG values;
+// store on the zone for the VS-circle popover.
+// Possession is entered on the home/top score row; xG on both score rows.
+// The tooltip shows only if at least possession OR xG has been entered.
+function setPossession(el, possession, xg){
   const m = el._id.match(/^(group\d{2}|ko\d{2})_poss$/);
-  if (!m){ delete el.dataset.poss; el.removeAttribute("tabindex"); return; }
+  if (!m){ delete el.dataset.poss; delete el.dataset.xg; el.removeAttribute("tabindex"); return; }
   const base = m[1];
-  const homeKey = base.startsWith("group") ? `${base}_home_score` : `${base}_top_score`;
-  const raw = (possession[homeKey] || "").toString().trim();
-  const home = parseFloat(raw);
-  if (raw === "" || isNaN(home) || home < 0 || home > 100){
-    delete el.dataset.poss; el.removeAttribute("tabindex"); el.removeAttribute("aria-label");
-    return;
+  const isGroup = base.startsWith("group");
+  const homeKey = isGroup ? `${base}_home_score` : `${base}_top_score`;
+  const awayKey = isGroup ? `${base}_away_score` : `${base}_bottom_score`;
+  const possRaw  = (possession[homeKey] || "").toString().trim();
+  const homeXg   = (xg[homeKey] || "").toString().trim();
+  const awayXg   = (xg[awayKey] || "").toString().trim();
+  const hasPoss  = possRaw !== "" && !isNaN(parseFloat(possRaw));
+  const hasXg    = homeXg !== "" || awayXg !== "";
+  if (!hasPoss && !hasXg){
+    delete el.dataset.poss; delete el.dataset.xg;
+    el.removeAttribute("tabindex"); el.removeAttribute("aria-label"); return;
   }
-  const away = 100 - home;
-  el.dataset.poss = `${Math.round(home)}|${Math.round(away)}`;
+  if (hasPoss){
+    const home = Math.round(parseFloat(possRaw));
+    el.dataset.poss = `${home}|${100 - home}`;
+  } else { delete el.dataset.poss; }
+  if (hasXg){
+    el.dataset.xg = `${homeXg}|${awayXg}`;
+  } else { delete el.dataset.xg; }
   el.setAttribute("tabindex", "0");
-  el.setAttribute("aria-label",
-    `Possession: home ${Math.round(home)}%, away ${Math.round(away)}%`);
+  const parts = [];
+  if (hasPoss) parts.push(`possession ${Math.round(parseFloat(possRaw))}% vs ${100 - Math.round(parseFloat(possRaw))}%`);
+  if (hasXg)  parts.push(`xG ${homeXg || "?"} vs ${awayXg || "?"}`);
+  el.setAttribute("aria-label", "Match stats: " + parts.join(", "));
 }
 
 async function refresh(){
@@ -614,44 +619,53 @@ function positionTip(box){
 function showTip(box){
   tipEl.textContent = "";                    // clear previous content
 
-  if (box.dataset.poss !== undefined){
+  if (box.dataset.poss !== undefined || box.dataset.xg !== undefined){
     // ── Possession bar ──────────────────────────────────────────────────
-    const [homeRaw, awayRaw] = box.dataset.poss.split("|");
-    const home = parseInt(homeRaw, 10) || 0;
-    const away = parseInt(awayRaw, 10) || 0;
-    const MIN = 7; const MAX = 93;           // clamp so no side vanishes
-    const hp = Math.min(Math.max(home, MIN), MAX);
-    const ap = 100 - hp;
-    const lbl = document.createElement("div");
-    lbl.textContent = "POSSESSION";
-    lbl.style.cssText = "font-size:1.1cqh;font-weight:700;letter-spacing:.06em;opacity:.7;margin-bottom:.2cqh;";
-    tipEl.appendChild(lbl);
-    const bar = document.createElement("div");
-    bar.className = "possbar";
-    const homeSeg = document.createElement("div");
-    homeSeg.className = "home pct"; homeSeg.style.flex = hp;
-    homeSeg.textContent = `${home}%`;
-    const awaySeg = document.createElement("div");
-    awaySeg.className = "away pct"; awaySeg.style.flex = ap;
-    awaySeg.textContent = `${away}%`;
-    bar.appendChild(homeSeg); bar.appendChild(awaySeg);
-    tipEl.appendChild(bar);
+    if (box.dataset.poss !== undefined){
+      const [homeRaw, awayRaw] = box.dataset.poss.split("|");
+      const home = parseInt(homeRaw, 10) || 0;
+      const away = parseInt(awayRaw, 10) || 0;
+      const MIN = 7; const MAX = 93;
+      const hp = Math.min(Math.max(home, MIN), MAX);
+      const ap = 100 - hp;
+      const lbl = document.createElement("div");
+      lbl.textContent = "POSSESSION";
+      lbl.style.cssText = "font-size:1.1cqh;font-weight:700;letter-spacing:.06em;opacity:.7;margin-bottom:.2cqh;";
+      tipEl.appendChild(lbl);
+      const bar = document.createElement("div");
+      bar.className = "possbar";
+      const homeSeg = document.createElement("div");
+      homeSeg.className = "home pct"; homeSeg.style.flex = hp;
+      homeSeg.textContent = `${home}%`;
+      const awaySeg = document.createElement("div");
+      awaySeg.className = "away pct"; awaySeg.style.flex = ap;
+      awaySeg.textContent = `${away}%`;
+      bar.appendChild(homeSeg); bar.appendChild(awaySeg);
+      tipEl.appendChild(bar);
+    }
+    // ── xG row ──────────────────────────────────────────────────────────
+    if (box.dataset.xg){
+      const [hxg, axg] = box.dataset.xg.split("|");
+      const xgLbl = document.createElement("div");
+      xgLbl.textContent = "xG";
+      xgLbl.style.cssText = "font-size:1.1cqh;font-weight:700;letter-spacing:.06em;opacity:.7;margin-top:.6cqh;margin-bottom:.2cqh;";
+      tipEl.appendChild(xgLbl);
+      const xgRow = document.createElement("div");
+      xgRow.style.cssText = "display:flex;justify-content:space-between;gap:1.5cqw;font-size:1.4cqh;font-weight:700;";
+      const hSpan = document.createElement("span");
+      hSpan.style.color = "#0D2032"; hSpan.textContent = hxg || "–";
+      const aSpan = document.createElement("span");
+      aSpan.style.color = "#FF5049"; aSpan.textContent = axg || "–";
+      xgRow.appendChild(hSpan); xgRow.appendChild(aSpan);
+      tipEl.appendChild(xgRow);
+    }
   } else {
-    // ── Scorer / xG lines ───────────────────────────────────────────────
-    const sc  = box.dataset.tip || "";
-    const xgv = box.dataset.xg  || "";
-    if (!sc && !xgv) return;               // nothing to show
-    if (sc){
-      const s = document.createElement("div");
-      s.textContent = sc;
-      tipEl.appendChild(s);
-    }
-    if (xgv){
-      const x = document.createElement("div");
-      x.style.cssText = "margin-top:.4cqh;opacity:.85;";
-      x.textContent = "xG: " + xgv;
-      tipEl.appendChild(x);
-    }
+    // ── Scorer lines (score-box tooltip) ───────────────────────────────
+    const sc = box.dataset.tip || "";
+    if (!sc) return;
+    const s = document.createElement("div");
+    s.textContent = sc;
+    tipEl.appendChild(s);
   }
   positionTip(box);
 }
@@ -685,15 +699,15 @@ function hideTip(){
 function wireTooltips(){
   // Delegate on the chart; handles both score and possession zones.
   const onEnter = (e) => {
-    const score = e.target.closest(".fld.score[data-tip],.fld.score[data-xg]");
+    const score = e.target.closest(".fld.score[data-tip]");
     if (score){ showTip(score); return; }
-    const poss = e.target.closest(".fld.possession[data-poss]");
+    const poss = e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg]");
     if (poss) showTip(poss);
   };
   chart.addEventListener("mouseover", onEnter);
   chart.addEventListener("focusin",   onEnter);
   chart.addEventListener("mouseout", (e) => {
-    const box = e.target.closest(".fld.score[data-tip],.fld.score[data-xg],.fld.possession[data-poss]");
+    const box = e.target.closest(".fld.score[data-tip],.fld.possession[data-poss],.fld.possession[data-xg]");
     if (box && !box.contains(e.relatedTarget)) hideTip();
   });
   chart.addEventListener("focusout", hideTip);
