@@ -179,6 +179,8 @@
     white-space: normal;
   }
   #tip.show { opacity: 1; transform: translateY(0); }
+  /* When pinned (sticky), allow pointer events so the report link is clickable. */
+  #tip.pinned { pointer-events: auto; }
 </style>
 </head>
 <body>
@@ -244,19 +246,21 @@ function tableToData(payload){
   let clkIdx = labelIdx(CFG.CLOCK_COLUMN);
   let xgIdx = labelIdx(CFG.XG_COLUMN);
   let posIdx = labelIdx(CFG.POSSESSION_COLUMN);
-  // Fallback to Description,Field ID,Value,Scorers,Clock,Phase,Anchor,xG,Poss order.
+  let repIdx = labelIdx(CFG.REPORT_COLUMN);
+  // Fallback column order: Desc,Field ID,Value,Scorers,Clock,Phase,Anchor,xG,Poss,Report.
   if (idIdx === -1) idIdx = 1;
   if (valIdx === -1) valIdx = 2;
   if (scIdx === -1) scIdx = 3;
   if (clkIdx === -1) clkIdx = 4;
   if (xgIdx === -1) xgIdx = 7;
   if (posIdx === -1) posIdx = 8;
+  if (repIdx === -1) repIdx = 9;
   const cellStr = (cell) => {
     if (!cell) return "";
     const v = (cell.v !== null && cell.v !== undefined) ? cell.v : cell.f;
     return (v === null || v === undefined) ? "" : String(v).trim();
   };
-  const values = {}, scorers = {}, clocks = {}, xg = {}, possession = {};
+  const values = {}, scorers = {}, clocks = {}, xg = {}, possession = {}, reports = {};
   for (const row of rows){
     const c = row.c || [];
     const id = cellStr(c[idIdx]);
@@ -270,8 +274,10 @@ function tableToData(payload){
     if (xv) xg[id] = xv;
     const pv = cellStr(c[posIdx]);
     if (pv) possession[id] = pv;
+    const rv = cellStr(c[repIdx]);
+    if (rv) reports[id] = rv;
   }
-  return { values, scorers, clocks, xg, possession };
+  return { values, scorers, clocks, xg, possession, reports };
 }
 
 async function buildOverlay(){
@@ -455,6 +461,7 @@ function applyValues(data){
   const clocks = data.clocks || {};
   const xg = data.xg || {};
   const possession = data.possession || {};
+  const reports = data.reports || {};
   for (const id in nodes){
     const el = nodes[id];
     if (el._kind === "clock"){ renderClock(el, clocks[id]); continue; }
@@ -463,7 +470,7 @@ function applyValues(data){
       renderCards(el, countRedCards(k ? scorers[k] : ""));
       continue;
     }
-    if (el._kind === "possession"){ setPossession(el, possession, xg); continue; }
+    if (el._kind === "possession"){ setPossession(el, possession, xg, reports); continue; }
     const v = (values[id] ?? "").toString();
     // Score boxes may carry a penalty superscript; everything else is plain.
     if (el._kind === "score") renderScore(el._txt, v);
@@ -537,8 +544,9 @@ function setTooltip(el, text){
 // Possession (+ xG): read the match's possession and both teams' xG values;
 // store on the zone for the VS-circle popover.
 // Possession is entered on the home/top score row; xG on both score rows.
-// The tooltip shows only if at least possession OR xG has been entered.
-function setPossession(el, possession, xg){
+// Match Report URL is stored on the *_clock row for that match.
+// The tooltip shows if at least one of possession, xG, or report is present.
+function setPossession(el, possession, xg, reports){
   const m = el._id.match(/^(group\d{2}|ko\d{2})_poss$/);
   if (!m){ delete el.dataset.poss; delete el.dataset.xg; el.removeAttribute("tabindex"); return; }
   const base = m[1];
@@ -548,10 +556,14 @@ function setPossession(el, possession, xg){
   const possRaw  = (possession[homeKey] || "").toString().trim();
   const homeXg   = (xg[homeKey] || "").toString().trim();
   const awayXg   = (xg[awayKey] || "").toString().trim();
+  // Report URL lives on the *_clock row (same base, different suffix)
+  const clockKey = `${base}_clock`;
+  const reportUrl = (reports[clockKey] || "").toString().trim();
   const hasPoss  = possRaw !== "" && !isNaN(parseFloat(possRaw));
   const hasXg    = homeXg !== "" || awayXg !== "";
-  if (!hasPoss && !hasXg){
-    delete el.dataset.poss; delete el.dataset.xg;
+  const hasReport = reportUrl !== "";
+  if (!hasPoss && !hasXg && !hasReport){
+    delete el.dataset.poss; delete el.dataset.xg; delete el.dataset.report;
     el.removeAttribute("tabindex"); el.removeAttribute("aria-label"); return;
   }
   if (hasPoss){
@@ -561,10 +573,14 @@ function setPossession(el, possession, xg){
   if (hasXg){
     el.dataset.xg = `${homeXg}|${awayXg}`;
   } else { delete el.dataset.xg; }
+  if (hasReport){
+    el.dataset.report = reportUrl;
+  } else { delete el.dataset.report; }
   el.setAttribute("tabindex", "0");
   const parts = [];
   if (hasPoss) parts.push(`possession ${Math.round(parseFloat(possRaw))}% vs ${100 - Math.round(parseFloat(possRaw))}%`);
   if (hasXg)  parts.push(`xG ${homeXg || "?"} vs ${awayXg || "?"}`);
+  if (hasReport) parts.push("match report available");
   el.setAttribute("aria-label", "Match stats: " + parts.join(", "));
 }
 
@@ -619,7 +635,7 @@ function positionTip(box){
 function showTip(box){
   tipEl.textContent = "";                    // clear previous content
 
-  if (box.dataset.poss !== undefined || box.dataset.xg !== undefined){
+  if (box.dataset.poss !== undefined || box.dataset.xg !== undefined || box.dataset.report){
     // ── Possession bar ──────────────────────────────────────────────────
     if (box.dataset.poss !== undefined){
       const [homeRaw, awayRaw] = box.dataset.poss.split("|");
@@ -661,6 +677,16 @@ function showTip(box){
       xgRow.appendChild(hSpan); xgRow.appendChild(aSpan);
       tipEl.appendChild(xgRow);
     }
+    // ── Match report link ────────────────────────────────────────────────
+    if (box.dataset.report){
+      const a = document.createElement("a");
+      a.href = box.dataset.report;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = "📋 Match report ↗";
+      a.style.cssText = "display:block;margin-top:.7cqh;font-size:1.1cqh;color:#6fd0ee;text-decoration:none;opacity:.9;pointer-events:auto;";
+      tipEl.appendChild(a);
+    }
   } else {
     // ── Scorer lines (score-box tooltip) ───────────────────────────────
     const sc = box.dataset.tip || "";
@@ -699,22 +725,73 @@ function hideTip(){
 }
 
 function wireTooltips(){
-  // Delegate on the chart; handles both score and possession zones.
-  const onEnter = (e) => {
+  // ── Score-box tooltip: hover/focus only (not sticky) ─────────────────
+  chart.addEventListener("mouseover", (e) => {
     const score = e.target.closest(".fld.score[data-tip]");
-    if (score){ showTip(score); return; }
-    const poss = e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg]");
-    if (poss) showTip(poss);
-  };
-  chart.addEventListener("mouseover", onEnter);
-  chart.addEventListener("focusin",   onEnter);
-  chart.addEventListener("mouseout", (e) => {
-    const box = e.target.closest(".fld.score[data-tip],.fld.possession[data-poss],.fld.possession[data-xg]");
-    if (box && !box.contains(e.relatedTarget)) hideTip();
+    if (score) showTip(score);
   });
-  chart.addEventListener("focusout", hideTip);
+  chart.addEventListener("focusin", (e) => {
+    const score = e.target.closest(".fld.score[data-tip]");
+    if (score) showTip(score);
+    // Possession zone focused via keyboard: show (unpinned)
+    const poss = e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg],.fld.possession[data-report]");
+    if (poss && !poss._pinned) showTip(poss);
+  });
+  chart.addEventListener("mouseout", (e) => {
+    const score = e.target.closest(".fld.score[data-tip]");
+    if (score && !score.contains(e.relatedTarget)) hideTip();
+    // Only hide possession tooltip on mouseout if it is NOT pinned
+    const poss = e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg],.fld.possession[data-report]");
+    if (poss && !poss._pinned && !poss.contains(e.relatedTarget)) hideTip();
+    // Also hide if mousing out of the tip itself while possession is not pinned
+    if (e.target === tipEl || tipEl.contains(e.target)){
+      const pinned = document.querySelector(".fld.possession._pinned-tip");
+      if (!pinned) hideTip();
+    }
+  });
+  chart.addEventListener("focusout", (e) => {
+    // Keep visible if focus moves into the tip (e.g. clicking the report link)
+    if (tipEl.contains(e.relatedTarget)) return;
+    const poss = e.target.closest(".fld.possession");
+    if (poss) poss._pinned = false;
+    hideTip();
+  });
+
+  // ── Possession zone hover: show (unpinned) ────────────────────────────
+  chart.addEventListener("mouseover", (e) => {
+    const poss = e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg],.fld.possession[data-report]");
+    if (poss && !poss._pinned) showTip(poss);
+  });
+
+  // ── Possession zone click: toggle sticky/pinned state ─────────────────
+  // Scoped ONLY to possession zones — no other tooltips are affected.
+  let pinnedEl = null;
+  chart.addEventListener("click", (e) => {
+    const poss = e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg],.fld.possession[data-report]");
+    if (!poss) return;
+    if (pinnedEl && pinnedEl !== poss){
+      pinnedEl._pinned = false; pinnedEl = null; hideTip();
+    }
+    if (poss._pinned){
+      poss._pinned = false; pinnedEl = null; tipEl.classList.remove("pinned"); hideTip();
+    } else {
+      poss._pinned = true; pinnedEl = poss; showTip(poss); tipEl.classList.add("pinned");
+    }
+  });
+
+  // ── Click outside or Escape unpins ────────────────────────────────────
+  document.addEventListener("click", (e) => {
+    if (!pinnedEl) return;
+    if (pinnedEl.contains(e.target) || tipEl.contains(e.target)) return;
+    pinnedEl._pinned = false; pinnedEl = null; tipEl.classList.remove("pinned"); hideTip();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape"){
+      if (pinnedEl){ pinnedEl._pinned = false; pinnedEl = null; tipEl.classList.remove("pinned"); }
+      hideTip();
+    }
+  });
   window.addEventListener("scroll", hideTip, { passive: true });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") hideTip(); });
 }
 
 // Kiosk fit-to-screen: size the chart so the WHOLE thing fits the visible area

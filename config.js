@@ -16,8 +16,9 @@ window.CHART_CONFIG = {
   VALUE_COLUMN: "Value",
   SCORERS_COLUMN: "Scorers",   // tooltip text shown on hover/focus of a score box
   CLOCK_COLUMN: "Clock",       // live game-clock text shown as a pill on the card
-  XG_COLUMN: "xG",             // per-team expected goals; added to the score tooltip
+  XG_COLUMN: "xG",             // per-team expected goals; shown in VS-circle tooltip
   POSSESSION_COLUMN: "Possession", // home/top team's possession %; away = 100 − home
+  REPORT_COLUMN: "Match Report",  // FIFA match report URL; stored on the *_clock row
 
   // How often viewers re-poll the sheet, in milliseconds.
   REFRESH_MS: 30000,

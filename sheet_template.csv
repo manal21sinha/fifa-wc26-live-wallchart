@@ -1,4 +1,4 @@
-Description,Field ID,Value,Scorers,Clock,Phase,Anchor,xG,Possession
+Description,Field ID,Value,Scorers,Clock,Phase,Anchor,xG,Possession,Match Report
 ⏱ Last updated (auto/manual — shown in status bar),_updated,,,,,,,
 "Jun 11, 8:00 PM · Group A · MEX v RSA · MEX score",group01_home_score,,,,,,,
 "Jun 11, 8:00 PM · Group A · MEX v RSA · RSA score",group01_away_score,,,,,,,
