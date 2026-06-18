@@ -737,18 +737,37 @@ function wireTooltips(){
     const poss = e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg],.fld.possession[data-report]");
     if (poss && !poss._pinned) showTip(poss);
   });
+
+  // ── Possession zone hover: show (unpinned) ────────────────────────────
+  chart.addEventListener("mouseover", (e) => {
+    const poss = e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg],.fld.possession[data-report]");
+    if (poss && !poss._pinned) showTip(poss);
+  });
+
+  // Track mousedown on a possession zone so we can suppress the spurious
+  // mouseout that the browser fires during a click (before click fires).
+  // Without this, mouseout hides the tip before click can pin it.
+  let clickingPoss = false;
+  chart.addEventListener("mousedown", (e) => {
+    clickingPoss = !!e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg],.fld.possession[data-report]");
+  });
+
   chart.addEventListener("mouseout", (e) => {
     const score = e.target.closest(".fld.score[data-tip]");
     if (score && !score.contains(e.relatedTarget)) hideTip();
-    // Only hide possession tooltip on mouseout if it is NOT pinned
     const poss = e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg],.fld.possession[data-report]");
-    if (poss && !poss._pinned && !poss.contains(e.relatedTarget)) hideTip();
-    // Also hide if mousing out of the tip itself while possession is not pinned
+    if (poss){
+      // Suppress hide if we're about to handle a click (mousedown was on this zone)
+      // or if the tooltip is already pinned.
+      if (!clickingPoss && !poss._pinned && !poss.contains(e.relatedTarget)) hideTip();
+    }
+    // Also hide if mousing out of the tip itself and not pinned
     if (e.target === tipEl || tipEl.contains(e.target)){
-      const pinned = document.querySelector(".fld.possession._pinned-tip");
-      if (!pinned) hideTip();
+      if (!tipEl.classList.contains("pinned")) hideTip();
     }
   });
+  document.addEventListener("mouseup", () => { clickingPoss = false; });
+
   chart.addEventListener("focusout", (e) => {
     // Keep visible if focus moves into the tip (e.g. clicking the report link)
     if (tipEl.contains(e.relatedTarget)) return;
@@ -757,20 +776,15 @@ function wireTooltips(){
     hideTip();
   });
 
-  // ── Possession zone hover: show (unpinned) ────────────────────────────
-  chart.addEventListener("mouseover", (e) => {
-    const poss = e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg],.fld.possession[data-report]");
-    if (poss && !poss._pinned) showTip(poss);
-  });
-
   // ── Possession zone click: toggle sticky/pinned state ─────────────────
   // Scoped ONLY to possession zones — no other tooltips are affected.
   let pinnedEl = null;
   chart.addEventListener("click", (e) => {
     const poss = e.target.closest(".fld.possession[data-poss],.fld.possession[data-xg],.fld.possession[data-report]");
     if (!poss) return;
+    e.stopPropagation(); // prevent the document click handler from immediately unpinning
     if (pinnedEl && pinnedEl !== poss){
-      pinnedEl._pinned = false; pinnedEl = null; hideTip();
+      pinnedEl._pinned = false; pinnedEl = null; tipEl.classList.remove("pinned"); hideTip();
     }
     if (poss._pinned){
       poss._pinned = false; pinnedEl = null; tipEl.classList.remove("pinned"); hideTip();
