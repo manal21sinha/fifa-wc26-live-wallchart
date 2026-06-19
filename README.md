@@ -67,6 +67,7 @@ window.CHART_CONFIG = {
   CLOCK_COLUMN: "Clock",
   XG_COLUMN: "xG",
   POSSESSION_COLUMN: "Possession",
+  REPORT_COLUMN: "Match Report",
   REFRESH_MS: 30000,
 };
 ```
@@ -220,11 +221,36 @@ shows both stats together:
   navy (`#0D2032`) and the away team's share in warm red (`#FF5049`), with
   each percentage labeled inside. Values under 7% or over 93% are clamped so
   neither side vanishes; the displayed percentage is always the raw value.
-- **xG** — the home team's xG in navy and the away team's in red, side by side,
-  using the same colors as the possession bar for easy visual pairing.
+- **xG** — the home team's xG in a navy badge and the away team's in a red
+  badge, using the same colors as the possession bar for easy visual pairing.
+- **Match report link** — if a report URL is stored for the match, a
+  `📋 Match report ↗` link appears at the bottom of the tooltip.
 
-The tooltip appears only when **at least one of possession or xG** has been
-entered for that match. If both cells are blank the VS circle shows nothing.
+The tooltip appears only when **at least one of possession, xG, or match
+report** has been entered for that match.
+
+**Click to pin:** hovering the VS circle shows the tooltip temporarily (it
+disappears on mouse-away as usual). **Clicking** the VS circle *pins* the
+tooltip so it stays open — this lets you click the match report link inside it.
+Click the same VS circle again, press Escape, or click anywhere else to unpin.
+This sticky behaviour is scoped only to VS circles; scorer tooltips on score
+boxes are unaffected.
+
+### Match report link
+
+Store the FIFA official match report URL in the **`Match Report`** column on
+that match's `*_clock` row (the same row where Phase, Anchor, and the Clock
+formula live). Leave it blank until the report is published.
+
+| Description | Field ID | Match Report |
+|---|---|---|
+| … · GAME CLOCK | `group01_clock` | `https://www.fifa.com/…` |
+| … · GAME CLOCK | `ko20_clock` | `https://www.fifa.com/…` |
+
+- Works for **all** matches (group and knockout).
+- The link opens in a **new tab** with `noopener noreferrer`.
+- If the cell is blank, no link appears and the tooltip still shows possession
+  and xG if those are filled.
 
 ## Live game clock
 
