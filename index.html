@@ -521,6 +521,7 @@ function applyValues(data){
       continue;
     }
     if (el._kind === "possession"){ setPossession(el, possession, xg, reports); continue; }
+    if (el._kind === "group_label") continue;   // no text/value to apply; activated separately
     const v = (values[id] ?? "").toString();
     // Score boxes may carry a penalty superscript; name boxes use pre-wrap so
     // explicit newlines (Alt+Enter in Sheets) are honoured. For multi-line names,
