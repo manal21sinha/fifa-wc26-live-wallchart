@@ -334,9 +334,15 @@ async function buildOverlay(){
     // (a flex-centred container's scrollWidth is unreliable when text overflows
     // both sides). The span is what we fit; the box stays put.
     const span = document.createElement("span");
-    span.style.whiteSpace = "nowrap";
+    // Score boxes never wrap; name boxes honour explicit newlines typed in the
+    // sheet (Alt+Enter in Google Sheets inserts a real \n that gviz preserves).
+    span.style.whiteSpace = (f.kind === "name") ? "pre-wrap" : "nowrap";
     el.appendChild(span);
     el._txt = span;
+    // Name fields remember their box dimensions so applyValues can recompute
+    // the base font size by line count — a two-line name needs half the per-line
+    // height so the block still fits inside the box vertically.
+    if (f.kind === "name"){ el._fh = f.height; el._fw = f.width; }
     // Per-box random kaleidoscope: 3 spread hues, random angle/speed/phase.
     const base = rnd(0, 360);
     el.style.setProperty("--h1", base.toFixed(0));
@@ -472,9 +478,23 @@ function applyValues(data){
     }
     if (el._kind === "possession"){ setPossession(el, possession, xg, reports); continue; }
     const v = (values[id] ?? "").toString();
-    // Score boxes may carry a penalty superscript; everything else is plain.
+    // Score boxes may carry a penalty superscript; name boxes use pre-wrap so
+    // explicit newlines (Alt+Enter in Sheets) are honoured. For multi-line names,
+    // recompute basefs by line count so the whole block fits vertically: each
+    // line gets (box height / n lines) worth of cap-height, just like a single
+    // line would get the full height.
     if (el._kind === "score") renderScore(el._txt, v);
-    else el._txt.textContent = v;
+    else {
+      el._txt.textContent = v;
+      if (el._kind === "name" && el._fh !== undefined){
+        const lines = v ? v.split("\n").length : 1;
+        const perLine = el._fh / Math.max(lines, 1);
+        const fs = perLine * 0.62;
+        const newBase = `min(${fs}cqh, ${el._fw * 0.9}cqw)`;
+        el.dataset.basefs = newBase;
+        el.style.fontSize = newBase;
+      }
+    }
     // Empty -> shimmering kaleidoscope; filled -> clean value, no animation.
     el.classList.toggle("empty", v === "");
     // Scorer tooltip (xG has moved to the VS-circle possession tooltip).
