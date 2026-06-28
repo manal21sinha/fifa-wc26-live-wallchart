@@ -334,9 +334,11 @@ async function buildOverlay(){
     // (a flex-centred container's scrollWidth is unreliable when text overflows
     // both sides). The span is what we fit; the box stays put.
     const span = document.createElement("span");
-    // Score boxes never wrap; name boxes honour explicit newlines typed in the
-    // sheet (Alt+Enter in Google Sheets inserts a real \n that gviz preserves).
-    span.style.whiteSpace = (f.kind === "name") ? "pre-wrap" : "nowrap";
+    // Always start nowrap; applyValues sets pre-wrap dynamically only when the
+    // value actually contains an explicit \n (Alt+Enter in Sheets). This way,
+    // names like "SOUTH AFRICA" stay on one line and shrink via fitText, while
+    // "BOSNIA &\nHERZEGOVINA" wraps exactly at the user-inserted line break.
+    span.style.whiteSpace = "nowrap";
     el.appendChild(span);
     el._txt = span;
     // Name fields remember their box dimensions so applyValues can recompute
@@ -487,7 +489,11 @@ function applyValues(data){
     else {
       el._txt.textContent = v;
       if (el._kind === "name" && el._fh !== undefined){
-        const lines = v ? v.split("\n").length : 1;
+        const hasNewline = v.includes("\n");
+        const lines = hasNewline ? v.split("\n").length : 1;
+        // Only allow wrapping when the user explicitly inserted a \n; otherwise
+        // keep nowrap so fitText can shrink the whole name onto one line.
+        el._txt.style.whiteSpace = hasNewline ? "pre-wrap" : "nowrap";
         const perLine = el._fh / Math.max(lines, 1);
         const fs = perLine * 0.62;
         const newBase = `min(${fs}cqh, ${el._fw * 0.9}cqw)`;
