@@ -5901,6 +5901,114 @@
       "top": 75.6824,
       "width": 5.2577,
       "height": 1.9752
+    },
+    {
+      "id": "group_label_A",
+      "kind": "group_label",
+      "group": "A",
+      "left": 1.342,
+      "top": 8.204,
+      "width": 1.167,
+      "height": 4.682
+    },
+    {
+      "id": "group_label_B",
+      "kind": "group_label",
+      "group": "B",
+      "left": 1.330,
+      "top": 23.776,
+      "width": 1.180,
+      "height": 4.734
+    },
+    {
+      "id": "group_label_C",
+      "kind": "group_label",
+      "group": "C",
+      "left": 1.341,
+      "top": 40.279,
+      "width": 1.168,
+      "height": 4.573
+    },
+    {
+      "id": "group_label_D",
+      "kind": "group_label",
+      "group": "D",
+      "left": 1.330,
+      "top": 55.931,
+      "width": 1.180,
+      "height": 4.734
+    },
+    {
+      "id": "group_label_E",
+      "kind": "group_label",
+      "group": "E",
+      "left": 1.335,
+      "top": 71.740,
+      "width": 1.168,
+      "height": 4.560
+    },
+    {
+      "id": "group_label_F",
+      "kind": "group_label",
+      "group": "F",
+      "left": 1.338,
+      "top": 87.483,
+      "width": 1.168,
+      "height": 4.534
+    },
+    {
+      "id": "group_label_G",
+      "kind": "group_label",
+      "group": "G",
+      "left": 97.493,
+      "top": 8.801,
+      "width": 1.168,
+      "height": 4.656
+    },
+    {
+      "id": "group_label_H",
+      "kind": "group_label",
+      "group": "H",
+      "left": 97.494,
+      "top": 24.486,
+      "width": 1.168,
+      "height": 4.687
+    },
+    {
+      "id": "group_label_I",
+      "kind": "group_label",
+      "group": "I",
+      "left": 97.494,
+      "top": 40.412,
+      "width": 1.168,
+      "height": 4.308
+    },
+    {
+      "id": "group_label_J",
+      "kind": "group_label",
+      "group": "J",
+      "left": 97.496,
+      "top": 56.014,
+      "width": 1.168,
+      "height": 4.567
+    },
+    {
+      "id": "group_label_K",
+      "kind": "group_label",
+      "group": "K",
+      "left": 97.494,
+      "top": 71.670,
+      "width": 1.168,
+      "height": 4.700
+    },
+    {
+      "id": "group_label_L",
+      "kind": "group_label",
+      "group": "L",
+      "left": 97.495,
+      "top": 87.468,
+      "width": 1.168,
+      "height": 4.559
     }
   ]
 }

@@ -176,6 +176,44 @@ knockout → the side away from the score box).
 - Group team names show the badge always; knockout names show it once the team
   name is filled in.
 
+## Group standings tables
+
+Hovering (or clicking to pin) any of the 12 vertical **GROUP X** labels on the artwork opens a standings table for that group.
+
+### Setting up the Groups tab
+
+1. In your Google Sheets file, create a new tab and name it exactly **`Groups`** (must match `GROUPS_SHEET_NAME` in `config.js`).
+2. Import `groups_template.csv` into it — **File → Import → Upload**, import into the existing sheet, and choose **"Replace current sheet"**. Select **"No" for auto-conversion** (same as the Scores sheet) to keep the column type as text.
+3. Fill in your data. The columns are:
+
+| Column | Description |
+|--------|-------------|
+| `Group` | Letter A–L (pre-filled in the template) |
+| `Pos` | Final position 1–4 — **you set this** (handles FIFA tiebreakers) |
+| `Team` | Team name with flag emoji prefix, e.g. `🇲🇽 Mexico` |
+| `PL` | Matches played |
+| `W` | Wins |
+| `D` | Draws |
+| `L` | Losses |
+| `GD` | Goal difference — enter as a signed integer, e.g. `+6`, `-1`, `0` |
+| `PTS` | Points |
+
+### Activation rule
+
+A group label zone is **inert** (no tooltip, no cursor change) until all **4 team names** in that group have a non-empty value. Fill in the 4th team name and the hover zone activates automatically on the next 30-second poll.
+
+This works naturally for both:
+- **Group stage in progress** — fill in team names as the draw is made; update W/D/L/GD/PTS after each match day; set `Pos` as you update.
+- **Group stage complete** — fill in the final standings as a historical record.
+
+### Interaction
+
+- **Hover** over a `GROUP X` label to preview the table (unpinned — disappears when you move away).
+- **Click** to pin the table open so you can read it at leisure.
+- Click the same label again, click anywhere else on the chart, or press **Escape** to unpin.
+
+The table shows: position, team name, PL, W, D, L, GD, PTS — columns matching `groups_template.csv`. Rows are sorted by your `Pos` column.
+
 ## xG and possession stats
 
 You can record **expected goals (xG)** and **possession** for each match in

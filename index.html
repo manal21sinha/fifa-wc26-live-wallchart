@@ -151,6 +151,36 @@
   .fld.possession[data-poss]{ cursor: help; }
   .fld.possession[data-poss]:focus-visible{ outline: 2px solid #2b8fc4; outline-offset: 2px; border-radius: 50%; }
 
+  /* Group label hover zone (over the vertical GROUP X text). Transparent;
+     pointer-events controlled by JS (inert until all 4 teams are filled in). */
+  .fld.group_label { background: none; pointer-events: none; border-radius: 3px; }
+  .fld.group_label.active { pointer-events: auto; cursor: pointer; }
+  .fld.group_label.active:focus-visible { outline: 2px solid #2b8fc4; outline-offset: 2px; }
+
+  /* Group standings table inside the shared #tip popover. */
+  .grptable {
+    border-collapse: collapse; width: 100%;
+    font-size: 1.35cqh; line-height: 1.25;
+  }
+  .grptable caption {
+    text-align: left; font-size: 1.5cqh; font-weight: 700;
+    letter-spacing: .05em; padding-bottom: .5cqh;
+    color: #eaf4fa;
+  }
+  .grptable th {
+    font-size: 1.0cqh; font-weight: 600; letter-spacing: .05em;
+    opacity: .6; padding: .25cqh .5cqw; border-bottom: 0.1cqh solid #2b6b8c;
+    text-align: right; white-space: nowrap;
+  }
+  .grptable th.team-col { text-align: left; }
+  .grptable td {
+    padding: .3cqh .5cqw; text-align: right; white-space: nowrap;
+    border-bottom: 0.07cqh solid rgba(255,255,255,.07);
+  }
+  .grptable td.team-col { text-align: left; padding-left: .3cqw; }
+  .grptable td.pts { font-weight: 700; color: #eaf4fa; }
+  .grptable tr:last-child td { border-bottom: none; }
+
   /* Possession bar inside the popover. */
   .possbar {
     display: flex; height: 2.2cqh; border-radius: 0.5cqh; overflow: hidden;
@@ -320,6 +350,18 @@ async function buildOverlay(){
       // focusable; on hover/focus it shows the possession-bar popover (built in
       // applyValues from this match's possession value). No kaleidoscope/text.
       el.className = "fld possession";
+      nodes[f.id] = el;
+      chart.appendChild(el);
+      continue;
+    }
+
+    if (f.kind === "group_label"){
+      // Group-label hover zone over the vertical "GROUP X" text. Starts inert
+      // (pointer-events:none via CSS); activateGroupZones() adds .active once
+      // all 4 team names for the group are present in the Groups sheet.
+      el.className = "fld group_label";
+      el.dataset.group = f.group;
+      el.setAttribute("tabindex", "-1"); // promoted to 0 when active
       nodes[f.id] = el;
       chart.appendChild(el);
       continue;
@@ -610,6 +652,134 @@ function setPossession(el, possession, xg, reports){
   el.setAttribute("aria-label", "Match stats: " + parts.join(", "));
 }
 
+// ── Groups sheet: second gviz fetch (same SHEET_ID, different tab) ──────────
+
+function groupsUrl(){
+  const base = `https://docs.google.com/spreadsheets/d/${CFG.SHEET_ID}/gviz/tq`;
+  const q = new URLSearchParams({ tqx: "out:json", sheet: CFG.GROUPS_SHEET_NAME,
+                                  headers: "1", t: Date.now() });
+  return `${base}?${q.toString()}`;
+}
+
+// Parse the Groups gviz payload into a map:
+//   { "A": [{pos,team,pl,w,d,l,gd,pts}, …], "B": […], … }
+// Column order matches groups_template.csv: Group,Pos,Team,PL,W,D,L,GD,PTS.
+function parseGroupsSheet(payload){
+  const table = payload.table || {};
+  const cols  = table.cols  || [];
+  const rows  = table.rows  || [];
+  const idx   = (name) => cols.findIndex(c => (c.label||"").trim().toLowerCase() === name.toLowerCase());
+  const iGrp = idx("Group"), iPos = idx("Pos"),  iTeam = idx("Team");
+  const iPL  = idx("PL"),    iW   = idx("W"),    iD    = idx("D");
+  const iL   = idx("L"),     iGD  = idx("GD"),   iPTS  = idx("PTS");
+  const cell  = (r, i) => { if (i < 0 || !r.c || !r.c[i]) return ""; const cv = r.c[i]; const v = (cv.v !== null && cv.v !== undefined) ? cv.v : cv.f; return (v === null || v === undefined) ? "" : String(v).trim(); };
+  const result = {};
+  for (const row of rows){
+    const grp = cell(row, iGrp);
+    if (!grp) continue;
+    if (!result[grp]) result[grp] = [];
+    result[grp].push({
+      pos:  cell(row, iPos),
+      team: cell(row, iTeam),
+      pl:   cell(row, iPL),
+      w:    cell(row, iW),
+      d:    cell(row, iD),
+      l:    cell(row, iL),
+      gd:   cell(row, iGD),
+      pts:  cell(row, iPTS),
+    });
+  }
+  return result;
+}
+
+// Store the latest groups data and activate/deactivate label zones.
+// A zone becomes active when all 4 team names for that group are non-empty.
+let groupsData = {};
+
+function activateGroupZones(data){
+  groupsData = data;
+  for (const id in nodes){
+    const el = nodes[id];
+    if (el._kind !== "group_label") continue;
+    const grp   = el.dataset.group;
+    const rows  = (data[grp] || []);
+    const allFilled = rows.length === 4 && rows.every(r => r.team.trim() !== "");
+    if (allFilled){
+      el.classList.add("active");
+      el.setAttribute("tabindex", "0");
+      el.setAttribute("aria-label", `GROUP ${grp} standings — click to view`);
+    } else {
+      el.classList.remove("active");
+      el.setAttribute("tabindex", "-1");
+      el.removeAttribute("aria-label");
+    }
+  }
+}
+
+// Build the group standings table HTML inside the shared #tip popover.
+function showGroupTable(grpEl){
+  const grp  = grpEl.dataset.group;
+  const rows = (groupsData[grp] || []).slice().sort((a, b) => parseInt(a.pos||9) - parseInt(b.pos||9));
+  tipEl.textContent = "";
+
+  const tbl = document.createElement("table");
+  tbl.className = "grptable";
+
+  // Caption: "GROUP A"
+  const cap = document.createElement("caption");
+  cap.textContent = `GROUP ${grp}`;
+  tbl.appendChild(cap);
+
+  // Header row
+  const thead = document.createElement("thead");
+  const hr = document.createElement("tr");
+  [["#",""], ["Team","team-col"], ["PL",""], ["W",""], ["D",""], ["L",""], ["GD",""], ["PTS",""]].forEach(([txt, cls]) => {
+    const th = document.createElement("th");
+    th.textContent = txt;
+    if (cls) th.className = cls;
+    hr.appendChild(th);
+  });
+  thead.appendChild(hr);
+  tbl.appendChild(thead);
+
+  // Data rows
+  const tbody = document.createElement("tbody");
+  for (const r of rows){
+    const tr = document.createElement("tr");
+    const cells = [
+      [r.pos,  ""],
+      [r.team, "team-col"],
+      [r.pl,   ""],
+      [r.w,    ""],
+      [r.d,    ""],
+      [r.l,    ""],
+      [r.gd,   ""],
+      [r.pts,  "pts"],
+    ];
+    for (const [val, cls] of cells){
+      const td = document.createElement("td");
+      td.textContent = val;
+      if (cls) td.className = cls;
+      tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+  }
+  tbl.appendChild(tbody);
+  tipEl.appendChild(tbl);
+  positionTip(grpEl);
+}
+
+async function refreshGroups(){
+  if (!CFG.GROUPS_SHEET_NAME) return;
+  try {
+    const r = await fetch(groupsUrl(), {cache:"no-store"});
+    if (!r.ok) return;   // silent — groups tab is optional
+    activateGroupZones(parseGroupsSheet(parseGviz(await r.text())));
+  } catch(e){
+    console.warn("Groups sheet fetch failed:", e);
+  }
+}
+
 async function refresh(){
   if (!CFG.SHEET_ID || CFG.SHEET_ID.startsWith("PASTE")){
     setStatus("err", "set SHEET_ID in config.js"); return;
@@ -819,6 +989,45 @@ function wireTooltips(){
     }
   });
 
+  // ── Group label click: show/pin the standings table ─────────────────────
+  // Same pin model as possession zones: first click pins, same click/outside/
+  // Escape unpins. Hover shows a preview (unpinned); click locks it in place.
+  let clickingGrp = false;
+  chart.addEventListener("mousedown", (e) => {
+    if (e.target.closest(".fld.group_label.active")) clickingGrp = true;
+  });
+  document.addEventListener("mouseup", () => { clickingGrp = false; });
+
+  chart.addEventListener("mouseover", (e) => {
+    const gl = e.target.closest(".fld.group_label.active");
+    if (gl && !gl._pinned) showGroupTable(gl);
+  });
+  chart.addEventListener("mouseout", (e) => {
+    const gl = e.target.closest(".fld.group_label.active");
+    if (gl && !gl._pinned && !clickingGrp && !gl.contains(e.relatedTarget)) hideTip();
+  });
+  chart.addEventListener("focusin", (e) => {
+    const gl = e.target.closest(".fld.group_label.active");
+    if (gl && !gl._pinned) showGroupTable(gl);
+  });
+  chart.addEventListener("focusout", (e) => {
+    const gl = e.target.closest(".fld.group_label.active");
+    if (gl && !tipEl.contains(e.relatedTarget)){ gl._pinned = false; hideTip(); }
+  });
+  chart.addEventListener("click", (e) => {
+    const gl = e.target.closest(".fld.group_label.active");
+    if (!gl) return;
+    e.stopPropagation();
+    if (pinnedEl && pinnedEl !== gl){
+      pinnedEl._pinned = false; pinnedEl = null; tipEl.classList.remove("pinned"); hideTip();
+    }
+    if (gl._pinned){
+      gl._pinned = false; pinnedEl = null; tipEl.classList.remove("pinned"); hideTip();
+    } else {
+      gl._pinned = true; pinnedEl = gl; showGroupTable(gl); tipEl.classList.add("pinned");
+    }
+  });
+
   // ── Click outside or Escape unpins ────────────────────────────────────
   document.addEventListener("click", (e) => {
     if (!pinnedEl) return;
@@ -862,7 +1071,9 @@ function fitToViewport(){
   hint.innerHTML = "Scores read live from Google Sheets, refreshing every " +
     (CFG.REFRESH_MS/1000) + "s. Edit the sheet to update — no redeploy needed.";
   await refresh();
+  await refreshGroups();
   setInterval(refresh, CFG.REFRESH_MS);
+  setInterval(refreshGroups, CFG.REFRESH_MS);
   document.addEventListener("visibilitychange", () => { if (!document.hidden) refresh(); });
   // The chart scales with the viewport, so re-fit on resize/rotate (debounced):
   // recompute the kiosk size first, then re-fit each box's text.

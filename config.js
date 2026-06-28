@@ -22,4 +22,7 @@ window.CHART_CONFIG = {
 
   // How often viewers re-poll the sheet, in milliseconds.
   REFRESH_MS: 30000,
+
+  // Tab name for the group standings sheet (separate tab, same spreadsheet).
+  GROUPS_SHEET_NAME: "Groups",
 };
