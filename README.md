@@ -176,6 +176,24 @@ knockout → the side away from the score box).
 - Group team names show the badge always; knockout names show it once the team
   name is filled in.
 
+## Striking out a knockout loser
+
+Google Sheets cell formatting (bold, italic, strikethrough) is never included in the gviz response — only the raw text value is returned. To mark a team as eliminated, **prefix the name with `~`** in the `Value` cell:
+
+| What you type | What the chart shows |
+|---|---|
+| `🇿🇦 SOUTH AFRICA` | 🇿🇦 SOUTH AFRICA *(normal)* |
+| `~🇿🇦 SOUTH AFRICA` | ~~🇿🇦 SOUTH AFRICA~~ *(struck through)* |
+
+The `~` is stripped before the text is measured, so font sizing and horizontal shrinking via `fitText` are unaffected. Multi-line names also work — put the `~` before the first line:
+
+```
+~🇧🇦 BOSNIA &
+HERZEGOVINA
+```
+
+This follows the same text-prefix convention as `\n` for line-breaks and 🟥 for red cards — no extra columns or fetches required.
+
 ## Group standings tables
 
 Hovering (or clicking to pin) any of the 12 vertical **GROUP X** labels on the artwork opens a standings table for that group.

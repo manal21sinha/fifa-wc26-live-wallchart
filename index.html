@@ -530,10 +530,17 @@ function applyValues(data){
     // line would get the full height.
     if (el._kind === "score") renderScore(el._txt, v);
     else {
-      el._txt.textContent = v;
+      // A leading ~ signals a knockout loser — strip it and apply strikethrough.
+      // gviz never returns cell formatting (bold/italic/strikethrough), so we use
+      // a text-prefix convention, the same pattern as \n for line-breaks and
+      // 🟥 for red cards. Type ~🇿🇦 SOUTH AFRICA in the sheet to strike it out.
+      const struck  = v.startsWith("~");
+      const display = struck ? v.slice(1) : v;
+      el._txt.style.textDecoration = struck ? "line-through" : "";
+      el._txt.textContent = display;
       if (el._kind === "name" && el._fh !== undefined){
-        const hasNewline = v.includes("\n");
-        const lines = hasNewline ? v.split("\n").length : 1;
+        const hasNewline = display.includes("\n");
+        const lines = hasNewline ? display.split("\n").length : 1;
         // Only allow wrapping when the user explicitly inserted a \n; otherwise
         // keep nowrap so fitText can shrink the whole name onto one line.
         el._txt.style.whiteSpace = hasNewline ? "pre-wrap" : "nowrap";
