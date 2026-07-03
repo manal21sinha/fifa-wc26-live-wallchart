@@ -682,9 +682,14 @@ function parseGroupsSheet(payload){
   const iL   = idx("L"),     iGD  = idx("GD"),   iPTS  = idx("PTS");
   const cell  = (r, i) => { if (i < 0 || !r.c || !r.c[i]) return ""; const cv = r.c[i]; const v = (cv.v !== null && cv.v !== undefined) ? cv.v : cv.f; return (v === null || v === undefined) ? "" : String(v).trim(); };
   const result = {};
+  let lastGrp = "";
   for (const row of rows){
-    const grp = cell(row, iGrp);
+    // Carry the last-seen group letter forward when column A is blank —
+    // this lets the sheet look "beautified" (group letter only on the first
+    // row of each group) without breaking the parser.
+    const grp = cell(row, iGrp) || lastGrp;
     if (!grp) continue;
+    lastGrp = grp;
     if (!result[grp]) result[grp] = [];
     result[grp].push({
       pos:  cell(row, iPos),
